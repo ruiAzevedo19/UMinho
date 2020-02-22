@@ -1,0 +1,17 @@
+computador{
+	def: "aparelho eletrónico que é capaz de receber, armazenar e processar grande quantidade de informação em função de um conjunto de instruções com que é programado"
+	trd: "computer"
+	sin: "PC"
+}
+Internet{
+	def: "conjunto de redes de computadores que, espalhados por todas as regiões do planeta, conseguem trocar dados e mensagens utilizando um protocolo comum"
+	trd: "Internet"
+	sin: "net"
+	sin: "rede"
+}
+algoritmo{
+	def: "conjunto de operações, sequenciais, lógicas e não ambíguas, que, aplicadas a um conjunto de dados, permitem encontrar a solução para um problema num número finito de passos"
+	trd: "algorithm"
+	sin: "operação"
+	sin: "cálculo"
+}

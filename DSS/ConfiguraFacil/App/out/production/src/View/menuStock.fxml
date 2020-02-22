@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="menuStock" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ControllerStock">
+   <children>
+      <Button fx:id="saveButton" layoutX="545.0" layoutY="750.0" mnemonicParsing="false" onAction="#saveList" prefHeight="30.0" prefWidth="120.0" text="Guardar" />
+      <Button fx:id="sairButton" layoutX="367.0" layoutY="750.0" mnemonicParsing="false" onAction="#backView" prefHeight="30.0" prefWidth="120.0" text="Sair" />
+      <TableView fx:id="stockTable" layoutX="55.0" layoutY="126.0" prefHeight="600.0" prefWidth="1100.0">
+         <columns>
+            <TableColumn fx:id="codCol" prefWidth="100.0" text="codigo" />
+            <TableColumn fx:id="descCol" prefWidth="300.0" text="Designaçao" />
+            <TableColumn fx:id="tipoCol" prefWidth="170.0" text="Categoria" />
+            <TableColumn fx:id="precoCol" prefWidth="200.0" text="Preço" />
+            <TableColumn fx:id="qtdCol" prefWidth="130.0" text="Quantidade" />
+            <TableColumn fx:id="actionsCol" prefWidth="200.0" text="Actions" />
+         </columns>
+      </TableView>
+      <ImageView fx:id="logoImg" fitHeight="100.0" fitWidth="100.0" layoutX="1096.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/bkgrd.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="stockLabel" layoutX="57.0" layoutY="25.0" text="Lista de Stock">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <Button layoutX="724.0" layoutY="752.0" mnemonicParsing="false" onAction="#voltarView" prefHeight="27.0" prefWidth="120.0" text="Voltar" />
+      <Line endX="1111.3648681640625" endY="81.85033416748047" layoutY="8.0" startX="59.006736755371094" startY="81.85032653808594" strokeWidth="2.0" />
+   </children>
+</AnchorPane>

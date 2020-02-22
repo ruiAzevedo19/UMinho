@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=FamiliaNumerosa
+comment1.params=
+comment1.target=FamiliaNumerosa()
+comment1.text=\n\ M\u00E9todo\ contrutor\ n\u00E3o\ parametrizado\n
+comment2.params=nome\ nif\ email\ morada\ password\ numero_agregado\ coeficiente_fiscal\ numeroFilhos
+comment2.target=FamiliaNumerosa(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ int,\ double,\ int)
+comment2.text=\n\ M\u00E9todo\ construtor\ parametrizado\n\ \n\ @param\ numeroFilhos\ \ numero\ de\ filhos\ \n
+comment3.params=deducao
+comment3.target=double\ reducaoImposto(double)
+comment3.text=\n\ M\u00E9todo\ que\ calcula\ a\ reducao\ do\ imposto\n
+numComments=4

@@ -1,0 +1,72 @@
+﻿@model ChefIt.Models.Receita
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Receita</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Preparacao)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Preparacao)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Duracao)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Duracao)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Dose)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Dose)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Dificuldade)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Dificuldade)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Classificacao)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Classificacao)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.User)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.User.Email)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ReceitaID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,44 @@
+﻿@model ChefIt.Models.User
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h2 style="text-align:center">Login</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <form asp-action="Login" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                @*<label asp-for="Username" class="control-label"></label>*@
+                <input asp-for="Username" class="form-control" placeholder="Username" />
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                @*<label asp-for="Password" class="control-label"></label>*@
+                <input asp-for="Password" class="form-control" type="password" placeholder="Password" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="text-align:center">
+                <input type="submit" value="Login" class="btn btn-default" />
+                <input type="button" value="Registar" class="btn btn-default" onclick="location.href='@Url.Action("RegisterUser", "Users")'" />
+            </div>
+        </form>
+    </div>
+    <div class="col-md-4"></div>
+</div>
+<h4>@ViewBag.Message</h4>
+<hr />
+@if (string.IsNullOrEmpty(ViewBag.LastLogin))
+{
+    <p  style="text-align:center" class="text-muted">Bem-vindo ao seu primeiro login no nosso sistema</p>
+}
+else
+{
+    <p  style="text-align:center" class="text-muted">Bem vindo, a ultima vez que fez login no nosso sistema foi em @ViewBag.LastLogin</p>
+}
+
+

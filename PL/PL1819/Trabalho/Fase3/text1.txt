@@ -1,0 +1,18 @@
+Informática é um termo usado para descrever o conjunto das ciências relacionadas à coleta, 
+armazenamento, transmissão e processamento de informações em meios digitais, estando incluídas 
+neste grupo: a ciência da computação, os sistemas de informação, a teoria da informação, 
+o processo de cálculo, a análise numérica e os métodos teóricos da representação dos 
+conhecimentos e da modelagem dos problemas. Mas também a informática pode ser entendida como 
+ciência que estuda o conjunto de informações e conhecimentos por meios digitais. O algoritmo 
+foi desenhado para que um dia uma máquina pudesse tratar informações. O uso da Internet também 
+é um caso importante. De nada adianta pedir para um aluno fazer uma pesquisa na Internet sem as 
+devidas orientações. Cabe ao professor instruir os alunos para que estes não façam simples cópias de 
+textos encontrados em sites. Apenas copiando, os alunos não vão aprender. Computador é uma máquina capaz
+ de variados tipos de tratamento automático de informações ou processamento de dados. Um computador pode 
+ possuir inúmeros atributos, dentre eles armazenamento de dados, processamento de dados, cálculo em grande 
+ escala, desenho industrial, tratamento de imagens gráficas, realidade virtual, entretenimento e cultura.
+ Ñao
+\begin{itemize}
+    \item computador
+    \item Internet
+\end{itemize}

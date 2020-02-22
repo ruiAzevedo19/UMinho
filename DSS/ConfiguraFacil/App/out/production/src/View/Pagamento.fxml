@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="menuPagamento" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ControllerPagamento">
+   <children>
+      <Label layoutX="50.0" layoutY="10.0" text="Dados do Cliente">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="50.0" layoutY="100.0" text="Nome:" />
+      <Label layoutX="50.0" layoutY="150.0" text="Morada:" />
+      <Label layoutX="50.0" layoutY="200.0" text="E-mail:" />
+      <Label layoutX="50.0" layoutY="250.0" text="Contacto:" />
+      <Label layoutX="50.0" layoutY="300.0" text="NIF:" />
+      <TextField fx:id="nome" layoutX="120.0" layoutY="95.0" prefHeight="30.0" prefWidth="200.0" />
+      <TextField fx:id="morada" layoutX="120.0" layoutY="145.0" prefHeight="30.0" prefWidth="200.0" />
+      <TextField fx:id="email" layoutX="120.0" layoutY="195.0" prefHeight="30.0" prefWidth="200.0" />
+      <TextField fx:id="contacto" layoutX="120.0" layoutY="245.0" prefHeight="30.0" prefWidth="200.0" />
+      <TextField fx:id="nif" layoutX="120.0" layoutY="295.0" prefHeight="30.0" prefWidth="200.0" />
+      <Label layoutX="500.0" layoutY="100.0" text="Método de Pagamento">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="visa" layoutX="550.0" layoutY="150.0" mnemonicParsing="false" text="Visa">
+         <toggleGroup>
+            <ToggleGroup fx:id="pag" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="master" layoutX="550.0" layoutY="200.0" mnemonicParsing="false" text="MasterCard" toggleGroup="$pag" />
+      <RadioButton fx:id="cheque" layoutX="550.0" layoutY="250.0" mnemonicParsing="false" text="Cheque" toggleGroup="$pag" />
+      <RadioButton fx:id="numerario" layoutX="550.0" layoutY="300.0" mnemonicParsing="false" text="Numerário" toggleGroup="$pag" />
+      <Button fx:id="voltarButton" layoutX="250.0" layoutY="400.0" mnemonicParsing="false" onAction="#backView" prefHeight="30.0" prefWidth="100.0" text="Voltar" />
+      <Button layoutX="420.0" layoutY="400.0" mnemonicParsing="false" onAction="#pagamentoView" prefHeight="30.0" prefWidth="200.0" text="Efectuar Pagamento" />
+      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="686.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/bkgrd.png" />
+         </image>
+      </ImageView>
+      <Line endX="539.0" layoutX="137.0" layoutY="71.0" startX="-100.0" strokeWidth="2.0" />
+      <Line endX="587.0" layoutX="137.0" layoutY="371.0" startX="-100.0" strokeWidth="2.0" />
+   </children>
+</AnchorPane>

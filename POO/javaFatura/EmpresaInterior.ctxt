@@ -1,0 +1,24 @@
+#BlueJ class context
+comment0.target=EmpresaInterior
+comment1.params=
+comment1.target=EmpresaInterior()
+comment1.text=\n\ M\u00E9todo\ construtor\ n\u00E3o\ parametrizado\n
+comment2.params=nome\ nif\ email\ morada\ password\ factor_fiscal\ localizacao\ incentivo
+comment2.target=EmpresaInterior(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ double,\ java.lang.String,\ double)
+comment2.text=\n\ M\u00E9todo\ construtor\ parametrizado\n
+comment3.params=
+comment3.target=java.lang.String\ getLocalizacao()
+comment3.text=\n\ M\u00E9todo\ que\ devolve\ a\ localiza\u00E7\u00E3o\ da\ empresa\n
+comment4.params=
+comment4.target=double\ getIncentivo()
+comment4.text=\n\ M\u00E9todo\ que\ devolve\ o\ icentivo\ fiscal\ da\ empresa\n
+comment5.params=localizacao
+comment5.target=void\ setLocalizacao(java.lang.String)
+comment5.text=\n\ M\u00E9todo\ que\ define\ a\ localiza\u00E7\u00E3o\ da\ empresa\n
+comment6.params=incentivo
+comment6.target=void\ setIncentivo(double)
+comment6.text=\n\ M\u00E9todo\ que\ define\ o\ incentivo\ fiscal\n
+comment7.params=deducao
+comment7.target=double\ reducaoImposto(double)
+comment7.text=\n\ M\u00E9todo\ que\ calcula\ a\ redu\u00E7\u00E3o\ do\ imposto\n
+numComments=8

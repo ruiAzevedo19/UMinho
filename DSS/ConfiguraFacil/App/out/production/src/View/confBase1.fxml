@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="confBase1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ControllerBase1">
+   <children>
+      <Label fx:id="titleLabel" layoutX="63.0" layoutY="22.0" text="Configura Fácil">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="logoImg" fitHeight="100.0" fitWidth="100.0" layoutX="1100.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/bkgrd.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="sairButton" layoutX="450.0" layoutY="720.0" mnemonicParsing="false" onAction="#backView" prefHeight="30.0" prefWidth="120.0" text="Sair" />
+      <Button fx:id="nextButton" layoutX="660.0" layoutY="720.0" mnemonicParsing="false" onAction="#confBase2View" prefHeight="30.0" prefWidth="120.0" text="Seguinte" />
+      <ImageView fx:id="car1Img" fitHeight="226.0" fitWidth="341.0" layoutX="77.0" layoutY="236.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/car1.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="car2Img" fitHeight="232.0" fitWidth="320.0" layoutX="438.0" layoutY="236.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/car2.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="car3Img" fitHeight="655.0" fitWidth="423.0" layoutX="763.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/car3.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="car1Price" layoutX="219.0" layoutY="503.0" text="50.000 €" />
+      <Label fx:id="car2Price" layoutX="571.0" layoutY="503.0" text="30.000 €" />
+      <Label fx:id="car3Price" layoutX="946.0" layoutY="503.0" text="150.000 €" />
+      <RadioButton fx:id="car3RadioBt" layoutX="932.0" layoutY="473.0" mnemonicParsing="false" onAction="#carro3" text="Carro 3">
+         <toggleGroup>
+            <ToggleGroup fx:id="ToggleButton" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="car1RadioBt" layoutX="205.0" layoutY="473.0" mnemonicParsing="false" onAction="#carro1" text="Carro 1" toggleGroup="$ToggleButton" />
+      <RadioButton fx:id="car2RadioBt" layoutX="568.0" layoutY="473.0" mnemonicParsing="false" onAction="#carro2" text="Carro 2" toggleGroup="$ToggleButton" />
+      <Line endX="1083.5118408203125" endY="112.76045989990234" layoutX="10.0" layoutY="-30.0" startX="58.37999725341797" startY="112.76045227050781" strokeWidth="2.0" AnchorPane.leftAnchor="66.96578216552734" />
+      <Line endX="1083.5118408203125" endY="112.76045989990234" layoutX="1.0" layoutY="549.0" startX="58.37999725341797" startY="112.76045227050781" strokeWidth="2.0" AnchorPane.leftAnchor="58.672889709472656" />
+   </children>
+</AnchorPane>

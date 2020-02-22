@@ -1,0 +1,57 @@
+*************************************************************
+ NUMBER OF NODES = 13, NUMBER OF ARCS = 42
+ UNKNOWN OR UNSPECIFIED INITIALIZATION MODE;USING DEFAULT INITIALIZATION
+ ***********************************
+ Total algorithm solution time =   0.00382518768 sec.
+ OPTIMAL COST =   135.
+ NUMBER OF ITERATIONS =  18
+ NUMBER OF MULTINODE ITERATIONS =  2
+ NUMBER OF MULTINODE ASCENT STEPS =  0
+ NUMBER OF REGULAR AUGMENTATIONS =  3
+ ***********************************
+
+-------------------- begin dimacs-format results --------------------
+s 135.
+f 1 7 0
+f 1 8 0
+f 1 9 0
+f 1 10 0
+f 1 11 0
+f 1 12 1
+f 1 13 0
+f 2 7 1
+f 2 8 0
+f 2 9 0
+f 2 10 0
+f 2 11 0
+f 2 12 0
+f 2 13 0
+f 3 7 0
+f 3 8 0
+f 3 9 0
+f 3 10 0
+f 3 11 1
+f 3 12 0
+f 3 13 0
+f 4 7 0
+f 4 8 1
+f 4 9 0
+f 4 10 0
+f 4 11 0
+f 4 12 0
+f 4 13 0
+f 5 7 0
+f 5 8 0
+f 5 9 1
+f 5 10 0
+f 5 11 0
+f 5 12 0
+f 5 13 0
+f 6 7 0
+f 6 8 0
+f 6 9 0
+f 6 10 1
+f 6 11 0
+f 6 12 0
+f 6 13 1
+--------------------- end dimacs-format results ---------------------

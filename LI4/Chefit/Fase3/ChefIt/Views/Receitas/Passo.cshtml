@@ -1,0 +1,65 @@
+﻿@model ReceitaViewModel
+
+@{
+    ViewData["Title"] = "Passo";
+}
+
+<h2>@Model.Nome</h2>
+
+<hr />
+<div class="row">
+
+    <div class="col-md-12" style="text-align:center; ">
+        @for (var i = 1; i <= Model.PassoIngredientes.Count; i++)
+        {
+            if (i == 1)
+            {
+                <div class="botao botao-@i" style="height:22px;width:22px;border-radius:50%;background-color:lawngreen;border:0.5px solid #eeeeee; margin: 5px;text-align:center;display:inline-block">
+                    @i
+                </div>
+            }
+            else
+            {
+                <div class="botao botao-@i" style="height:22px;width:22px;border-radius:50%;border:0.5px solid #eeeeee; margin: 5px;text-align:center;display:inline-block">
+                    @i
+                </div>
+            }
+        }
+    </div>
+</div>
+
+<hr />
+
+<div class="row">
+    @foreach (var item in Model.PassoIngredientes)
+    {
+        if (item.Key.NrPasso == 1)
+        {
+            <div class="descricao" id="passo-@item.Key.NrPasso">
+                <div class="tab">
+                    <p><b><u>Ingredientes</u></b></p>
+                    @foreach (var temp in item.Value)
+                    {
+                        <p style="margin-left:30px">@temp.Nome</p>
+                    }
+                </div>
+                <p>@item.Key.Descricao</p>
+            </div>
+        }
+        else
+        {
+            <div class="descricao" style="display:none" id="passo-@item.Key.NrPasso">
+                <div class="tab">
+                    <p><b><u>Ingredientes</u></b></p>
+                    @foreach (var temp in item.Value)
+                    {
+
+                        <p style="margin-left:30px">@temp.Nome</p>
+                    }
+                </div>
+                <p>@item.Key.Descricao</p>
+            </div>
+        }
+    }
+</div>
+

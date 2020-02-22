@@ -1,0 +1,15 @@
+\BOOKMARK [1][-]{section.1}{Introdu\347\343o}{}% 1
+\BOOKMARK [1][-]{section.2}{Proposta de Arquitetura}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Shared Memory}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Without Shared Memory}{section.2}% 4
+\BOOKMARK [1][-]{section.3}{Manuten\347\343o de artigos}{}% 5
+\BOOKMARK [2][-]{subsection.3.1}{M\351todos}{section.3}% 6
+\BOOKMARK [1][-]{section.4}{Servidor de vendas}{}% 7
+\BOOKMARK [2][-]{subsection.4.1}{M\351todos}{section.4}% 8
+\BOOKMARK [1][-]{section.5}{Cliente de vendas}{}% 9
+\BOOKMARK [2][-]{subsection.5.1}{M\351todos}{section.5}% 10
+\BOOKMARK [1][-]{section.6}{Agregador}{}% 11
+\BOOKMARK [2][-]{subsection.6.1}{M\351todos}{section.6}% 12
+\BOOKMARK [1][-]{section.7}{Funcionalidades adicionais}{}% 13
+\BOOKMARK [1][-]{section.8}{Testes e Resultados}{}% 14
+\BOOKMARK [1][-]{section.9}{Conclus\365es e trabalho futuro}{}% 15

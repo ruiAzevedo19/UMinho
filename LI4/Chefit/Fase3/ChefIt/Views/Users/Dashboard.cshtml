@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<h2>Bem-vindo, @ViewBag.Username</h2>
+
+@if(ViewBag.Tipo == "a")
+{
+    <h1>Sou o administrador</h1>
+}
+else
+{
+    <h1>Sou um cliente</h1>
+}
+

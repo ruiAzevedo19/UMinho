@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="confBase3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ControllerBase3">
+   <children>
+      <Label fx:id="preco" layoutX="960.0" layoutY="260.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="alcantara" layoutX="386.0" layoutY="497.0" mnemonicParsing="false" onAction="#selectEstofos" text="Alcantara">
+         <toggleGroup>
+            <ToggleGroup fx:id="estofos" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="pele" layoutX="386.0" layoutY="447.0" mnemonicParsing="false" onAction="#selectEstofos" text="Pele" toggleGroup="$estofos" />
+      <RadioButton fx:id="tecido" layoutX="386.0" layoutY="397.0" mnemonicParsing="false" onAction="#selectEstofos" text="Tecido (base)" toggleGroup="$estofos" />
+      <RadioButton fx:id="j18" layoutX="150.0" layoutY="500.0" mnemonicParsing="false" onAction="#selectJantes" text="Jante 18&quot;">
+         <toggleGroup>
+            <ToggleGroup fx:id="jantes" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="j17" layoutX="150.0" layoutY="450.0" mnemonicParsing="false" onAction="#selectJantes" text="Jante 17&quot;" toggleGroup="$jantes" />
+      <RadioButton fx:id="j16" layoutX="150.0" layoutY="400.0" mnemonicParsing="false" onAction="#selectJantes" text="Jante 16&quot; (base)" toggleGroup="$jantes" />
+      <ImageView fitHeight="119.0" fitWidth="247.0" layoutX="379.0" layoutY="195.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/interior.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="motorImg" fitHeight="148.0" fitWidth="269.0" layoutX="66.0" layoutY="193.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/jantes.jpeg" />
+         </image>
+      </ImageView>
+      <Label layoutX="391.0" layoutY="123.0" text="Escolha caixa de velocidades:" />
+      <Label layoutX="130.0" layoutY="120.0" text="Escolha tamanho das jantes:" />
+      <Label fx:id="titleLabel" layoutX="65.0" layoutY="27.0" text="Configura Fácil">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="logoImg" fitHeight="100.0" fitWidth="100.0" layoutX="1100.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/bkgrd.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="voltarButton" layoutX="450.0" layoutY="720.0" mnemonicParsing="false" onAction="#backView" prefHeight="30.0" prefWidth="120.0" text="Voltar" />
+      <Button fx:id="nextButton" layoutX="660.0" layoutY="720.0" mnemonicParsing="false" onAction="#confExtraView" prefHeight="30.0" prefWidth="120.0" text="Seguinte" />
+      <Label layoutX="613.0" layoutY="375.0" text="Cor:" />
+      <RadioButton fx:id="white" layoutX="616.0" layoutY="434.0" mnemonicParsing="false" onAction="#selectCor">
+         <toggleGroup>
+            <ToggleGroup fx:id="cor" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="cinza" layoutX="616.0" layoutY="484.0" mnemonicParsing="false" onAction="#selectCor" toggleGroup="$cor" />
+      <RadioButton fx:id="azul" layoutX="616.0" layoutY="534.0" mnemonicParsing="false" onAction="#selectCor" toggleGroup="$cor" />
+      <RadioButton fx:id="preto" layoutX="616.0" layoutY="584.0" mnemonicParsing="false" onAction="#selectCor" toggleGroup="$cor" />
+      <BorderPane layoutX="656.0" layoutY="419.0" prefHeight="45.0" prefWidth="52.0" style="-fx-background-color: black;">
+         <padding>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </padding>
+         <center>
+            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER" />
+         </center>
+      </BorderPane>
+      <BorderPane layoutX="656.0" layoutY="469.0" prefHeight="45.0" prefWidth="52.0" style="-fx-background-color: black;">
+         <center>
+            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" BorderPane.alignment="CENTER" />
+         </center>
+         <padding>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </padding>
+      </BorderPane>
+      <BorderPane layoutX="656.0" layoutY="519.0" prefHeight="45.0" prefWidth="52.0" style="-fx-background-color: black;">
+         <center>
+            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: blue;" BorderPane.alignment="CENTER" />
+         </center>
+         <padding>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </padding>
+      </BorderPane>
+      <BorderPane layoutX="656.0" layoutY="569.0" prefHeight="45.0" prefWidth="52.0" style="-fx-background-color: black;">
+         <center>
+            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER" />
+         </center>
+         <padding>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </padding>
+      </BorderPane>
+      <Line endX="886.2415771484375" endY="7.62939453125E-6" layoutX="195.0" layoutY="89.0" startX="-130.0951385498047" startY="7.62939453125E-6" AnchorPane.leftAnchor="65.0" />
+      <Line endX="886.2415771484375" endY="7.62939453125E-6" layoutX="233.0" layoutY="676.0" startX="-130.0951385498047" startY="7.62939453125E-6" AnchorPane.leftAnchor="65.0" />
+      <TextArea fx:id="confAtualTxt" layoutX="767.0" layoutY="203.0" prefHeight="411.0" prefWidth="391.0" AnchorPane.bottomAnchor="186.0" AnchorPane.leftAnchor="753.0" AnchorPane.rightAnchor="56.0" AnchorPane.topAnchor="203.0" />
+      <Label layoutX="819.0" layoutY="148.0" prefHeight="44.0" prefWidth="299.0" text="Configuração atual">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

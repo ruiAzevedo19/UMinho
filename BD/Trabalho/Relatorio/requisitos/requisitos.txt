@@ -1,0 +1,55 @@
+---------------   Requisitos de Descrição  ---------------
+
+1. Uma empresa é caracterizada pelo seu nome, morada e contactos.
+
+2. Um jornal é caracterizado pelo seu nome, número de edição e data de lançamento.
+
+3. Os anúncios são caracterizados pela sua marca, conteúdo e empresa que os produz.
+
+4. O editor é caracterizado pelo seu nome.
+
+5. Um artigo é caracterizado pelo seu título, data em que foi escrito e o seu conteúdo.
+
+6. Um escritor é caracterizado pelo seu nome.
+
+---------------  Requisitos de Exploração  ---------------
+
+1. Permitir a consulta das informações de uma empresa.
+
+2. Permitir a consulta das informações de escritor.
+
+3. Permitir a consulta das informações de um anúncio.
+
+4. Permitir a consulta das informações de um artigo.
+
+5. Permitir a consulta das informações de um escritor.
+
+6. Permitir a consulta das informações de um editor.
+
+7. Listar todos os jornais de uma dada empresa.
+
+8. Listar todos os anúncios de uma empresa.
+
+7. Listar todos os artigos contidos num jornal.
+
+8. Listar todos os anúncios contidos num jornal.
+
+10. Listar todos os artigos escritos por um dado escritor.
+
+11. Listar todos os jornais editados por um dado editor.
+
+12. Identificar a quantidade de jornais produzidos por uma empresa.
+
+13. Listar todos os escritores que têm pelo menos um artigo escrito num determinado jornal.
+
+14. Listar todos os jornais de uma dada empresa numa determinada data ou intervalo de datas.
+
+15. Listar todos os escritores que já contribuíram para a escrita de jornais de uma dada empresa.
+
+16. Listar todos os jornais em que aparecerem os anúncios de uma determinada empresa.
+
+17. Listar todos os artigos que foram lançados por uma dada empresa com ou sem restrição temporal.
+
+---------------  Requisitos de Controlo  ---------------
+
+1. Impedir que se crie um jornal com uma data de edição inferior à última edição lançada.

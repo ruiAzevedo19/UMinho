@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="novoFuncPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="585.0" prefWidth="734.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ControllerNovoFunc">
+   <children>
+      <Label fx:id="novoFunLabel" layoutX="64.0" layoutY="16.0" prefHeight="45.0" prefWidth="305.0" text="Novo Funcionário">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="teslaImage" fitHeight="100.0" fitWidth="100.0" layoutX="1086.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="16.0">
+         <image>
+            <Image url="@../Imagens/bkgrd.png" />
+         </image>
+      </ImageView>
+      <Line fx:id="line" endX="497.0" layoutX="123.0" layoutY="78.0" startX="-58.585784912109375" startY="-1.9142074584960938" strokeWidth="2.0" />
+      <TextField fx:id="nomeTxt" layoutX="256.0" layoutY="116.0" prefHeight="27.0" prefWidth="254.0" AnchorPane.leftAnchor="256.0" AnchorPane.rightAnchor="224.0" />
+      <TextField fx:id="nifTxt" layoutX="256.0" layoutY="173.0" prefHeight="27.0" prefWidth="254.0" AnchorPane.leftAnchor="256.0" AnchorPane.rightAnchor="224.0" />
+      <TextField fx:id="usernameTxt" layoutX="256.0" layoutY="229.0" prefHeight="27.0" prefWidth="254.0" AnchorPane.leftAnchor="256.0" AnchorPane.rightAnchor="224.0" />
+      <TextField fx:id="passwordTxt" layoutX="257.0" layoutY="283.0" prefHeight="27.0" prefWidth="254.0" AnchorPane.leftAnchor="257.0" AnchorPane.rightAnchor="223.0" />
+      <Label layoutX="194.0" layoutY="121.0" text="Nome :" />
+      <Label layoutX="210.0" layoutY="178.0" text="NIF : " />
+      <Label layoutX="170.0" layoutY="234.0" text="Username :" />
+      <Label layoutX="172.0" layoutY="288.0" text="Password :" />
+      <TextField fx:id="contactoTxt" layoutX="257.0" layoutY="341.0" prefHeight="27.0" prefWidth="254.0" />
+      <Label layoutX="173.0" layoutY="346.0" text="Contacto :" />
+      <Label layoutX="184.0" layoutY="403.0" text="Função :" />
+      <Button fx:id="guardarButton" layoutX="411.0" layoutY="452.0" mnemonicParsing="false" onAction="#adicionaFuncionario" prefHeight="27.0" prefWidth="100.0" text="Guardar" />
+      <ChoiceBox fx:id="funcaoBox" layoutX="259.0" layoutY="398.0" prefHeight="27.0" prefWidth="254.0" />
+      <Button fx:id="cancelarButton" layoutX="259.0" layoutY="452.0" mnemonicParsing="false" onAction="#backView" prefHeight="27.0" prefWidth="100.0" text="Cancelar" />
+      <Line fx:id="line1" endX="-158.38478088378906" endY="449.5" layoutX="133.0" layoutY="88.0" startX="-158.38479614257812" startY="-10.5" strokeWidth="2.0" AnchorPane.leftAnchor="63.0" />
+      <Line fx:id="line2" endX="492.5" endY="4.5" layoutX="178.0" layoutY="129.0" startX="492.5" startY="406.5858154296875" strokeWidth="2.0" AnchorPane.rightAnchor="63.0" />
+      <Line fx:id="line3" endX="537.0" endY="448.5858154296875" layoutX="133.0" layoutY="88.0" startX="-68.58578491210938" startY="450.91424560546875" strokeWidth="2.0" />
+   </children>
+</AnchorPane>

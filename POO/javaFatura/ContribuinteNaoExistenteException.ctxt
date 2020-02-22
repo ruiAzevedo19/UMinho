@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=ContribuinteNaoExistenteException
+comment0.text=\n\ Escreva\ a\ descri\u00E7\u00E3o\ da\ classe\ IndiviualPasswdException\ aqui.\n\ \n\ @author\ (seu\ nome)\ \n\ @version\ (n\u00FAmero\ de\ vers\u00E3o\ ou\ data)\n
+comment1.params=
+comment1.target=ContribuinteNaoExistenteException()
+comment1.text=\n\ M\u00E9todo\ construtor\ n\u00E3o\ parametrizado\n
+comment2.params=s
+comment2.target=ContribuinteNaoExistenteException(java.lang.String)
+comment2.text=\n\ M\u00E9todo\ construtor\ parametrizado\n\ \n\ @param\ String\ s\n
+numComments=3

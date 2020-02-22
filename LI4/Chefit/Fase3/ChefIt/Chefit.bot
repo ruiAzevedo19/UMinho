@@ -1,0 +1,18 @@
+{
+    "name": "Chefit",
+    "description": "",
+    "services": [
+        {
+            "type": "endpoint",
+            "appId": "bf07527d-a343-4d03-9dd4-fe20fb463639",
+            "appPassword": "a6101b8e-bf05-4fc8-bea8-09f0a8f6e6ed",
+            "endpoint": "localhost:3970/api/messages",
+            "id": "ab922e60-83c9-11e9-99f7-95ec8fd01492",
+            "name": "Chefit"
+        }
+    ],
+    "padlock": "",
+    "version": "2.0",
+    "path": "C:\\Users\\ruiaz\\Desktop\\UM\\LI4\\Chef.it\\Fase3\\ChefIt\\Chefit.bot",
+    "overrides": null
+}

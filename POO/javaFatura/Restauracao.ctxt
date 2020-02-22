@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Restauracao
+comment0.text=\n\ Write\ a\ description\ of\ class\ Restauracao\ here.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=Restauracao()
+comment1.text=\n\ M\u00E9todo\ construtor\ n\u00E3o\ parametrizado\n
+comment2.params=valor_despesa\ coeficiente_fiscal
+comment2.target=double\ calcula(double,\ double)
+comment2.text=\n\ M\u00E9todo\ que\ calcula\ o\ montante\ de\ dedu\u00E7\u00E3o\ fiscal\ de\ uma\ fatura\n
+comment3.params=r
+comment3.target=Restauracao(Restauracao)
+comment3.text=\n\ M\u00E9todo\ construtor\ por\ c\u00F3pia\ \n\ \n\ @param\ Restauracao\ r\n
+comment4.params=
+comment4.target=Restauracao\ clone()
+comment4.text=\n\ M\u00E9todo\ que\ cria\ um\ clone\n
+numComments=5

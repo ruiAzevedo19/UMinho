@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=MenuInicial
+comment1.params=g
+comment1.target=MenuInicial(GestaoFaturas)
+comment1.text=\n\ M\u00E9todo\ construtor\ parametrizado\n
+comment2.params=
+comment2.target=void\ menuInicial()
+comment2.text=\n\ M\u00E9todo\ que\ cria\ o\ menu\ inicial\n
+comment3.params=
+comment3.target=void\ menuLogin()
+comment3.text=\n\ M\u00E9todo\ que\ cria\ o\ menu\ login\n
+comment4.params=
+comment4.target=void\ menuRegisto()
+comment4.text=\n\ M\u00E9todo\ que\ cria\ o\ menu\ de\ registo\n
+comment5.params=
+comment5.target=boolean\ menuRegistoIndividual()
+comment5.text=\n\ M\u00E9todo\ que\ cria\ o\ menu\ de\ registo\ individual\n
+comment6.params=
+comment6.target=boolean\ menuRegistoColectivo()
+comment6.text=\n\ M\u00E9todo\ que\ cria\ um\ menu\ de\ registo\ colectivo\n
+numComments=7

@@ -1,0 +1,149 @@
+Grammar
+
+    0 $accept: DICIONARIO $end
+
+    1 DICIONARIO: PALAVRAS
+
+    2 PALAVRAS: PALAVRAS PALAVRA
+    3         | /* empty */
+
+    4 PALAVRA: NOME ARGUMENTOS
+
+    5 NOME: WORD
+
+    6 ARGUMENTOS: ARGUMENTOS ARGUMENTO
+    7           | /* empty */
+
+    8 ARGUMENTO: DEF
+    9          | TRD
+   10          | SIN
+
+
+Terminals, with rules where they appear
+
+$end (0) 0
+error (256)
+DEF (258) 8
+SIN (259) 10
+TRD (260) 9
+WORD (261) 5
+
+
+Nonterminals, with rules where they appear
+
+$accept (7)
+    on left: 0
+DICIONARIO (8)
+    on left: 1, on right: 0
+PALAVRAS (9)
+    on left: 2 3, on right: 1 2
+PALAVRA (10)
+    on left: 4, on right: 2
+NOME (11)
+    on left: 5, on right: 4
+ARGUMENTOS (12)
+    on left: 6 7, on right: 4 6
+ARGUMENTO (13)
+    on left: 8 9 10, on right: 6
+
+
+state 0
+
+    0 $accept: . DICIONARIO $end
+
+    $default  reduce using rule 3 (PALAVRAS)
+
+    DICIONARIO  go to state 1
+    PALAVRAS    go to state 2
+
+
+state 1
+
+    0 $accept: DICIONARIO . $end
+
+    $end  shift, and go to state 3
+
+
+state 2
+
+    1 DICIONARIO: PALAVRAS .
+    2 PALAVRAS: PALAVRAS . PALAVRA
+
+    WORD  shift, and go to state 4
+
+    $default  reduce using rule 1 (DICIONARIO)
+
+    PALAVRA  go to state 5
+    NOME     go to state 6
+
+
+state 3
+
+    0 $accept: DICIONARIO $end .
+
+    $default  accept
+
+
+state 4
+
+    5 NOME: WORD .
+
+    $default  reduce using rule 5 (NOME)
+
+
+state 5
+
+    2 PALAVRAS: PALAVRAS PALAVRA .
+
+    $default  reduce using rule 2 (PALAVRAS)
+
+
+state 6
+
+    4 PALAVRA: NOME . ARGUMENTOS
+
+    $default  reduce using rule 7 (ARGUMENTOS)
+
+    ARGUMENTOS  go to state 7
+
+
+state 7
+
+    4 PALAVRA: NOME ARGUMENTOS .
+    6 ARGUMENTOS: ARGUMENTOS . ARGUMENTO
+
+    DEF  shift, and go to state 8
+    SIN  shift, and go to state 9
+    TRD  shift, and go to state 10
+
+    $default  reduce using rule 4 (PALAVRA)
+
+    ARGUMENTO  go to state 11
+
+
+state 8
+
+    8 ARGUMENTO: DEF .
+
+    $default  reduce using rule 8 (ARGUMENTO)
+
+
+state 9
+
+   10 ARGUMENTO: SIN .
+
+    $default  reduce using rule 10 (ARGUMENTO)
+
+
+state 10
+
+    9 ARGUMENTO: TRD .
+
+    $default  reduce using rule 9 (ARGUMENTO)
+
+
+state 11
+
+    6 ARGUMENTOS: ARGUMENTOS ARGUMENTO .
+
+    $default  reduce using rule 6 (ARGUMENTOS)

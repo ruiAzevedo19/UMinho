@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ControllerExtra">
+   <children>
+      <Accordion layoutX="60.0" layoutY="205.0" prefHeight="291.0" prefWidth="221.0">
+        <panes>
+          <TitledPane animated="false" text="Pacote de Iluminaçao">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="350.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="14.0" text="Farois Tri-Xenon" />
+                        <Label layoutX="14.0" layoutY="40.0" text="Luz interior Ambiente" />
+                        <Label layoutX="14.0" layoutY="66.0" text="Luzes cortesia atras" />
+                     </children></AnchorPane>
+            </content>
+               <graphic>
+                  <CheckBox fx:id="iluminaPack" mnemonicParsing="false" />
+               </graphic>
+          </TitledPane>
+          <TitledPane animated="false" text="Pacote de Inverno">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="350.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="14.0" text="Pneus de Inverno" />
+                        <Label layoutX="14.0" layoutY="40.0" text="Para-brisas Aquecido" />
+                        <Label layoutX="14.0" layoutY="66.0" text="Aquecimento de Estofos" />
+                        <Label layoutX="14.0" layoutY="92.0" text="Desembaciador de espelhos" />
+                     </children></AnchorPane>
+            </content>
+               <graphic>
+                  <CheckBox fx:id="invernoPack" mnemonicParsing="false" />
+               </graphic>
+          </TitledPane>
+          <TitledPane animated="false" text="Pacote Confort">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="350.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="14.0" text="Sensor Dianteiro" />
+                        <Label layoutX="14.0" layoutY="40.0" text="Sensor Traseiro" />
+                        <Label layoutX="14.0" layoutY="66.0" text="Sensor Estacionamento" />
+                     </children></AnchorPane>
+            </content>
+               <graphic>
+                  <CheckBox fx:id="confortPack" mnemonicParsing="false" />
+               </graphic>
+          </TitledPane>
+            <TitledPane animated="false" text="Pacote Desportivo">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="350.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="14.0" text="Farois Tri-Xenon" />
+                        <Label layoutX="14.0" layoutY="40.0" text="Pneus Michelin" />
+                        <Label layoutX="14.0" layoutY="66.0" text="Tecto de Abrir" />
+                        <Label layoutX="14.0" layoutY="92.0" text="Bancos Desportivos" />
+                        <Label layoutX="14.0" layoutY="118.0" text="Travoes de Desempenho" />
+                     </children></AnchorPane>
+               </content>
+               <graphic>
+                  <CheckBox fx:id="sportPack" mnemonicParsing="false" />
+               </graphic>
+            </TitledPane>
+        </panes>
+      </Accordion>
+      <Accordion layoutX="298.0" layoutY="204.0" prefHeight="292.0" prefWidth="181.0">
+        <panes>
+          <TitledPane animated="false" text="Sensores">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <CheckBox fx:id="dianteiro" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Dianteiro" />
+                        <CheckBox layoutX="14.0" layoutY="40.0" mnemonicParsing="false" text="Traseiro" />
+                        <CheckBox layoutX="14.0" layoutY="66.0" mnemonicParsing="false" text="Estacionamento" />
+                     </children></AnchorPane>
+            </content>
+          </TitledPane>
+          <TitledPane animated="false" text="Pneus">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <CheckBox layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Continental" />
+                        <CheckBox layoutX="14.0" layoutY="40.0" mnemonicParsing="false" text="Michelin" />
+                        <CheckBox layoutX="14.0" layoutY="66.0" mnemonicParsing="false" text="Inverno" />
+                     </children></AnchorPane>
+            </content>
+          </TitledPane>
+          <TitledPane animated="false" text="Interior">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <CheckBox layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Aquecimento de Estofos" />
+                        <CheckBox layoutX="14.0" layoutY="40.0" mnemonicParsing="false" text="Bancos Desportivos" />
+                     </children></AnchorPane>
+            </content>
+          </TitledPane>
+            <TitledPane animated="false" text="Exterior">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <CheckBox layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Barras de Tejadilho" />
+                        <CheckBox layoutX="14.0" layoutY="40.0" mnemonicParsing="false" text="Tecto de Abrir" />
+                     </children></AnchorPane>
+               </content>
+            </TitledPane>
+            <TitledPane animated="false" text="Iluminação">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <CheckBox layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Farois Xenon" />
+                        <CheckBox layoutX="14.0" layoutY="40.0" mnemonicParsing="false" text="Farois Bi-Xenon" />
+                        <CheckBox layoutX="14.0" layoutY="66.0" mnemonicParsing="false" text="Farois Tri-Xenon" />
+                        <CheckBox layoutX="14.0" layoutY="92.0" mnemonicParsing="false" text="Luz interior Ambiente" />
+                        <CheckBox layoutX="14.0" layoutY="118.0" mnemonicParsing="false" text="Luz Cortesia Atras" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </TitledPane>
+            <TitledPane animated="false" text="Chassis">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <CheckBox layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Chassis Reforçado" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </TitledPane>
+        </panes>
+      </Accordion>
+      <Accordion layoutX="495.0" layoutY="203.0" prefHeight="293.0" prefWidth="202.0">
+         <panes>
+            <TitledPane animated="false" text="Climatização">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <CheckBox layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="AC Manual" />
+                        <CheckBox layoutX="14.0" layoutY="40.0" mnemonicParsing="false" text="ECC" />
+                        <CheckBox layoutX="14.0" layoutY="66.0" mnemonicParsing="false" text="Para-brisas Aquecido" />
+                        <CheckBox layoutX="14.0" layoutY="92.0" mnemonicParsing="false" text="Desemb. de espelhos" />
+                     </children></AnchorPane>
+               </content>
+            </TitledPane>
+            <TitledPane animated="false" text="Rádio">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <CheckBox layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Radio de CD's" />
+                        <CheckBox layoutX="14.0" layoutY="40.0" mnemonicParsing="false" text="Radio MP3" />
+                        <CheckBox layoutX="14.0" layoutY="66.0" mnemonicParsing="false" text="Radio GPS" />
+                     </children></AnchorPane>
+               </content>
+            </TitledPane>
+            <TitledPane animated="false" text="Instrumentos">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <CheckBox layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Macaco electrico" />
+                     </children></AnchorPane>
+               </content>
+            </TitledPane>
+            <TitledPane animated="false" text="Garantia">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <CheckBox layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Extensão 2Anos" />
+                        <CheckBox layoutX="14.0" layoutY="40.0" mnemonicParsing="false" text="Extensão 5 Anos" />
+                     </children></AnchorPane>
+               </content>
+            </TitledPane>
+            <TitledPane animated="false" text="Segurança">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <CheckBox layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Cadeira de Criança" />
+                     </children></AnchorPane>
+               </content>
+            </TitledPane>
+            <TitledPane animated="false" text="Travões">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <CheckBox layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Travoes de Desempenho" />
+                     </children></AnchorPane>
+               </content>
+            </TitledPane>
+         </panes>
+      </Accordion>
+      <ImageView fx:id="logoImg" fitHeight="100.0" fitWidth="100.0" layoutX="1100.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/bkgrd.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="titleLabel" layoutX="60.0" layoutY="45.0" text="Configura Fácil">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <Button fx:id="finalizarButton" layoutX="645.0" layoutY="720.0" mnemonicParsing="false" onAction="#confirmaView" prefHeight="30.0" prefWidth="120.0" text="Finalizar" />
+      <Button fx:id="voltarButton" layoutX="435.0" layoutY="720.0" mnemonicParsing="false" onAction="#backView" prefHeight="30.0" prefWidth="120.0" text="Voltar" />
+      <Label layoutX="60.0" layoutY="158.0" text="Pacotes">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="298.0" layoutY="158.0" text="Extras">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Line endX="868.513671875" endY="-1.52587890625E-5" layoutX="211.0" layoutY="104.0" startX="-159.99130249023438" startY="-1.52587890625E-5" strokeWidth="2.0" AnchorPane.leftAnchor="50.0" />
+      <Line endX="868.513671875" endY="-1.52587890625E-5" layoutX="257.0" layoutY="690.0" startX="-159.99130249023438" startY="-1.52587890625E-5" strokeWidth="2.0" AnchorPane.leftAnchor="50.0" />
+      <TextArea fx:id="confAtualTxt" layoutX="741.0" layoutY="212.0" prefHeight="441.0" prefWidth="391.0" AnchorPane.bottomAnchor="186.0" AnchorPane.leftAnchor="753.0" AnchorPane.rightAnchor="56.0" AnchorPane.topAnchor="203.0" />
+      <Label layoutX="815.0" layoutY="145.0" prefHeight="51.0" prefWidth="296.0" text="Configuração Atual">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

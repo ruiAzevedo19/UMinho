@@ -1,0 +1,65 @@
+﻿@model IEnumerable<ChefIt.Models.Receita>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<hr />
+<h2>Receitas</h2>
+<hr />
+<br />
+@for (var i = 0; i < 3; i++)
+{
+    @foreach (var receita in Model)
+    {
+        <div id="receita-@receita.ReceitaID" style="overflow:-webkit-paged-x; border-style: solid;border-width: 1px;border-color: #eeeeee" class="=row linha-receita" onclick="location.href='@Url.Action("ApresentaReceita", "Receitas", new { id = receita.ReceitaID })'">
+            <div class="col-md-3 imagem-receita" style="margin-top: 35px; margin-left: 20px;">
+                <img src="~/images/sopamilho.jpg" style="width:100%;height:100%" />
+            </div>
+
+            <div class="col-md-8 detalhes-receita">
+
+                <p class="titulo-receita"><p id=@receita.ReceitaID class="nome-receita">@receita.Nome</p></p>
+                <div class="row">
+                    <div class="col-md-3">
+                        <ul class="lista-receita-nomes">
+
+                            <li>Tempo de preparação:</li>
+                            <li>Duração:</li>
+                            <li>Classificação:</li>
+                            <li>Dificuldade: </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-9">
+                        <ul class="lista-receita-detalhes">
+                            <li> @receita.Preparacao <i class="fas fa-hourglass-end" style="margin-left:5px"></i></li>
+                            <li> @receita.Duracao <i class="far fa-clock" style="margin-left:5px"></i></li>
+                            <li>
+                                @receita.Classificacao
+
+                                @for (int j = 0; j < 5; j++)
+                                {
+                                    if (j < (int)receita.Classificacao)
+                                    {
+                                        <i class="fas fa-star" style="margin-left:5px"></i>
+                                    }
+                                    else
+                                    {
+                                        <i class="far fa-star" style="margin-left:5px"></i>
+                                    }
+                                }
+                            </li>
+                            <li> @receita.Dificuldade <i class="fas fa-praying-hands" style="margin-left: 15px;"></i> </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+    }
+
+}

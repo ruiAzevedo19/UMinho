@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="loginPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="280.0" prefWidth="522.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ControllerLogin">
+   <children>
+      <ImageView fx:id="logoImg" fitHeight="280.0" fitWidth="325.0" layoutX="122.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagens/bkgrd.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="userText" layoutX="122.0" layoutY="114.0" prefHeight="27.0" prefWidth="289.0" />
+      <PasswordField fx:id="passText" layoutX="122.0" layoutY="166.0" prefHeight="25.0" prefWidth="289.0" />
+      <Label fx:id="userLabel" layoutX="81.0" layoutY="119.0" text="User:" />
+      <Label fx:id="passLabel" layoutX="50.0" layoutY="171.0" text="Password:" />
+      <Label fx:id="confFacilLabel" layoutX="118.0" layoutY="31.0" text="Configura Facil" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="41.0" />
+         </font>
+      </Label>
+      <Button fx:id="loginButton" layoutX="234.0" layoutY="215.0" mnemonicParsing="false" onAction="#valida" text="Entrar" />
+      <Line endX="358.25" endY="-0.23529696464538574" layoutX="141.0" layoutY="14.0" startX="-122.0" startY="-2.071087121963501" strokeWidth="2.0" AnchorPane.leftAnchor="19.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="12.0" />
+      <Line endX="358.6642150878906" endY="57.5" layoutX="142.0" layoutY="266.0" startX="-119.67156982421875" startY="57.904388427734375" strokeWidth="2.0" AnchorPane.bottomAnchor="12.0" />
+      <Line endX="19.0" endY="13.5" startX="19.500009536743164" startY="265.61639404296875" strokeWidth="2.0" AnchorPane.leftAnchor="19.0" />
+      <Line endX="528.6569213867188" endY="16.664215087890625" startX="527.99267578125" startY="265.61639404296875" strokeWidth="2.0" AnchorPane.rightAnchor="19.0" />
+
+   </children>
+</AnchorPane>

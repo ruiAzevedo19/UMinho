@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=Autenticavel
+comment0.text=\n\ Write\ a\ description\ of\ interface\ Autenticavel\ here.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=password
+comment1.target=boolean\ login(java.lang.String)
+numComments=2

@@ -1,0 +1,24 @@
+#BlueJ class context
+comment0.target=MenuIndividual
+comment1.params=gf\ nif
+comment1.target=MenuIndividual(GestaoFaturas,\ java.lang.String)
+comment2.params=
+comment2.target=void\ menuIndividual()
+comment3.params=
+comment3.target=void\ pesquisaFatura()
+comment4.params=
+comment4.target=void\ adicionaCAE()
+comment5.params=
+comment5.target=void\ adicionaNifFamilia()
+comment6.params=
+comment6.target=void\ calculoDeducao()
+comment7.params=
+comment7.target=void\ corrigeFatura()
+comment7.text=\n\ M\u00E9todo\ que\ corrige\ uma\ fatura\n
+comment8.params=
+comment8.target=void\ resolveFatura()
+comment8.text=\n\ M\u00E9todo\ que\ resolve\ uma\ fatura\n
+comment9.params=
+comment9.target=void\ lerDatas()
+comment9.text=\n\ L\u00EA\ datas\ do\ System.in\n
+numComments=10

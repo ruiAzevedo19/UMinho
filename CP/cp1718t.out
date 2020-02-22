@@ -1,0 +1,20 @@
+\BOOKMARK [1][-]{section.1}{Pre\342mbulo}{}% 1
+\BOOKMARK [1][-]{section.2}{Documenta\347\343o}{}% 2
+\BOOKMARK [1][-]{section.3}{Como realizar o trabalho}{}% 3
+\BOOKMARK [1][-]{appendix.A}{M\363nade para probabilidades e estat\355stica}{}% 4
+\BOOKMARK [1][-]{appendix.B}{Defini\347\365es auxiliares}{}% 5
+\BOOKMARK [1][-]{appendix.C}{Solu\347\365es dos alunos}{}% 6
+\BOOKMARK [2][-]{subsubsection.C.0.1}{allTransactions}{appendix.C}% 7
+\BOOKMARK [3][-]{subsubsection.C.0.2}{ledger}{subsubsection.C.0.1}% 8
+\BOOKMARK [3][-]{subsubsection.C.0.3}{isValidMagicNr}{subsubsection.C.0.1}% 9
+\BOOKMARK [3][-]{subsubsection.C.0.4}{rotateQTree}{subsubsection.C.0.1}% 10
+\BOOKMARK [3][-]{subsubsection.C.0.5}{scaleQTree}{subsubsection.C.0.1}% 11
+\BOOKMARK [3][-]{subsubsection.C.0.6}{invertQTree}{subsubsection.C.0.1}% 12
+\BOOKMARK [3][-]{subsubsection.C.0.7}{compressQTree}{subsubsection.C.0.1}% 13
+\BOOKMARK [3][-]{subsubsection.C.0.8}{outlineQTree}{subsubsection.C.0.1}% 14
+\BOOKMARK [3][-]{subsubsection.C.0.9}{generatePTree}{subsubsection.C.0.1}% 15
+\BOOKMARK [3][-]{subsubsection.C.0.10}{drawPTree}{subsubsection.C.0.1}% 16
+\BOOKMARK [3][-]{subsubsection.C.0.11}{singletonBag}{subsubsection.C.0.1}% 17
+\BOOKMARK [3][-]{subsubsection.C.0.12}{muB}{subsubsection.C.0.1}% 18
+\BOOKMARK [3][-]{subsubsection.C.0.13}{dist}{subsubsection.C.0.1}% 19
+\BOOKMARK [1][-]{appendix.D}{Como exprimir c\341lculos e diagramas em LaTeX/lhs2tex}{}% 20

@@ -1,0 +1,115 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[portuges]{babel}
+\usepackage{listings}
+\usepackage[table]{xcolor}
+\usepackage{verbatim}
+%%\usepackage{indentfirst}
+\usepackage{hyperref}
+%%\setlength{\parindent}{ex}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{float}
+
+\title{
+       \vspace{60px}
+       \Huge \textbf{Gestão de Vendas} \\[15px]
+       \Large \textbf{Relatório do trabalho prático}
+       %%\vspace{100px}
+      }
+\author{
+        \begin{tabular}{c}
+            \textbf{Grupo XXX} \\[5px]
+                Joana Cruz(A76270) \\
+                Etienne Costa (A76089) \\
+                Rui Azevedo (A80789)
+        \end{tabular}
+       }
+\date{Maio 2019}
+
+\makeatletter         
+\def\@maketitle{
+    \begin{center}
+        \huge \@title \\[4ex]
+        \Large \@author \\[5ex] 
+        \@date \\[8px]
+        \vspace{100px}
+        \includegraphics[scale=0.40]{img/uminho.png} \\
+        \vspace{25px} 
+        \small Sistemas Operativos \\[3px]
+        Mestrado Integrado em Engenharia Informática \\[3px]
+        Universidade do Minho \\
+    \end{center}}
+\makeatother
+
+\begin{document}
+\maketitle
+
+\newpage
+\section{Introdução}
+
+Este projeto surge no âmbito da Unidade Curricular de Sistemas Operativos e tem como objetivo a implementação de  um sistema  de gestão de inventário e vendas.\\
+O sistema é constituído por vários programas: manutenção de artigos, servidor de vendas, cliente de vendas e agregador
+de dados.
+
+
+\section{Proposta de Arquitetura}
+
+Sendo um protocolo uma convenção que controla e possibilita uma conexão,comunicação e transferência de dados entre dois sistemas computacionais,dedicou-se está secção para explanar o formato das mensagens protocolares bem com as suas interações.
+
+\subsection{Shared Memory}
+
+O serviço de transferência rápida e fiável de dados foi implementado, a nível aplicacional, com recurso ao UDP. Sendo assim houve a necessidade de definir um datagrama UDP  que possui as seguintes características :
+
+\iffalse
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.50]{img/arquitetura.PNG}
+    \caption{Arquitetura com memória partilhada}
+\end{figure}
+\fi
+
+
+\subsection{Without Shared Memory}
+
+
+\newpage
+\section{Manutenção de artigos}
+\subsection{Métodos}
+
+
+\newpage
+\section{Servidor de vendas}
+Para a implementação destes conceitos, foi utilizada a linguagem de programação orientada a objectos \emph{C}, e foram definidas as seguintes classes:
+\subsection{Métodos}
+De modo a não tornar esta leitura exaustiva , decidiu-se simplesmente apresentar os métodos mais relevantes
+e procurar explicar o impacto que cada um tem na implementação do nosso serviço.
+
+
+\newpage
+\section{Cliente de vendas}
+\subsection{Métodos}
+
+
+\newpage
+\section{Agregador}
+\subsection{Métodos}
+
+
+\newpage
+\section{Funcionalidades adicionais}
+
+
+
+
+
+\newpage
+\section{Testes e Resultados}
+
+
+\newpage
+\section{Conclusões e trabalho futuro}
+
+
+
+\end{document}

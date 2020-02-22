@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=MenuAdmin
+comment1.params=gf\ cod
+comment1.target=MenuAdmin(GestaoFaturas,\ java.lang.String)
+comment2.params=
+comment2.target=void\ menuAdmin()
+comment3.params=
+comment3.target=void\ pesquisa()
+comment4.params=
+comment4.target=void\ faturacaoEmpresas()
+numComments=5

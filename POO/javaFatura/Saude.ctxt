@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Saude
+comment0.text=\n\ Write\ a\ description\ of\ class\ Saude\ here.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=Saude()
+comment1.text=\n\ M\u00E9todo\ construtor\ n\u00E3o\ parametrizado\n
+comment2.params=valor_despesa\ coeficiente_fiscal
+comment2.target=double\ calcula(double,\ double)
+comment2.text=\n\ M\u00E9todo\ que\ calcula\ o\ montante\ de\ dedu\u00E7\u00E3o\ fiscal\ de\ uma\ fatura\n
+comment3.params=s
+comment3.target=Saude(Saude)
+comment3.text=\n\ M\u00E9todo\ construtor\ por\ c\u00F3pia\ \n\ \n\ @param\ Saude\ s\n
+comment4.params=
+comment4.target=Saude\ clone()
+comment4.text=\n\ M\u00E9todo\ que\ cria\ um\ clone\n
+numComments=5

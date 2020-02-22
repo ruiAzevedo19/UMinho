@@ -1,0 +1,16 @@
+\babel@toc {portuges}{}
+\contentsline {section}{\numberline {1}Resumo}{1}
+\contentsline {section}{\numberline {2}Introdu\IeC {\c c}\IeC {\~a}o}{3}
+\contentsline {subsection}{\numberline {2.1}Preliminares}{3}
+\contentsline {subsection}{\numberline {2.2}Sele\c {c}\~ao de enunciado e Objetivos}{3}
+\contentsline {subsection}{\numberline {2.3}Estrutura do Relat\IeC {\'o}rio}{3}
+\contentsline {subsection}{\numberline {2.4}Caracter\IeC {\'\i }sticas dos Dados, Padr\~oes de Frase e Decis\IeC {\~o}es}{3}
+\contentsline {section}{\numberline {3}Implementa\IeC {\c c}\IeC {\~a}o e A\IeC {\c c}\IeC {\~o}es Sem\IeC {\^a}nticas}{4}
+\contentsline {subsection}{\numberline {3.1}Estados e Express\IeC {\~o}es Regulares}{4}
+\contentsline {subsection}{\numberline {3.2}Estrutura de Dados}{6}
+\contentsline {subsection}{\numberline {3.3}Main}{8}
+\contentsline {section}{\numberline {4}Apresenta\IeC {\c c}\IeC {\~a}o de Resultados}{8}
+\contentsline {subsection}{\numberline {4.1}Input}{8}
+\contentsline {subsection}{\numberline {4.2}Output}{9}
+\contentsline {section}{\numberline {5}Conclus\IeC {\~a}o}{10}
+\contentsline {section}{\numberline {6}C\IeC {\'o}digo FLEX}{12}

@@ -1,0 +1,46 @@
+*************************************************************
+ NUMBER OF NODES = 25, NUMBER OF ARCS = 32
+ DEFAULT INITIALIZATION USED
+ ***********************************
+ Total algorithm solution time =   0.0155777931 sec.
+ OPTIMAL COST =   135.
+ NUMBER OF ITERATIONS =  42
+ NUMBER OF MULTINODE ITERATIONS =  10
+ NUMBER OF MULTINODE ASCENT STEPS =  15
+ NUMBER OF REGULAR AUGMENTATIONS =  6
+ ***********************************
+s 135.
+f 1 2 4
+f 2 3 2
+f 2 11 1
+f 3 4 1
+f 3 25 0
+f 4 5 0
+f 4 18 0
+f 5 6 0
+f 6 7 0
+f 7 8 4
+f 8 9 3
+f 8 25 0
+f 9 10 4
+f 10 1 4
+f 11 12 2
+f 12 13 2
+f 13 14 2
+f 14 9 0
+f 14 15 1
+f 15 16 1
+f 16 17 0
+f 16 25 0
+f 17 11 0
+f 18 19 1
+f 19 20 1
+f 20 21 4
+f 21 22 4
+f 22 7 3
+f 22 23 0
+f 23 24 0
+f 24 18 0
+f 25 20 2
+--------------------- end dimacs-format results ---------------------
+

@@ -1,0 +1,33 @@
+<component name="libraryTable">
+  <library name="cloud.orbit:orbit-mongodb:0.9.0" type="repository">
+    <properties maven-id="cloud.orbit:orbit-mongodb:0.9.0" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/cloud/orbit/orbit-mongodb/0.9.0/orbit-mongodb-0.9.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/cloud/orbit/orbit-core/0.8.0/orbit-core-0.8.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/cloud/orbit/orbit-commons/0.8.0/orbit-commons-0.8.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/ea/async/ea-async/1.0.2/ea-async-1.0.2.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/ea/agentloader/ea-agent-loader/1.0.0/ea-agent-loader-1.0.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.13/slf4j-api-1.7.13.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/cloud/orbit/orbit-json/0.8.0/orbit-json-0.8.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.6.3/jackson-databind-2.6.3.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-annotations/2.6.0/jackson-annotations-2.6.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-core/2.6.3/jackson-core-2.6.3.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/mongojack/mongojack/2.5.1/mongojack-2.5.1.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/mongodb/mongodb-driver/3.1.0/mongodb-driver-3.1.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/mongodb/bson/3.1.0/bson-3.1.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/mongodb/mongodb-driver-core/3.1.0/mongodb-driver-core-3.1.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/de/undercouch/bson4jackson/2.5.0/bson4jackson-2.5.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/javax/persistence/persistence-api/1.0.2/persistence-api-1.0.2.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/commons-io/commons-io/2.4/commons-io-2.4.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/de/flapdoodle/embed/de.flapdoodle.embed.mongo/1.47.3/de.flapdoodle.embed.mongo-1.47.3.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/de/flapdoodle/embed/de.flapdoodle.embed.process/1.41.1/de.flapdoodle.embed.process-1.41.1.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-lang3/3.1/commons-lang3-3.1.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/net/java/dev/jna/jna/4.0.0/jna-4.0.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/net/java/dev/jna/jna-platform/4.0.0/jna-platform-4.0.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-compress/1.3/commons-compress-1.3.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/mongodb/mongo-java-driver/3.1.1/mongo-java-driver-3.1.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "stdlib.h": "c",
+        "fcntl.h": "c",
+        "item.h": "c",
+        "string.h": "c",
+        "parser.h": "c",
+        "ma_api.h": "c",
+        "sell.h": "c"
+    }
+}

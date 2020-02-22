@@ -1,0 +1,94 @@
+﻿@model ReceitaViewModel
+
+@{
+    ViewData["Title"] = "Passos";
+}
+
+@*<h2>@Model.Nome</h2>*@
+
+<hr />
+
+<input type="button" value="Preparar receita" style="margin-bottom:10px;float:right" class="btn btn-default" onclick="location.href='@Url.Action("PrepararReceita", "Receitas", new { id = Model.ReceitaID})'" />
+<input type="button" value="Agendar receita" style="margin-bottom:10px;margin-right:10px;float:right" class="btn btn-default" onclick="location.href='@Url.Action("PrepararReceita", "Receitas", new { id = Model.ReceitaID })'" />
+<br />
+<div class="row">
+    <div class="col-md-12">
+        <div class="=row">
+            <div class="col-md-3 imagem-receita">
+                <img src="~/images/sopamilho.jpg" style="width:100%;height:100%" />
+            </div>
+            <div class="col-md-9 detalhes-receita">
+
+                <p class="titulo-receita"><a id=@Model.ReceitaID class="nome-receita">@Model.Nome</a></p>
+                <div class="row">
+                    <div class="col-md-3">
+                        <ul class="lista-receita-nomes">
+                            <li>Tempo de preparação:</li>
+                            <li>Duração:</li>
+                            <li>Classificação:</li>
+                            <li>Dificuldade: </li>
+                            <li>Descrição:</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-9">
+                        <ul class="lista-receita-detalhes">
+                            <li> @Model.Preparacao <i class="fas fa-hourglass-end" style="margin-left:5px"></i></li>
+                            <li> @Model.Duracao <i class="far fa-clock" style="margin-left:5px"></i></li>
+                            <li>
+                                @Model.Classificacao
+
+                                @for (int i = 0; i < 5; i++)
+                                {
+                                    if (i < (int)Model.Classificacao)
+                                    {
+                                        <i class="fas fa-star" style="margin-left:5px"></i>
+                                    }
+                                    else
+                                    {
+                                        <i class="far fa-star" style="margin-left:5px"></i>
+                                    }
+                                }
+                            </li>
+                            <li> @Model.Dificuldade <i class="fas fa-praying-hands" style="margin-left: 15px;"></i> </li>
+                            <li>@Model.Descricao</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12" style="height:1px;width:100%; background-color:#eeeeee; margin-bottom:30px"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <h3><b>Ingredientes</b></h3>
+        <br />
+        <div style="column-count:3;column-rule-style: double;column-rule-color: #eeeeee;margin: auto;width: 80%;border: 3px solid #eeeeee;padding: 10px;">
+            @foreach (var ingr in Model.Ingredientes)
+            {
+                <p style="margin-left:30px;text-align:justify"><b>@ingr.Key.Nome</b>   : @ingr.Value</p>
+            }
+        </div>
+    </div>
+    <br />
+    <hr />
+    <h3><b>Passos</b></h3>
+    <br />
+    <div class="col-md-12">
+
+        @foreach (var item in Model.PassoIngredientes)
+        {
+            <div class="row" style="border: 1px solid #eeeeee;margin-bottom:10px; display:table;display: flex;align-items: center;width: 90%;height: 100px;margin: auto;width: 80%;border: 3px solid #eeeeee;padding: 10px;">
+                <div class="col-md-1" style="text-align:right;display:table-cell">
+                    <b>@*Passo*@ @item.Key.NrPasso</b>
+                </div>
+                <div class="col-md-11" style="border-left: 1px solid #eeeeee;display:table-cell">
+                    @item.Key.Descricao
+                </div>
+                <br />
+            </div>
+        }
+    </div>
+
+</div>
+
