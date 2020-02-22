@@ -25,18 +25,13 @@ Projects developed during the computer engineering course.
   
   - [Knowledge and Reasoning Representation Systems](https://github.com/ruiAzevedo19/UMinho/tree/master/SRCR) - Artifical Intelligence. A Set Of Projects Using Prolog To Represent Knowledge.
   
-   - [Deterministic Models of Operational Research ](https://github.com/ruiAzevedo19/UMinho/tree/master/MDIO) - Network Flow And Critical Path Method To Make Better Decisions.
+  - [Deterministic Models of Operational Research ](https://github.com/ruiAzevedo19/UMinho/tree/master/MDIO) - Network Flow And Critical Path Method To Make Better Decisions.
    
-    - [Distributed Systems ](https://github.com/ruiAzevedo/UMinho/tree/master/SD) - Music Sharing Plataform (SoundCloud).
+  - [Distributed Systems ](https://github.com/ruiAzevedo/UMinho/tree/master/SD) - Music Sharing Plataform (SoundCloud).
     
-    - [Language Processing](https://github.com/ruiAzevedo19/UMinho/tree/master/PL) - Processing files using Regular Expressions, Flex, Gawk and Yacc.
+  - [Language Processing](https://github.com/ruiAzevedo19/UMinho/tree/master/PL) - Processing files using Regular Expressions, Flex, Gawk and Yacc.
    
-   
   
-  
-  
-
-
 ## Contributors
 
 * [Joana Cruz](https://github.com/joanacruz94)
@@ -45,4 +40,5 @@ Projects developed during the computer engineering course.
 * [Pedro Paes](https://github.com/pedropaes)
 * [Pedro Costa](https://github.com/pCosta99)
 * [José Alves](https://github.com/phansti)
+* [Miriam Pinto](https://github.com/a42040)
 
