@@ -27,7 +27,7 @@ Projects developed during the computer engineering course.
   
   - [Deterministic Models of Operational Research ](https://github.com/ruiAzevedo19/UMinho/tree/master/MDIO) - Network Flow And Critical Path Method To Make Better Decisions.
    
-  - [Distributed Systems ](https://github.com/ruiAzevedo/UMinho/tree/master/SD) - Music Sharing Plataform (SoundCloud).
+  - [Distributed Systems ](https://github.com/ruiAzevedo19/UMinho/tree/master/SD) - Music Sharing Plataform (SoundCloud).
     
   - [Language Processing](https://github.com/ruiAzevedo19/UMinho/tree/master/PL) - Processing files using Regular Expressions, Flex, Gawk and Yacc.
    
