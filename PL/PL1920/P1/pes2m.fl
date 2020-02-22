@@ -1,0 +1,13 @@
+%option main
+
+%% 
+
+#include<stdlib.h>
+
+[0-9]+(\.[0-9]+)?\ +pés     printf("%.2f metros", atof(yytext) * 0.3048);
+
+.|\n            		    printf("%s", yytext); 
+
+%%
+
+

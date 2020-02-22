@@ -1,0 +1,36 @@
+%option noyywrap
+%option main
+
+NUMBER	[0-9]
+
+%%
+%{
+	char n1[20], n2[20], n3[20];
+	int n = 0;
+
+	void save_index(char* d, char* pt){
+		char com[100];
+		sprintf(com, "mkdir %s/index.html", d);
+		FILE* f = fopen(com,"a");
+		fprintf(f,"<li>%s</li>\n", pt);
+		fclose(f);
+	}
+%}
+
+{NUMBER}{2}0{6}		{ sprintf(com, "mkdir %.2s", yytext) ; system(com); n = 1; }
+
+{NUMBER}{3}0{5}		{ sprintf(com, "mkdir %.2s/%c", yytext, yytext[2]); system(com); n = 2; } 
+
+{NUMBER}{4}0{4}		
+
+::.*/::				{  }
+
+.|\n 	;
+
+%%
+
+void makedir(char* dir){
+	char com[100];
+	sprintf(com, "mkdir %s", dir);
+	system(com); 
+}

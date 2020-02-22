@@ -1,0 +1,25 @@
+%option noyywrap
+
+%{
+	char s = 0;
+	float sum = 0;
+%}
+
+NUMBER	[0-9]+(\.[0-9]+)?
+
+%%
+
+{NUMBER} 	if( s == 1 ) sum += atof(yytext);
+
+\+			s = 1 - s;
+
+=			printf("sum = %.2f\n", sum); 
+
+.|\n		;
+
+%%
+
+int main(){
+	yylex();
+	return 0;
+}

@@ -1,0 +1,11 @@
+
+EU=Pedro Fernandes.
+ELE=BeltrÃ£o Coelho.
+
+Eu: Bom dia, como estÃ¡? tudo bem consigo?
+qual o seu nome?
+ele: eu chamo-me BeltrÃ£o Coelho e estou muito bem.
+e qual o seu nome?
+EU: Pedro um seu criado! Ele Ã© o Zezinho.
+ELE: Ah ok muito bem. Prazer Zezinho, eu nÃ£o o conhecia.
+eu: vamos entÃ£o comeÃ§ar a entrevista que ele quer comeÃ§ar a filmar.

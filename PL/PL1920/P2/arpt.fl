@@ -1,0 +1,27 @@
+%option noyywrap
+
+%{
+	int bfrases;
+%}
+
+PT	::.+
+AR 	^[^:\n]+
+
+%% 
+
+
+{AR}	{ printf("AR: %s\n", yytext); bfrases++; }
+
+{PT}	printf("PT: %s\n", yytext + 3);
+
+\n{2,}  printf("\n");
+
+%%
+
+int main(){
+	bfrases = 0;
+	yylex();
+	printf("Frases = %d\n", bfrases);
+	return 0;
+}
+

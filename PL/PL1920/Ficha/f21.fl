@@ -1,0 +1,48 @@
+%option main
+
+%{
+	char* entrevistador;
+	char* entrevistado;
+%}
+
+%%
+
+
+#include<stdlib.h>
+#include<string.h>
+
+	/* --- a ---
+
+	(?i:eu|ele)[:=]\ ?
+
+	.|\n	printf("%s", yytext);
+
+	*/
+
+	/* --- b ---
+
+	(?i:eu)[:=]\ 		printf("Entrevistador: ");
+
+	(?i:ele)[:=]\ 		printf("Entrevistado: ");
+
+	.|\n				printf("%s", yytext);
+
+	*/
+
+	/* --- c --- */
+
+(?i:eu)=[^\..]+	{ 
+					entrevistador = strdup(yytext + 3) ; 
+					printf("%s", yytext); 
+				}
+(?i:ele)=[^\..]+ { 
+					entrevistado  = strdup(yytext + 4) ; 
+					printf("%s", yytext); 
+				 }
+
+(?i:eu):\   	{ printf("%s: %s", entrevistador, yytext + 4); }
+(?i:ele):\   	{ printf("%s: %s", entrevistado, yytext + 5);  }
+
+.|\n	{ printf("%s", yytext); }
+
+%%

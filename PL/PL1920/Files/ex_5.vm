@@ -1,0 +1,37 @@
+	pushi 0
+	pushi 0
+	pushi 0
+start
+	pushi 0
+	storeg 0
+	pushi 1
+	storeg 2
+inif1: nop
+	pushg 0
+	pushi 10
+	inf
+	jz endf1
+	jump instrf1
+ultinstr1: nop
+	pushg 0
+	pushi 1
+	add
+	storeg 0
+	jump inif1
+instrf1: nop
+	pushg 1
+	pushg 2
+	pushi 2
+	dup 1
+	pushi 0
+	equal
+	jz valid1
+	err "divisão por zero."
+	stop
+valid1: nop
+	div
+	add
+	storeg 1
+	jump ultinstr1
+endf1: nop
+stop

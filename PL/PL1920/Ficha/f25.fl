@@ -1,0 +1,31 @@
+%option noyywrap
+
+%{
+	#include <ctype.h>
+
+	int nomes = 0;
+	int siglas = 0;
+%}
+
+%%
+
+^.			{ *yytext = toupper(*yytext);	printf("%s", yytext); }	
+
+[.?!]\ *.	{	
+				int i = strlen(yytext) - 1;
+				yytext[i] = toupper(yytext[i]);
+				printf("%s", yytext);
+			}
+
+[A-Z]+			{ siglas++; printf("%s", yytext); }
+
+[A-Z][a-z]+		{ nomes++; printf("%s", yytext); }
+
+.|\n			printf("%s", yytext);
+
+%%
+
+int main(){
+	yylex();
+	printf("\nNomes Próprios = %d\nSiglas = %d\n", nomes, siglas);
+}

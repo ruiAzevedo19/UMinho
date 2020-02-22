@@ -1,0 +1,11 @@
+Texto exemplo para o exercício 5.
+
+este é um email à PRH. as palavras no inicio da linha devem começar por maiúsculas.     mesmo que comece com vários espaços.
+e preciso também contar os nomes próprios como João, António e Silva.
+Vamos também contar o número de siglas como ADS, SAWE, OLW.
+
+
+  adeus
+
+Cumprimentos,
+  PRH

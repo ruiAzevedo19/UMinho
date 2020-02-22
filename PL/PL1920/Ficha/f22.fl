@@ -1,0 +1,49 @@
+%option noyywrap
+
+%{
+	#include "hashTable.h"
+	#include <stdio.h>
+	#include <string.h>
+	#include <unistd.h>
+%}
+
+WORD		[a-zA-Zàáéçã]+
+
+%%
+
+\\def:.+\n	{	
+				yytext[strlen(yytext) - 2] = 0;
+				char* var[2];
+				const char s[2] = "=";
+				char* token = strtok(yytext + 5,s);
+				var[0] = strdup(token);
+				token = strtok(NULL,s);
+				var[1] = strdup(token);
+				add(var[0],var[1]);
+			}
+
+(^def|.)\\[^ .]+	{
+						char* mean = lookup(yytext + 2);
+						if( mean )
+							printf(" %s", mean);
+						else
+							printf("%s", yytext);
+					}
+	
+{WORD}\/	{ yytext[strlen(yytext) - 1] = 0; printf("%smente", yytext); }
+
+~{WORD}		printf("in%s", yytext + 1);
+
+~{WORD}\/	{ yytext[strlen(yytext) - 1] = 0; printf("in%smente", yytext + 1); }	
+
+^\n			;
+
+.|\n		 printf("%s", yytext); 
+
+%%
+
+int main(){
+	initDictionary(10);
+	yylex();
+	return 0;
+}

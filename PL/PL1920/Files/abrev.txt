@@ -1,0 +1,15 @@
+\def:mm=mesmo;
+\def:mt=muito;
+\def:b=boa;
+\def:prox=proxima;
+\def:exs=exercícios;
+\def:pq=porque;
+\def:sp=sempre;
+\def:cqd=como queriamos demonstrar;
+
+
+Esta sessao foi \mm \mt \b.
+Na \prox nao quero \mm faltar, porque será uma sessão ainda melhor. Feliz/ que sei bem quanto é 4/5.
+Todos os ~satisfeitos podem queixar-se dos \exs \pq sobria/ ninguém irá responder \cqd.
+O ~= a nÃo é para expandir.
+Mas ~feliz/ há \sp casos \mt interessantes para nos dar luta! 

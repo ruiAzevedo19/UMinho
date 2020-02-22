@@ -1,0 +1,43 @@
+ 
+// Programa em Assembly da VM para alocar uma array com 5 posições
+// ler numeros, armazenar no array, em posições seguidas e calcular/escrever a sua soma 
+        pushi 0  // i -> 0; indice que vai varrendo o array
+        pushi 0  // soma -> 1; variavel que acumula o somatorio dos elementos do array
+        pushn 5 // array a -> 2
+start
+ciclo:
+        pushgp
+        pushi 2
+        padd      // calcula endr base de a
+        pushg 0   // calcula indice (i)
+        pushs "introduza um numero inteiro:"
+        writes
+        read
+        atoi
+        storen // a[i] <- read()
+
+        pushg 1
+        pushgp
+        pushi 2
+        padd
+        pushg 0
+        loadn  // vai buscar o valor que esta em a[i]
+        add
+        storeg 1 // soma = soma + a[i]
+
+        pushg 0
+        pushi 1
+        add
+        storeg 0
+
+        pushg 0
+        pushi 5
+        equal
+        jz ciclo
+
+fim:
+        pushs "A soma da lista e: "
+        writes
+        pushg 1 // vai buscar o valor da variavel soma e imprime
+        writei
+        stop

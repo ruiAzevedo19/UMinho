@@ -1,0 +1,41 @@
+	pushi 0
+	pushi 0
+	pushi 0
+start
+	pushi 1
+	storeg 2
+	pushs "enter a number to calculate it's factorial\n"
+	writes
+	read
+	atoi
+	storeg 1
+	pushi 1
+	storeg 0
+inif1: nop
+	pushg 0
+	pushg 1
+	infeq
+	jz endf1
+	jump instrf1
+ultinstrf1: nop
+	pushg 0
+	pushi 1
+	add
+	storeg 0
+	jump inif1
+instrf1: nop
+	pushg 2
+	pushg 0
+	mul
+	storeg 2
+	jump ultinstrf1
+endf1: nop
+	pushs "factorial of"
+	writes  //escrever
+	pushg 1
+	writei  //escrever
+	pushs " = "
+	writes   //escrever
+	pushg 2
+	writei  //escrever
+stop
