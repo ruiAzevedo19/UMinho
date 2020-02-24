@@ -1,0 +1,17 @@
+%option noyywrap
+
+%{
+	// C global variables and lib imports
+
+%}
+
+%%
+
+</.*>		
+
+%%
+
+int main(){
+	yylex();
+	return 0;
+}
