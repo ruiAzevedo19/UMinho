@@ -1,7 +1,7 @@
 CC=gcc
 FLAGS= -Wall
 
-all: cp cat readln readln_v2 nl 
+all: cp cat cat2 nl 
 
 cp:
 	$(CC) $(FLAGS) -o cp cp.c
@@ -9,15 +9,12 @@ cp:
 cat: 
 	$(CC) $(FLAGS) -o cat cat.c
 
-readln:
-	$(CC) $(FlAGS) -o readln readln.c
-
-readln_v2:
-	$(CC) $(FLAGS) -o readln_v2 readln_v2.c
+cat2: 
+	$(CC) $(FLAGS) -o cat2 cat_v2.c readln.c
 
 nl:
-	$(CC) $(FLAGS) -o nl nl.c
+	$(CC) $(FLAGS) -o nl nl.c readln.c
 
 clean:
-	rm cp cat readln nl person
+	rm cp cat cat2 nl
 

@@ -8,5 +8,5 @@ gen:
 	$(CC) $(FLAGS) -o gen gen.c person.c
 
 clean:
-	rm person 
+	rm person gen 
 

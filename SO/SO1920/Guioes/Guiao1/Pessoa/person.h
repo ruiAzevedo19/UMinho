@@ -7,7 +7,7 @@ typedef struct person{
 }Person;
 
 /* Adiciona uma pessoa */
-int add(int fd, Person *p);
+void add(int fd, Person *p);
 
 /* Update da idade através do nome */
 int update(int fd, char* name, int age);
@@ -17,6 +17,5 @@ int update_reg(int fd, int reg, int age);
 
 /* Devolve uma pessoa com um determinado nome */
 int get(Person *p, int fd, char* name);
-
 
 #endif
