@@ -9,11 +9,11 @@ NUMBER	[0-9]+(\.[0-9]+)?
 
 %%
 
-{NUMBER} 	if( s == 1 ) sum += atof(yytext);
+{NUMBER}	if( s == 1 ) sum += atof(yytext);
 
-\+			s = 1 - s;
+\+		s = 1 - s;
 
-=			printf("sum = %.2f\n", sum); 
+=		printf("sum = %.2f\n", sum); 
 
 .|\n		;
 
