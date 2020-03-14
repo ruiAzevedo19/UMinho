@@ -1,0 +1,3 @@
+/Users/ruiazevedo/Desktop/GitHub/UMinho/CG/F1/CMakeFiles/rebuild_cache.dir
+/Users/ruiazevedo/Desktop/GitHub/UMinho/CG/F1/CMakeFiles/edit_cache.dir
+/Users/ruiazevedo/Desktop/GitHub/UMinho/CG/F1/CMakeFiles/class5.dir
