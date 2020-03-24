@@ -1,0 +1,16 @@
+%option noyywrap yylineno
+%{
+    #include "y.tab.h"
+    void yyerror(char*);
+%}
+
+%%
+
+#.*           {}
+[ \n]         {}
+[()]          { return(yytext[0]); }
+.             { yyerror("Símbolo desconhecido!");           }
+
+%%
+
+

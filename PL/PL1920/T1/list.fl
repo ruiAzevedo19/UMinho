@@ -1,0 +1,13 @@
+%option noyywrap
+
+%%
+
+[0-9]+  { yylval.n = atoi(yytext) ; return INT; }
+
+[(),]   {return yytext[0];}
+
+" "|\n  {}
+
+.       { fprintf(stderr, "Inválido '%c'\n", yytext[0]); }
+
+%%

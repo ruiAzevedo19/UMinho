@@ -1,12 +1,12 @@
 #include <stdio.h>
 
 #ifdef __APPLE__
+#define GL_SILENCE_DEPRECATION 
 #include <GLUT/glut.h>
 #else
 #include <GL/glut.h>
 #endif
 
-#define GL_SILENCE_DEPRECATION 
 #define _USE_MATH_DEFINES
 #include <math.h>
 
@@ -95,6 +95,7 @@ void ex2(){
 }
 
 void ex3a(float alpha){
+    printf("cos(%.2f) = %.2f\nsin(%.2f) = %.2f\n", alpha,sin(alpha),alpha,cos(alpha));
     glTranslated(cos(alpha),sin(alpha),0);
     glRotated(alpha,0,0,1);
 }
@@ -144,7 +145,7 @@ void renderScene(void) {
     // Transformations 
     // ex1();
     // ex2();
-    // ex3a(45);
+     ex3a(45);
     // ex3b(45);
 
     // primitives 
@@ -152,7 +153,7 @@ void renderScene(void) {
     glPolygonMode(GL_FRONT , GL_LINE);
     //sphere(1,50);
     //square(1);
-    //house(0.25,0.25,0.25);
+    house(0.25,0.25,0.25);
 
     // End of frame
 	glutSwapBuffers();

@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/ruiazevedo/Desktop/GitHub/UMinho/CG/Guioes/Guiao5/main.cpp
+stdio.h
+-
+stdlib.h
+-
+time.h
+-
+vector
+-
+GLUT/glut.h
+-
+GL/glut.h
+-
+math.h
+-
+

@@ -1,0 +1,20 @@
+%option noyywrap yylineno
+%{
+    #include "y.tab.h"
+    void yyerror(char*);
+%}
+
+%%
+
+\<!--.*--\>   {}
+[ \n]         {}
+[<>]          return(yytext[0]);
+[^<>]+/\<     return TXT;
+[^<>]+/\>     return TAG;
+\<\/          return OPENSLASH;
+[ \t\n]       {}
+.             yyerror("Simbolo inválido");
+
+%%
+
+

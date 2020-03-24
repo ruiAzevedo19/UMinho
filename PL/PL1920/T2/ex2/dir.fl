@@ -1,0 +1,13 @@
+%option noyywrap
+
+%%
+
+[a-zA-Z0-9]+  { yylval.n = strdup(yytext) ; return ID; }
+
+[(),]   {return yytext[0];}
+
+" "|\n  {}
+
+.       { fprintf(stderr, "Inválido '%c'\n", yytext[0]); }
+
+%%
