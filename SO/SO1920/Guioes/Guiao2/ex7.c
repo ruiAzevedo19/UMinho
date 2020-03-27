@@ -37,6 +37,7 @@ int main(int argc, char** argv){
             _exit(line);
         }
     }
+
     for(int i = 0; i < LINES; i++){
         wait(&status);
         if( WEXITSTATUS(status) >= 0 )
