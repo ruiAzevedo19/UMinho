@@ -1,0 +1,4 @@
+client 1 : ola mundo
+client 1 : adeus mundo
+client 2 : ola mundo
+client 2 : adeus mundo
