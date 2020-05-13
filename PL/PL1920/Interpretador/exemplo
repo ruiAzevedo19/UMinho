@@ -1,0 +1,22 @@
+print 3+4*2
+>> 11
+
+g = 45/9 + 7*3
+>> g: 26
+
+read a
+?? 23 
+>> a: 23
+
+show
+>> a: 23
+   g: 26
+
+print a+g
+>> 49
+
+b = a * 2 + g
+>> b: 72
+
+halt
+>> Até à próxima

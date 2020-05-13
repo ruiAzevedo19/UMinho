@@ -1,0 +1,60 @@
+<?xml    version="1.0"   ?>
+<alunos>
+    <aluno>
+        <id>A91023</id>
+        <nome>Filipa Antunes</nome>
+        <notas>
+            <nota>
+                <uc>Processamento de Linguagens</uc>
+                <valor>15</valor>
+            </nota>
+            <nota>
+                <uc>Computação Gráfica</uc>
+                <valor>11</valor>
+            </nota>
+        </notas>
+    </aluno>
+    <aluno>
+        <id>A88777</id>
+        <nome>Casimiro Fontanelas</nome>
+        <notas>
+            <nota>
+                <uc>Processamento de Linguagens</uc>
+                <valor>11</valor>
+            </nota>
+            <nota>
+                <uc>Computação Gráfica</uc>
+                <valor>17</valor>
+            </nota>
+        </notas>
+    </aluno>
+    <aluno>
+        <id>A91024</id>
+        <nome>Gustavo Pires</nome>
+        <notas>
+            <nota>
+                <uc>Processamento de Linguagens</uc>
+                <valor>14</valor>
+            </nota>
+            <nota>
+                <uc>Computação Gráfica</uc>
+                <valor>13</valor>
+            </nota>
+        </notas>
+    </aluno>
+    <aluno>
+        <id>A88778</id>
+        <nome>Rui Fontanelas</nome>
+        <notas>
+            <nota>
+                <uc>Processamento de Linguagens</uc>
+                <valor>13</valor>
+            </nota>
+            <nota>
+                <uc>Computação Gráfica</uc>
+                <valor>16</valor>
+            </nota>
+        </notas>
+    </aluno>
+</alunos>
+

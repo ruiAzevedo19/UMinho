@@ -1,0 +1,30 @@
+[
+    {
+        "id": "A91023",
+        "nome": "Filipa Antunes",
+        "notas": [
+            {
+                "uc": "Processamento de Linguagens",
+                "nota": 15
+            },
+            {
+                "uc": "Computação Gráfica",
+                "nota": 15
+            }
+        ]
+    },
+    {
+        "id": "A88777",
+        "nome": "Casimiro Fontanelas",
+        "notas": [
+            {
+                "uc": "Processamento de Linguagens",
+                "nota": 11
+            },
+            {
+                "uc": "Computação Gráfica",
+                "nota": 15
+            }
+        ]
+    }
+]
