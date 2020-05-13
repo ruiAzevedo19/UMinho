@@ -5,50 +5,58 @@
 %}
 
 %token ERRO
-%token SELECT FROM WHERE ORDERBY GROUPBY 
-%token SIGNAL AND OR 
+%token SELECT FROM AS WHERE ORDER GROUP BY
+%token NOT AND OR 
 %token id num string 
 
 %%
 
-SQL : Sentence 
+SQL : SELECT SCols FROM Tables                  { printf("Frase válida!\n"); } 
+    | SELECT SCols FROM Tables Filter           { printf("Frase válida!\n"); }      
+    | SELECT SCols FROM Tables Filter Optns     { printf("Frase válida!\n"); }  
     ;
 
-Sentence : SELECT ListField FROM ListTable                         { printf("Frase Válida!\n"); }
-         | SELECT ListField FROM ListTable WHERE ListCond          { printf("Frase Válida!\n"); }
-         | SELECT ListField FROM ListTable WHERE ListCond Arrange  { printf("Frase Válida!\n"); }
-         ;
+SCols : '*'
+      | Ids 
+      ;
 
-ListField : '*'
-          | Fields
-          ;
+Ids : id 
+    | Ids ',' id 
+    ;
 
-ListTable : Fields
-          ;
-
-Arrange : ORDERBY Fields
-        | GROUPBY Fields 
-        | ORDERBY Fields GROUPBY Fields
-        | GROUPBY Fields ORDERBY Fields
-        ;
-
-ListCond : Term
-         | Term AND '(' ListCond ')'
-         | '(' ListCond ')' AND Term 
-         | Term OR  '(' ListCond ')'
-         | '(' ListCond ')' OR  Term
-         | '(' ListCond ')' AND '(' ListCond')'
-         | '(' ListCond ')'
-         ;
-
-Fields : id 
-       | Fields ',' id 
+Tables : Table
+       | Tables ',' Table
        ;
 
-Term : id SIGNAL num 
-     | id '=' num 
-     | id '=' string
+Table : id 
+      | id AS id 
+      ;
+
+Filter : WHERE '(' Exp ')'
+       ;
+
+Optns : ORDER BY Cols 
+      | GROUP BY Cols 
+      | ORDER BY Cols GROUP BY Cols 
+      | GROUP BY Cols ORDER BY Cols 
+      ;
+
+Cols : Ids
      ;
+
+Exp : Termo
+    | Exp OR Termo 
+    ;
+
+Termo : Fator 
+      | Termo AND Fator 
+      
+
+Fator : id '=' string 
+      | id '=' num 
+      | NOT Fator 
+      | '(' Exp ')'
+      ;
 
 %%
 

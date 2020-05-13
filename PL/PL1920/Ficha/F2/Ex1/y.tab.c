@@ -1311,39 +1311,14 @@ yyreduce:
   YY_REDUCE_PRINT (yyn);
   switch (yyn)
     {
-        case 2:
-#line 19 "lisp.y"
-    { printf("Frase válida!\n"); }
-    break;
-
-  case 3:
+        case 3:
 #line 20 "lisp.y"
     { printf("Frase válida!\n"); }
     break;
 
-  case 4:
-#line 23 "lisp.y"
-    { printf("prod 2,1 : %d\n", i++); }
-    break;
-
-  case 5:
-#line 24 "lisp.y"
-    { printf("prod 2,2 : %d\n", i++); }
-    break;
-
-  case 6:
-#line 25 "lisp.y"
-    { printf("prod 2,3 : %d\n", i++); }
-    break;
-
-  case 7:
-#line 28 "lisp.y"
-    {printf("prod 3 : %d\n", i++);}
-    break;
-
 
 /* Line 1267 of yacc.c.  */
-#line 1347 "y.tab.c"
+#line 1322 "y.tab.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);

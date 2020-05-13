@@ -42,30 +42,34 @@
      ERRO = 258,
      SELECT = 259,
      FROM = 260,
-     WHERE = 261,
-     ORDERBY = 262,
-     GROUPBY = 263,
-     SIGNAL = 264,
-     AND = 265,
-     OR = 266,
-     id = 267,
-     num = 268,
-     string = 269
+     AS = 261,
+     WHERE = 262,
+     ORDER = 263,
+     GROUP = 264,
+     BY = 265,
+     NOT = 266,
+     AND = 267,
+     OR = 268,
+     id = 269,
+     num = 270,
+     string = 271
    };
 #endif
 /* Tokens.  */
 #define ERRO 258
 #define SELECT 259
 #define FROM 260
-#define WHERE 261
-#define ORDERBY 262
-#define GROUPBY 263
-#define SIGNAL 264
-#define AND 265
-#define OR 266
-#define id 267
-#define num 268
-#define string 269
+#define AS 261
+#define WHERE 262
+#define ORDER 263
+#define GROUP 264
+#define BY 265
+#define NOT 266
+#define AND 267
+#define OR 268
+#define id 269
+#define num 270
+#define string 271
 
 
 
