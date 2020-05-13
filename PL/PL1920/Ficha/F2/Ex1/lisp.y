@@ -16,7 +16,7 @@
 
 %%
 
-Lisp : Lisp SExp { printf("Frase válida!\n"); }
+Lisp : Lisp SExp 
      | SExp      { printf("Frase válida!\n"); } 
      ;
 

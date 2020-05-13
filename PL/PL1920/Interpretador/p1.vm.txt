@@ -1,0 +1,28 @@
+    pushn 26
+start
+    pushi 5
+    storeg 0
+
+    pushi 3
+    pushg 0
+    mul
+    pushi 2
+    add 
+    writei 
+
+    pushs "<$> "
+    writes
+    read
+    atoi
+    storeg 2
+
+    pushg 0
+    pushg 2 
+    add
+    writei 
+
+    pushg 0
+    pushg 2 
+    add 
+    storeg 5
+stop

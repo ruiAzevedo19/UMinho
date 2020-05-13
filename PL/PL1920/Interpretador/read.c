@@ -9,6 +9,7 @@ int limpa_buffer()
     {
         c=getchar();
     } while(c!='\n');
+    return 0;
 }
 
 int isDigit( char d )

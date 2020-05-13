@@ -40,38 +40,38 @@
       know about them.  */
    enum yytokentype {
      ERRO = 258,
-     HALT = 259,
-     PRINT = 260,
-     READ = 261,
-     SHOW = 262,
-     SEP = 263,
-     num = 264,
-     id = 265
+     SELECT = 259,
+     FROM = 260,
+     WHERE = 261,
+     ORDERBY = 262,
+     GROUPBY = 263,
+     SIGNAL = 264,
+     AND = 265,
+     OR = 266,
+     id = 267,
+     num = 268,
+     string = 269
    };
 #endif
 /* Tokens.  */
 #define ERRO 258
-#define HALT 259
-#define PRINT 260
-#define READ 261
-#define SHOW 262
-#define SEP 263
-#define num 264
-#define id 265
+#define SELECT 259
+#define FROM 260
+#define WHERE 261
+#define ORDERBY 262
+#define GROUPBY 263
+#define SIGNAL 264
+#define AND 265
+#define OR 266
+#define id 267
+#define num 268
+#define string 269
 
 
 
 
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
-typedef union YYSTYPE
-#line 15 "interpretador.y"
-{
-    int ivalue;
-    char cvalue;
-}
-/* Line 1529 of yacc.c.  */
-#line 74 "y.tab.h"
-	YYSTYPE;
+typedef int YYSTYPE;
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1
 # define YYSTYPE_IS_TRIVIAL 1

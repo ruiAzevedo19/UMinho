@@ -7,9 +7,9 @@
 
 %%
 
-[ \t\r]         ;
+[ \t\r\n]       ;
 
-\n              return SEP;
+;               return SEP;
 
 [+*\-/=()]      return *yytext;
 

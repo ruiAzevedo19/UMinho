@@ -1,0 +1,2 @@
+SELECT * FROM table WHERE ((chv = 1) AND (tipo="AAA"))
+ORDER BY nome GROUP BY regiao

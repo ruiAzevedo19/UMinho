@@ -8,15 +8,9 @@
 
 %%
 
-Lp : Parentesis     
-   ;
-
-Parentesis : Single Parentesis { printf("Frase válida!\n"); }
+Parentesis : Parentesis '(' Parentesis')' { printf("Frase válida!\n"); }    
            |
            ;
-
-Single : '(' Parentesis ')'
-       ;
 
 %%
 

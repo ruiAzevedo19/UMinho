@@ -1,22 +1,9 @@
-print 3+4*2
->> 11
+a = 5;
 
-g = 45/9 + 7*3
->> g: 26
+print 2+a*3;
 
-read a
-?? 23 
->> a: 23
+read c;
 
-show
->> a: 23
-   g: 26
+print a + c;
 
-print a+g
->> 49
-
-b = a * 2 + g
->> b: 72
-
-halt
->> Até à próxima
+f = a + c;
