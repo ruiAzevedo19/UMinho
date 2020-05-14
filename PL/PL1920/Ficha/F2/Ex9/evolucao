@@ -1,0 +1,14 @@
+. Limpeza : - (1,v,13.2,[u:12]) . Frescos : - (2,w,13.2,[u:13])
+
+. Limpeza : - (1,v,13.2,Quantity)
+. Limpeza : - List 
+. Limpeza : Item 
+. Limpeza : Items 
+Section 
+ShopList . Frescos : - (2,w,13.2,Quantity)
+ShopList . Frescos : - List 
+ShopList . Frescos : Item 
+ShopList . Frescos : Items 
+ShopList Section 
+ShopList 
+Shop 

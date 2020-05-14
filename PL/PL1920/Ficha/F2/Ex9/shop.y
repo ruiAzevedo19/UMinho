@@ -17,10 +17,11 @@
 
 %%
 
-Shop : ShopList   { printf("Shopping list ok!\n"); }
+Shop : ShopList  { printf("Shopping list ok!\n"); }       
      ;
 
-ShopList : Section {printf("Section ok!\n");}
+ShopList : Section 
+         | ShopList Section 
          ;
 
 Section : '.' string ':' Items 
@@ -34,11 +35,15 @@ Item : '-' List
      ;
 
 List : '(' integer ',' string ',' floating ',' Quantity ')'
+     ;
     
 
 Quantity : '[' unidade ':' integer  ']'
          | '[' peso    ':' floating ']'   
+         | '[' peso    ':' integer  ']'   
+         | '[' volume  ':' integer  ']'
          | '[' volume  ':' floating ']'
+         ;
 
 %%
 

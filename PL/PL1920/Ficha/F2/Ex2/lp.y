@@ -8,10 +8,12 @@
 
 %%
 
-Parentesis : Parentesis '(' Parentesis ')' { printf("Frase válida!\n"); }    
+Z : Parentesis  { printf("Frase válida!\n"); }    
+  ;
+
+Parentesis : '(' Parentesis ')' Parentesis 
            |
            ;
-
 %%
 
 int main(){

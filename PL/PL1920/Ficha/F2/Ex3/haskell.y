@@ -13,8 +13,11 @@
 
 %%
 
-Haskell : Lists Haskell  { printf("Frase válida!\n"); }
-        | Lists          { printf("Frase válida!\n"); }
+Z : Haskell { printf("Frase válida!\n"); }
+  ;
+
+Haskell : Lists Haskell 
+        | Lists        
         ;
 
 Lists : '[' ']' 

@@ -8,7 +8,7 @@
 
 [ \t\r\n]           ;
 
-[()\[\].\-:,]        return *yytext;
+[()\[\].\-:,]       return *yytext;
 
 unidade             return unidade;
 
