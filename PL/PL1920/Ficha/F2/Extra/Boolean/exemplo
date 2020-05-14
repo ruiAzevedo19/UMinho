@@ -1,0 +1,9 @@
+1 && 0 || 1
+
+Bool
+Exp
+Exp OR Termo 
+Termo OR Termo 
+Termo AND Fator OR Termo 
+Fator AND 0 OR Fator 
+1 AND 0 OR 1
