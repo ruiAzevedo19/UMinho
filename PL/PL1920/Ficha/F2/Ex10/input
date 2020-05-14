@@ -1,0 +1,12 @@
+Func{
+    <1,Rui Azevedo,Fotocopiador> ,
+    <2,Etienne Costa,Patrao> ,
+    <3,Pedro Costa,Contador de folhas brancas>
+}
+
+Jobs{
+    <1,25/7,14:30,urgente,Imprimir teses> ,
+    <3,25/7,15:05,urgente, Contar o numero de folhas brancas em stock> ,
+    <1,27/7,15:30,baixa,Imprimir apontamentos de PL> ,
+    <2,24/7,15:00,urgente, despedir dona das limpezas>
+}
