@@ -11,7 +11,9 @@ Projects developed during the computer engineering course.
   
   - [Operating Systems](https://github.com/ruiAzevedo19/UMinho/tree/master/SO) - Work about sales management and a range of Operating Systems exercises.
   
-  - [Program Calculation](https://github.com/ruiAzevedo19/UMinho/tree/master/CP) - A range of exercises using functional programming, category theory and program design by calculation.  
+  - [Program Calculation](https://github.com/ruiAzevedo19/UMinho/tree/master/CP) - A range of exercises using functional programming, category theory and program design by calculation.
+  
+  - [Computer Labs III](https://github.com/ruiAzevedo19/UMinho/tree/master/LI3) - Sales management system using C and Java languages
   
 * **3rd year**:
 
