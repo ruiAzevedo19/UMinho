@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="com.jakewharton.fliptables:fliptables:1.1.0" type="repository">
+    <properties maven-id="com.jakewharton.fliptables:fliptables:1.1.0" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/jakewharton/fliptables/fliptables/1.1.0/fliptables-1.1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="src:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/src_jar</output-path>
+    <root id="archive" name="src.jar">
+      <element id="module-output" name="src" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/jakewharton/fliptables/fliptables/1.1.0/fliptables-1.1.0.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

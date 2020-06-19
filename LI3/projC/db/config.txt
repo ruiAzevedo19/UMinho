@@ -1,0 +1,9 @@
+db/Clientes.txt
+db/Produtos.txt
+db/Vendas_1M.txt
+2
+3
+26
+2
+1
+
