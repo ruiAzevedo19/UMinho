@@ -17,7 +17,7 @@ Projects developed during the computer engineering course.
   
 * **3rd year**:
 
-  - [Software Labs IV](https://github.com/ruiAzevedo19/UMinho/tree/master/LI4) - Personal Assistant for Home Cooking with voice recognition
+  - [Computer Labs IV](https://github.com/ruiAzevedo19/UMinho/tree/master/LI4) - Personal Assistant for Home Cooking with voice recognition
 
   - [Software Systems Development & Databases](https://github.com/ruiAzevedo19/UMinho/tree/master/DSS) - BMW Configurator.
   
