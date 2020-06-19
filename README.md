@@ -43,4 +43,5 @@ Projects developed during the computer engineering course.
 * [Pedro Costa](https://github.com/pCosta99)
 * [José Alves](https://github.com/phansti)
 * [Miriam Pinto](https://github.com/a42040)
+* [José Luís](https://github.com/JLoisM)
 
