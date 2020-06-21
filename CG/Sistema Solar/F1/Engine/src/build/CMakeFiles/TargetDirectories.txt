@@ -1,0 +1,3 @@
+/home/pcosta/Desktop/UM/CG/CG_Projeto/Engine/src/build/CMakeFiles/rebuild_cache.dir
+/home/pcosta/Desktop/UM/CG/CG_Projeto/Engine/src/build/CMakeFiles/Engine.dir
+/home/pcosta/Desktop/UM/CG/CG_Projeto/Engine/src/build/CMakeFiles/edit_cache.dir

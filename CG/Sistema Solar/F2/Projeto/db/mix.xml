@@ -1,0 +1,101 @@
+<?xml version="2.0" ?>
+<!--<scene>-->
+    <!--<group>-->
+        <!--<translate X='1'/>-->
+        <!--<models>-->
+            <!--<model file="sphere.3d"/>-->
+        <!--</models>-->
+        <!--<group>-->
+            <!--<translate Y='1'/>-->
+            <!--<models>-->
+                <!--<model file="cone.3d"/>-->
+            <!--</models>-->
+        <!--</group>-->
+    <!--</group>-->
+<scene>
+	<group>
+		<scale X='2' Y='2' Z='2'/>
+		<models>
+			<model file="sphere.3d" />
+		</models>
+	</group>
+	<group>
+		<translate Z='-5'/>
+		<scale X='0.1' Y='0.1' Z='0.1'/>
+		<models>
+			<model file="sphere.3d" />
+		</models>
+	</group>
+	<group>
+		<rotate angle='50' axisY='1'/>
+		<translate Z='-10'/>
+		<scale X='0.3' Y='0.3' Z='0.3'/>
+		<models>
+			<model file="sphere.3d" />
+		</models>
+	</group>
+	<group>
+		<rotate angle='-90' axisY='1'/>
+		<translate Z='-15'/>
+		<scale X='0.3' Y='0.3' Z='0.3'/>
+		<models>
+			<model file="sphere.3d" />
+		</models>
+		<group>
+			<rotate angle='-35' axisX='1'/>
+			<translate Z='2.7'/>
+			<scale X='0.15' Y='0.15' Z='0.15'/>
+			<models>
+                <model file="sphere.3d" />
+			</models>
+		</group>
+	</group>
+	<group>
+		<rotate angle='50' axisY='1'/>
+		<translate Z='-18'/>
+		<scale X='0.3' Y='0.3' Z='0.3'/>
+		<models>
+			<model file="sphere.3d" />
+		</models>
+	</group>
+	<group>
+		<rotate angle='-170' axisY='1'/>
+		<translate Z='-28'/>
+		<models>
+			<model file="sphere.3d" />
+		</models>
+	</group>
+	<group>
+		<rotate angle='-190' axisY='1'/>
+		<translate Z='-33'/>
+		<scale X='0.8' Y='0.8' Z='0.8'/>
+		<models>
+			<model file="sphere.3d" />
+			<model file="plane.3d" />
+		</models>
+	</group>
+	<group>
+		<rotate angle='-210' axisY='1'/>
+		<translate Z='-38'/>
+		<scale X='0.6' Y='0.6' Z='0.6'/>
+		<models>
+			<model file="sphere.3d" />
+		</models>
+	</group>
+	<group>
+		<rotate angle='-230' axisY='1'/>
+		<translate Z='-43'/>
+		<scale X='0.6' Y='0.6' Z='0.6'/>
+		<models>
+			<model file="sphere.3d" />
+		</models>
+	</group>
+	<group>
+		<rotate angle='-210' axisY='1'/>
+		<translate Z='-48'/>
+		<scale X='0.05' Y='0.05' Z='0.05'/>
+		<models>
+			<model file="sphere.3d" />
+		</models>
+	</group>
+</scene>

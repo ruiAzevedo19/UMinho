@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/pcosta/Desktop/UM/CG/CG_Projeto/Engine/src/engine.cpp
+GLUT/glut.h
+-
+GL/glew.h
+-
+GL/glew.h
+-
+GL/glut.h
+-
+math.h
+-
+iostream
+-
+parser.h
+/home/pcosta/Desktop/UM/CG/CG_Projeto/Engine/src/parser.h
+
+/home/pcosta/Desktop/UM/CG/CG_Projeto/Engine/src/parser.h
+string
+-
+vector
+-
+vertex.h
+/home/pcosta/Desktop/UM/CG/CG_Projeto/Engine/src/vertex.h
+
+/home/pcosta/Desktop/UM/CG/CG_Projeto/Engine/src/vertex.h
+string
+-
+

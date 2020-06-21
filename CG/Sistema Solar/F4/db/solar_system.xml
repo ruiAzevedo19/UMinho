@@ -1,0 +1,152 @@
+<?xml version='2.0' ?>
+<scene>
+    <lights>
+        <light type="POINT" posX='0' posY='10' posZ='0' />
+    </lights>
+    <group>
+        <translate time='10'>
+            <point X='5' Y='1' Z='20'/>
+            <point X='10' Y='3' Z ='10'/>
+            <point X='15' Y='5' Z='5'/>
+            <point X='10' Y='10' Z='10'/>
+        </translate>
+        <scale X='0.4' Y = '0.4' Z = '0.4'/>
+        <models>
+            <model file='pch.3d' texture='textures/8k_mars.jpg' />
+        </models>
+    </group>
+	<group>
+		<!-- Sun -->
+		<rotate axisY='1' time='10'/>
+		<scale X='2' Y='2' Z='2'/>
+		<models>
+			<model file='sphere.3d' texture='textures/8k_sun.jpg'/>
+		</models>
+	</group>
+	<group>
+		<rotate axisX='0.059' axisY='0.998' time='1.2'/>
+		<translate Z='-5'/>
+		<scale X='0.15' Y='0.15' Z='0.15'/>
+		<group>
+			<rotate axisX='0.0596' axisY='0.9974' time = '1'/>
+            <models>
+            	<!-- Mercury -->
+                <model file='sphere.3d' texture='textures/8k_mercury.jpg' diffR='0.8' diffG='0.8' diffB='0.15'/>
+            </models>
+        </group>
+	</group>
+	<group>
+		<rotate angle='50' axisX='0.067' axisY='0.9977' time='3.15'/>
+		<translate Z='-10'/>
+		<scale X='0.3' Y='0.3' Z='0.3'/>
+		<group>
+			<rotate axisX='-0.113' axisY='-0.9517' time = '1'/>
+            <models>
+            	<!-- Venus -->
+                <model file='sphere.3d'  texture='textures/8k_venus_surface.jpg' />
+            </models>
+        </group>
+	</group>
+	<group>
+		<rotate angle='-90' axisX='0.1245' axisY='0.9922' time='5'/>
+		<translate Z='-15'/>
+		<scale X='0.3' Y='0.3' Z='0.3'/>
+		<group>
+			<rotate axisX='0.5222' axisY='0.5945' time = '1'/>
+            <models>
+            	<!-- Earth -->
+                <model file='sphere.3d' texture='textures/8k_earth_daymap.jpg' />
+            </models>
+        </group>
+		<group>
+			<rotate angle='-35' axisX='0.0897' axisY='0.996' time='1.5'/>
+			<translate Z='2.7'/>
+			<scale X='0.1' Y='0.1' Z='0.1'/>
+			<group>
+				<rotate axisX='0.1167' axisY='0.969' time = '1'/>
+            	<models>
+            		<!-- Moon -->
+                	<model file='sphere.3d'/>
+            	</models>
+        	</group>
+		</group>
+	</group>
+	<group>
+		<rotate angle='50' axisX='0.0985' axisY='0.99514' time='9.65'/>
+		<translate Z='-18'/>
+		<scale X='0.3' Y='0.3' Z='0.3'/>
+		<group>
+			<rotate axisX='0.5241' axisY='0.56954' time = '1'/>
+            <models>
+            	<!-- Mars -->
+                <model file='sphere.3d' texture='textures/8k_mars.jpg' />
+            </models>
+        </group>
+	</group>
+	<group>
+		<rotate angle='-170' axisX='0.1061' axisY='0.9944' time='19.5'/>
+		<translate Z='-28'/>
+		<group>
+			<rotate axisX='0.1607' axisY='0.9398' time = '1'/>
+            <models>
+            	<!-- Jupiter -->
+                <model file='sphere.3d' texture='textures/8k_jupiter.jpg' />
+            </models>
+        </group>
+	</group>
+	<group>
+		<rotate angle='-190' axisX='0.096' axisY='0.9954' time='27.5'/>
+		<translate Z='-33'/>
+		<scale X='0.8' Y='0.8' Z='0.8'/>
+		<group>
+			<rotate axisX='0.5457' axisY='0.5457'/>
+            <models>
+            	<!-- Saturn ring -->
+                <model file='ring.3d' texture="textures/8k_saturn_ring_alpha.png" />
+            </models>
+        </group>
+		<group>
+			<rotate axisX='0.5457' axisY='0.5457' time = '1'/>
+            <models>
+            	<!-- Saturn -->
+                <model file='sphere.3d' texture="textures/8k_saturn.jpg" />
+            </models>
+        </group>
+	</group>
+	<group>
+		<rotate angle='-210' axisX='0.1129' axisY='0.9936' time='30'/>
+		<translate Z='-38'/>
+		<scale X='0.6' Y='0.6' Z='0.6'/>
+		<group>
+			<rotate axisX='-1.0984' axisY='-0.0081' time = '1'/>
+            <models>
+            	<!-- Uranus -->
+                <model file='sphere.3d' texture='textures/2k_uranus.jpg' />
+            </models>
+        </group>
+	</group>
+	<group>
+		<rotate angle='-230' axisX='0.112' axisY='0.9937' time='45'/>
+		<translate Z='-43'/>
+		<scale X='0.6' Y='0.6' Z='0.6'/>
+		<group>
+			<rotate axisX='0.5864' axisY='0.5193' time = '1'/>
+            <models>
+            	<!-- Neptune -->
+                <model file='sphere.3d' texture='textures/2k_neptune.jpg' />
+            </models>
+        </group>
+	</group>
+	<group>
+		<rotate angle='-210' axisX='0.2059' axisY='0.9789' time='60'/>
+		<translate Z='-48'/>
+		<scale X='0.05' Y='0.05' Z='0.05'/>
+		<group>
+			<rotate axisX='1.049' axisY='0.1358' time = '1'/>
+            <models>
+            	<!-- Pluto -->
+                <model file='sphere.3d' />
+            </models>
+        </group>
+	</group>
+</scene>

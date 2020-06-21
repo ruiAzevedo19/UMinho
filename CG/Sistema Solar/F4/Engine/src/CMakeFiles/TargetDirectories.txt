@@ -1,0 +1,3 @@
+/home/ruiazevedo/Desktop/CG/F4/Engine/src/CMakeFiles/rebuild_cache.dir
+/home/ruiazevedo/Desktop/CG/F4/Engine/src/CMakeFiles/Engine.dir
+/home/ruiazevedo/Desktop/CG/F4/Engine/src/CMakeFiles/edit_cache.dir

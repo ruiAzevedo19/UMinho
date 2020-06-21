@@ -1582,8 +1582,21 @@ yyreturn:
 }
 
 
-#line 33 "boolean.y"
+#line 34 "boolean.y"
 
+
+/*
+    !1 || 0 && 1 
+
+    Exp 
+    Exp OR Termo 
+    Fator OR Termo 
+    Not Fator OR Termo 
+    Not one OR Termo 
+    Not one OR Termo AND Fator 
+    Not one OR Fator AND one 
+    Not one OR zero AND one 
+*/
 
 int main(){
     yyparse();

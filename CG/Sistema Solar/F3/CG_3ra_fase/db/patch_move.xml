@@ -1,0 +1,15 @@
+<?xml version="2.0" ?>
+<scene>
+    <group>
+        <translate time='10'>
+            <point X='5' Y='1' Z='20'/>
+            <point X='10' Y='3' Z ='10'/>
+            <point X='15' Y='5' Z='5'/>
+            <point X='10' Y='10' Z='10'/>
+        </translate>
+        <scale X='0.4' Y = '0.4' Z = '0.4'/>
+        <models>
+            <model file="pch.3d"/>
+        </models>
+    </group>
+</scene>

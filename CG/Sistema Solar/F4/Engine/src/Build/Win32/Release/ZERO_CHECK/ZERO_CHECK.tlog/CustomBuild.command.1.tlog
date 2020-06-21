@@ -1,0 +1,10 @@
+^E:\UM\3\CG\PROJETO\CG\ENGINE\SRC\BUILD\CMAKEFILES\EED01779F7230926350F4D96B034E6AA\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SE:/UM/3/CG/Projeto/CG/Engine/src -BE:/UM/3/CG/Projeto/CG/Engine/src/Build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file E:/UM/3/CG/Projeto/CG/Engine/src/Build/Engine.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

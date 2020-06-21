@@ -16,7 +16,7 @@
 Z : Haskell { printf("Frase válida!\n"); }
   ;
 
-Haskell : Lists Haskell 
+Haskell : Haskell Lists  
         | Lists        
         ;
 

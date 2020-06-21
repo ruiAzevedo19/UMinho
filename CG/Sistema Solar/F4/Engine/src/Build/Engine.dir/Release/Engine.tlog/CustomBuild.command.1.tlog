@@ -1,0 +1,10 @@
+^E:\UM\3\CG\PROJETO\CG\ENGINE\SRC\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SE:/UM/3/CG/Projeto/CG/Engine/src -BE:/UM/3/CG/Projeto/CG/Engine/src/Build --check-stamp-file E:/UM/3/CG/Projeto/CG/Engine/src/Build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

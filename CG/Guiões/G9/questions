@@ -1,0 +1,5 @@
+What happens if we perform some geometrical transformation before placing the light?
+Acontece que a luz incide num ponto diferente primeiro como se pode ver no print rotate_before_light_on_left.
+
+What happens if the light is placed before the gluLookAt?
+Acontece que um dos lados está sempre iluminado e o outro está sempre a sombra. Ainda que não seja 100% demonstrativo, consegue-se perceber isso no print light_before_gluLookAt_on_left.

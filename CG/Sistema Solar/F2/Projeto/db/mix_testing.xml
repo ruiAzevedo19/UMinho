@@ -1,0 +1,28 @@
+<?xml version="2.0" ?>
+<scene>
+	<group>
+        <translate Z='10'/>
+		<models>
+			<model file="sphere.3d" />
+		</models>
+	</group>
+	<group>
+		<scale X='2' Y='2' Z='2'/>
+        <translate Z='10'/>
+		<models>
+			<model file="sphere.3d" />
+		</models>
+	</group>
+    <group>
+        <translate X='10'/>
+        <models>
+            <model file="sphere.3d"/>
+        </models>
+        <group>
+            <translate X='10'/>
+            <models>
+                <model file="sphere.3d"/>
+            </models>
+        </group>
+    </group>
+</scene>

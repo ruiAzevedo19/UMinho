@@ -1,0 +1,9 @@
+<?xml version="2.0" ?>
+<scene> 
+    <group>
+            <rotate angle='-90' axisX='1' axisY='0' axisZ='0'/>
+        <models>
+            <model file="pch.3d"/>
+        </models>
+    </group>
+</scene>

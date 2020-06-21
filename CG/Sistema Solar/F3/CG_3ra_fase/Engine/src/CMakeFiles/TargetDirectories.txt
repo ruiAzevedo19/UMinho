@@ -1,0 +1,3 @@
+/home/ruiazevedo/Desktop/CG/F3/CG_3ra_fase/Engine/src/CMakeFiles/rebuild_cache.dir
+/home/ruiazevedo/Desktop/CG/F3/CG_3ra_fase/Engine/src/CMakeFiles/Engine.dir
+/home/ruiazevedo/Desktop/CG/F3/CG_3ra_fase/Engine/src/CMakeFiles/edit_cache.dir

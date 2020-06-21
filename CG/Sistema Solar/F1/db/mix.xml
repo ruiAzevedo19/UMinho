@@ -1,0 +1,7 @@
+<?xml version="2.0" ?>
+<scene>
+	<model file='cone.3d'/>
+	<model file='plane.3d'/>
+	<model file='box.3d'/>
+	<model file='sphere.3d'/>
+</scene>
