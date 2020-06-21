@@ -1,0 +1,25 @@
+executar 'cut -f7 -d: /etc/passwd | uniq | wc -l'
+executar 'cat file | sort | uniq'
+executar 'cat file | sort | uniq | wc'
+tempo-execucao 5
+executar './sleep 2 | wc'
+executar './sleep 10 | cat file | sort'
+tempo-inactividade 1
+executar './sleep 10 | cat file'
+tempo-execucao 0
+tempo-inactividade 0
+executar './sleep 3'
+executar './sleep 20 | cat file | sort | uniq'
+listar
+listar
+listar
+listar
+terminar 8
+executar 'cat bigFile'
+executar './argus -o 9 | wc'
+historico
+output 1
+output 2
+output 3
+output 10
+sair

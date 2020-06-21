@@ -1,0 +1,44 @@
+#!/bin/bash
+
+echo "-> executa tarefa 1, 2 e 3 -----------------------"
+./argus -e 'sleep 3'
+sleep 1
+./argus -e 'sleep 3 | cat file | sort | uniq'
+sleep 1
+./argus -e 'cat bigFile'
+echo "-> listagem (1) ----------------------------------"
+./argus -l 
+sleep 1
+echo "-> listagem (2) ----------------------------------"
+./argus -l
+echo "-> tempo-execucao = 1 ----------------------------"
+./argus -m 1
+echo "-> executa tarefa 4, 5 e 6 -----------------------"
+./argus -e 'cat bigFile | sort | uniq | wc -l'
+sleep 1
+./argus -e 'ls'
+sleep 1
+./argus -e 'sleep 10'
+sleep 1
+echo "-> tempo-execucao = 0 ----------------------------"
+./argus -m 0
+echo "-> tempo-inactividade = 1 ------------------------"
+./argus -i 1
+echo "-> executa tarefa 7 ------------------------------"
+./argus -e 'sleep 10 | cat file | sort'
+sleep 1
+echo "-> tempo-inactividade = 0 ------------------------"
+./argus -i 0
+echo "-> executa tarefa 8 ------------------------------"
+./argus -e 'cat bigFile | sort | uniq'
+echo "-> termina tarefa 8 ------------------------------"
+./argus -t 8 
+echo "-> executa tarefa 9 ------------------------------"
+./argus -e './argus -o 3 | wc'
+sleep 2
+echo "-> output da tarefa 9 ----------------------------"
+./argus -o 9
+sleep 2
+echo "-> historico -------------------------------------"
+./argus -r
+
