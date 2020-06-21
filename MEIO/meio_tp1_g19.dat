@@ -1,0 +1,12 @@
+Grupo que inclui o Aluno com o Nº 85700
+MEIO-TP1 - Tabelas de probabilidades de pedidos e entregas de automóveis
+
+FILIAL 1
+Número de clientes:	  ;      0 ;      1 ;      2 ;      3 ;      4 ;      5 ;      6 ;      7 ;      8 ;      9 ;     10 ;     11 ;     12
+Probabilidade (pedidos):  ; 0.0392 ; 0.0692 ; 0.1236 ; 0.1360 ; 0.1284 ; 0.1124 ; 0.1108 ; 0.0900 ; 0.0640 ; 0.0580 ; 0.0416 ; 0.0200 ; 0.0068
+Probabilidade (entregas): ; 0.0352 ; 0.0700 ; 0.1152 ; 0.1412 ; 0.1452 ; 0.1032 ; 0.1024 ; 0.0892 ; 0.0740 ; 0.0568 ; 0.0376 ; 0.0228 ; 0.0072
+
+FILIAL 2
+Número de clientes:	  ;      0 ;      1 ;      2 ;      3 ;      4 ;      5 ;      6 ;      7 ;      8 ;      9 ;     10 ;     11 ;     12
+Probabilidade (pedidos):  ; 0.0460 ; 0.0816 ; 0.1244 ; 0.1492 ; 0.1136 ; 0.1108 ; 0.1020 ; 0.0876 ; 0.0664 ; 0.0508 ; 0.0384 ; 0.0212 ; 0.0080
+Probabilidade (entregas): ; 0.0516 ; 0.1548 ; 0.2132 ; 0.2136 ; 0.1692 ; 0.1092 ; 0.0556 ; 0.0224 ; 0.0072 ; 0.0024 ; 0.0008 ; 0.0000 ; 0.0000
