@@ -38,7 +38,7 @@ Projects developed during the computer engineering course.
   - [Stochastic Models of Operational Research](https://github.com/ruiAzevedo19/UMinho/tree/master/MEIO) - Car sales management model
   
 * **4rd year**:
-    ## Formal Methods in Software Engineering
+    #### Formal Methods in Software Engineering
 
     - [Specification and Modeling](https://github.com/ruiAzevedo19/UMinho/tree/master/EM) - Model checking and model finding using Alloy and Electrum
 
@@ -46,13 +46,13 @@ Projects developed during the computer engineering course.
 
     - [Software analysis and testing](https://github.com/ruiAzevedo19/UMinho/tree/master/ATS) - Code smells, metrics, refactoring, parser combinators in Haskell, 
 
-    ## Application Engineering
+    #### Application Engineering
 
     - [Database administration](https://github.com/ruiAzevedo19/UMinho/tree/master/ABD) - Big data, mechanisms for query processing and transactional guarantees, reliability and scale challenges 
 
     - [Data center infrastructure](https://github.com/ruiAzevedo19/UMinho/tree/master/ICD) - data storage infrastructures, services infrastructures, centralized monitoring and management, infrastruture and service security
 
-    ## Additional 
+    #### Additional 
 
     - [System Deployment and Benchmarking](https://github.com/ruiAzevedo19/UMinho/tree/master/SDB) - Plan, configure and start up a specific distributed computer system, according to a specific application. Distributed architectures
 
