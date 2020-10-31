@@ -1,0 +1,28 @@
+-- Create container for postgres
+docker run --user 501:20 -v /Users/ruiazevedo/Desktop/Mestrado/ABD/data/:/var/lib/postgresql/data -e POSTGRES_DB=abd -e POSTGRES_USER=abduser -e POSTGRES_PASSWORD=segredo -p 5432:5432 -it -l pgsql postgres:12
+
+-- List docker processes
+docker ps
+
+-- Postgres status ( shows if docker container is running )
+docker exec -it confident_edison pg_ctl status
+
+-- Postgres reload server 
+docker exec -it confident_edison pg_ctl reload
+
+-- Stop container server
+docker exec -it confident_edison pg_ctl stop
+
+-- Start server 
+docker start -ai confident_edison
+
+-- Connects to postgres 
+docker exec -it confident_edison psql -U abduser abd
+
+\d -> show tables
+\d table -> table scheme 
+
+-- Deletes container 
+docker rm confident_edison
+
+

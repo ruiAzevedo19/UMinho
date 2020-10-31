@@ -1,0 +1,59 @@
+module addressBookV1
+
+sig Name, Addr {}
+
+sig Book {
+	addr: Name -> lone Addr
+}
+
+-- Adds mapping b -> n -> a 
+pred add(b, b1 : Book, n : Name, a : Addr){
+	b1.addr = b.addr + n -> a
+}
+
+-- Deletes the mapping that contains name 'n'
+pred del(b, b1 : Book , n : Name){
+	b1.addr = b.addr - n -> Addr
+}
+
+-- Looks for the address of a certain name
+fun lookup(b : Book , n : Name) : set Addr {
+	n.(b.addr)
+}
+
+-- Deletion is the undo operation of add. Adding and removing should result in the same addr set
+assert delUndoesAdd {
+	all b, b1, b2 : Book , n : Name , a : Addr |  
+		no n.(b.addr) and add[b , b1 , n , a] and del[b1 , b2 , n] implies b.addr = b2.addr
+}
+
+-- Checks if insertion doesn't affect lookup
+assert addLocal {
+	all b,b1: Book, n,n1: Name, a: Addr |
+		add[b,b1,n,a] and n != n1 implies lookup[b,n1] = lookup [b1,n1] 
+}
+
+-- Checks if add is idempotent, this is, it's not possible adding the same name and address
+assert addIdempotent {
+	all b, b1, b2 : Book , n : Name , a : Addr |
+		add[b,b1,n,a] and add[b1,b2,n,a] implies b1.addr = b2.addr
+}
+
+pred show(b:Book) {
+	#b.addr > 1
+	#Name.(b.addr) > 1
+}
+
+run show for 3 but 1 Book
+
+check delUndoesAdd for 10 but 3 Book
+check addIdempotent for 3
+check addLocal for 3 but 2 Book
+
+
+
+
+
+
+
+

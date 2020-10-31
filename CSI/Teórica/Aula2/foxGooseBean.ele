@@ -1,0 +1,17 @@
+abstract sig Being {
+	Eats: set Being, 
+	where: one Bank
+}
+
+one sig Fox, Goose, Beans, Farmer extends Being{}
+
+abstract sig Bank {cross: one Bank}
+
+one sig Left, Right extends Bank {}
+
+
+fact {
+	cross = Left -> Right + Right -> Left
+	Eats = Fox -> Goose + Goose -> Beans
+}
+run {}

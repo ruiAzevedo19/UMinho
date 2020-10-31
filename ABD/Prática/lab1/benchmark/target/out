@@ -1,0 +1,223 @@
+# shared_buffers = 2MB & work_mem = 4MB & effective_cache_size = 2GB
+-
+Number of client threads: 1
+throughput (txn/s) = 150.1
+response time (s) = 0.006652324620253164
+abort rate (%) = 0.0
+-
+Number of client threads: 2
+throughput (txn/s) = 137.1
+response time (s) = 0.014564325173595915
+abort rate (%) = 0.0
+-
+Number of client threads: 4
+throughput (txn/s) = 135.6
+response time (s) = 0.0295010073960177
+abort rate (%) = 0.0
+-
+Number of client threads: 8
+throughput (txn/s) = 147.6
+response time (s) = 0.05421721562906504
+abort rate (%) = 0.0
+-
+Number of client threads: 16
+throughput (txn/s) = 139.9
+response time (s) = 0.11442599552215868
+abort rate (%) = 0.0
+-
+Number of client threads: 32
+throughput (txn/s) = 136.8
+response time (s) = 0.233704625436769
+abort rate (%) = 0.0
+-
+# shared_buffers = 64MB & work_mem = 4MB & effective_cache_size = 2GB
+-
+Number of client threads: 1
+throughput (txn/s) = 277.3
+response time (s) = 0.0036037251294626757
+abort rate (%) = 0.0
+-
+Number of client threads: 2
+throughput (txn/s) = 317.3
+response time (s) = 0.006301092175858809
+abort rate (%) = 0.0
+-
+Number of client threads: 4
+throughput (txn/s) = 351.9
+response time (s) = 0.0113591147104291
+abort rate (%) = 0.0
+-
+Number of client threads: 8
+throughput (txn/s) = 352.65
+response time (s) = 0.022680254884020985
+abort rate (%) = 0.0
+-
+Number of client threads: 16
+throughput (txn/s) = 351.45
+response time (s) = 0.045466747053919475
+abort rate (%) = 0.0
+-
+Number of client threads: 32
+throughput (txn/s) = 357.65
+response time (s) = 0.08939964468614567
+abort rate (%) = 0.0
+-
+# shared_buffers = 2MB & work_mem = 64MB & effective_cache_size = 2GB
+-
+Number of client threads: 1
+throughput (txn/s) = 143.4
+response time (s) = 0.006970451945258019
+abort rate (%) = 0.0
+-
+Number of client threads: 2
+throughput (txn/s) = 134.4
+response time (s) = 0.014853331397321428
+abort rate (%) = 0.0
+-
+Number of client threads: 4
+throughput (txn/s) = 130.1
+response time (s) = 0.030728727808608764
+abort rate (%) = 0.0
+-
+Number of client threads: 8
+throughput (txn/s) = 133.8
+response time (s) = 0.05984062813714499
+abort rate (%) = 0.0
+-
+Number of client threads: 16
+throughput (txn/s) = 136.7
+response time (s) = 0.11666390852816386
+abort rate (%) = 0.0
+-
+Number of client threads: 32
+throughput (txn/s) = 126.2
+response time (s) = 0.25226326858755943
+abort rate (%) = 0.0
+-
+# shared_buffers = 64MB & work_mem = 64MB & effective_cache_size = 2GB
+-
+Number of client threads: 1
+throughput (txn/s) = 263.75
+response time (s) = 0.0037892905450236966
+abort rate (%) = 0.0
+-
+Number of client threads: 2
+throughput (txn/s) = 299.45
+response time (s) = 0.006675215685256303
+abort rate (%) = 0.0
+-
+Number of client threads: 4
+throughput (txn/s) = 342.45
+response time (s) = 0.011673562129069937
+abort rate (%) = 0.0
+-
+Number of client threads: 8
+throughput (txn/s) = 336.25
+response time (s) = 0.023777716870334573
+abort rate (%) = 0.0
+-
+Number of client threads: 16
+throughput (txn/s) = 349.6
+response time (s) = 0.04574309568020595
+abort rate (%) = 0.0
+-
+Number of client threads: 32
+throughput (txn/s) = 362.65
+response time (s) = 0.0877354792814008
+abort rate (%) = 0.0
+-
+# shared_buffers = 512MB & work_mem = 512MB & effective_cache_size = 2GB
+-
+Number of client threads: 1
+throughput (txn/s) = 276.9
+response time (s) = 0.003609347130552546
+abort rate (%) = 0.0
+-
+Number of client threads: 2
+throughput (txn/s) = 321.15
+response time (s) = 0.00622504289444185
+abort rate (%) = 0.0
+-
+Number of client threads: 4
+throughput (txn/s) = 342.35
+response time (s) = 0.01167923083919965
+abort rate (%) = 0.0
+-
+Number of client threads: 8
+throughput (txn/s) = 322.7
+response time (s) = 0.024781490138363806
+abort rate (%) = 0.0
+-
+Number of client threads: 16
+throughput (txn/s) = 343.25
+response time (s) = 0.04651784001966497
+abort rate (%) = 0.0
+-
+Number of client threads: 32
+throughput (txn/s) = 371.55
+response time (s) = 0.08601788571282465
+abort rate (%) = 0.0
+-
+# shared_buffers = 1GB & work_mem = 1GB & effective_cache_size = 2GB
+-
+Number of client threads: 1
+throughput (txn/s) = 259.3
+response time (s) = 0.0038543685431932126
+abort rate (%) = 0.0
+-
+Number of client threads: 2
+throughput (txn/s) = 318.15
+response time (s) = 0.006281599418356121
+abort rate (%) = 0.0
+-
+Number of client threads: 4
+throughput (txn/s) = 343.6
+response time (s) = 0.011642584475116414
+abort rate (%) = 0.0
+-
+Number of client threads: 8
+throughput (txn/s) = 343.85
+response time (s) = 0.023263254294023556
+abort rate (%) = 0.0
+-
+Number of client threads: 16
+throughput (txn/s) = 371.45
+response time (s) = 0.04305107265930812
+abort rate (%) = 0.0
+-
+Number of client threads: 32
+throughput (txn/s) = 347.15
+response time (s) = 0.09194073241955927
+abort rate (%) = 0.0
+-
+# shared_buffers = 1GB & work_mem = 1GB & effective_cache_size = 4GB
+Number of client threads: 1
+throughput (txn/s) = 270.75
+response time (s) = 0.003690420428624192
+abort rate (%) = 0.0
+-
+Number of client threads: 2
+throughput (txn/s) = 307.9
+response time (s) = 0.0064921061690483926
+abort rate (%) = 0.0
+-
+Number of client threads: 4
+throughput (txn/s) = 355.55
+response time (s) = 0.011254749421881592
+abort rate (%) = 0.0
+-
+Number of client threads: 8
+throughput (txn/s) = 340.0
+response time (s) = 0.02353194562588235
+abort rate (%) = 0.0
+-
+Number of client threads: 16
+throughput (txn/s) = 339.8
+response time (s) = 0.047098006286639196
+abort rate (%) = 0.0
+-
+Number of client threads: 32
+throughput (txn/s) = 363.15
+response time (s) = 0.08765616217086604
+abort rate (%) = 0.0
+-

@@ -1,0 +1,54 @@
+sig Worker {}
+
+var sig Prepared in Worker {}
+var sig Committed in Prepared {}
+var sig Aborted in Worker {}
+
+pred finish[w : Worker]{
+	w not in Prepared
+	w not in Aborted
+	Prepared' = Prepared + w
+	Committed' = Committed
+	Aborted' = Aborted 
+}
+
+pred commit[w : Worker]{
+	Worker in Prepared 
+	Prepared' = Prepared
+	Committed' =  Committed + w
+	Aborted' = Aborted
+}
+
+pred abort[w : Worker] {
+	w not in Aborted
+	w in Prepared implies some Aborted
+	Prepared' = Prepared - w
+	Committed' = Committed
+	Aborted' = Aborted + w
+}
+
+pred nop {
+	Prepared' = Prepared
+	Committed' = Committed
+	Aborted' = Aborted
+}
+
+fact init {
+	no Aborted
+	no Prepared
+	no Committed
+}
+
+fact transitions {
+	always (
+		nop or some w : Worker | finish[w] or commit[w] or abort[w]
+	)
+}
+
+assert Consistency {
+	always( no Committed or no Aborted )
+}
+
+-- check Consistency
+
+run {} for 3
