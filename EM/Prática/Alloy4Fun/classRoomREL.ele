@@ -115,7 +115,7 @@ pred inv14 {
 
 /* The tutoring chain of every person eventually reaches a Teacher. */
 pred inv15 {
-	
+    all p : Person | some (Teacher & ^Tutors.p)	
 }
 
 
