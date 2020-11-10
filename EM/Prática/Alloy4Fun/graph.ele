@@ -10,9 +10,7 @@ The graph is undirected, ie, edges are symmetric.
 http://mathworld.wolfram.com/UndirectedGraph.html
 */
 pred undirected {
-	// all disj n, n1 : Node | n->n1 in adj <=> n1->n in adj
-  	// all disj n, n1 : Node | n1 in n.adj <=> n in n1.adj
-    adj = ~adj
+    adj in ~adj
 }
 
 /*
@@ -20,11 +18,11 @@ The graph is oriented, ie, contains no symmetric edges.
 http://mathworld.wolfram.com/OrientedGraph.html
 */
 pred oriented {
-	// all n, n1 : Node | n->n1 in adj => n1->n not in adj
-  	all n, n1 : Node | n->n1 in adj and n1->n in adj => n = n1
+	adj & ~adj in iden
 }
 
-/*
+
+/* 
 The graph is acyclic, ie, contains no directed cycles.
 http://mathworld.wolfram.com/AcyclicDigraph.html
 */
@@ -61,7 +59,7 @@ The graph is strongly connected, ie, it is possible to reach every node from eve
 http://mathworld.wolfram.com/StronglyConnectedDigraph.html
 */
 pred stonglyConnected {
-
+	one Node or ( all n : Node | Node in n.^adj )
 }
 
 /*
@@ -69,7 +67,9 @@ The graph is transitive, ie, if two nodes are connected through a third node, th
 http://mathworld.wolfram.com/TransitiveDigraph.html
 */
 pred transitive {
+  	all n : Node | n->n.adj.adj in adj
 
 }
+
 
 
