@@ -51,7 +51,7 @@ The graph is weakly connected, ie, it is possible to reach every node from every
 http://mathworld.wolfram.com/WeaklyConnectedDigraph.html
 */
 pred weaklyConnected {
-
+	one Node || all n : Node | Node in n.^(adj + ~adj)
 }
 
 /*

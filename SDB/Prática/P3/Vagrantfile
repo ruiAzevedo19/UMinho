@@ -1,0 +1,37 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# ssh connection
+PUBLIC_KEY = File.read(File.expand_path('~/.ssh/id_rsa.pub')).strip
+
+Vagrant.configure("2") do |config|
+    config.vm.box = "bento/ubuntu-20.04"
+
+    # config.vm.network "private_network", ip: "10.0.0.101"
+
+    config.vm.provider "virtualbox" do |vb|
+        vb.gui = true
+        vb.memory = "512"
+    end
+
+    config.vm.provision "file" , source: "/Users/ruiazevedo/Desktop/Mestrado/SDB/Prática/docker_env" , destination: "$HOME/docker_env"
+
+    config.vm.provision "shell", inline: <<-SHELL
+        apt-get -y update
+        apt-get -y upgrade
+        apt-get -y autoremove
+        apt-get install -y vim 
+        echo "#{PUBLIC_KEY}" >> /home/vagrant/.ssh/authorized_keys
+        sudo apt-get install -y apt-transport-https ca-certificates curl software-properties-common
+        curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+        sudo apt-key fingerprint 0 EBFCD88
+        sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs ) stable"
+        sudo apt-get -y update
+        sudo apt-get -y install docker-ce
+        sudo curl -l "https://github.com/docker-compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose 
+        sudo chmod +x /usr/local/bin/docker-compose
+        SHELL
+    config.vm.define "vm1" do |vm1| 
+        vm1.vm.network 'private_network', ip: '10.0.0.101'
+    end
+end

@@ -1,2 +1,7 @@
-package Playground;public class Iterator {
+package Playground;
+
+import java.util.Iterator;
+
+public class Main {
+
 }

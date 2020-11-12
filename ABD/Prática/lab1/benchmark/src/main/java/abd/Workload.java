@@ -48,15 +48,13 @@ public class Workload {
                 "id INT not NULL, " +
                 "name VARCHAR(255), "   +
                 "address VARCHAR(255)," +
-                "data VARCHAR(" + dataSize + "), "  +
-                "PRIMARY KEY (id)" +
+                "data VARCHAR(" + dataSize + ") "  +
                 ")";
         String createProduct = "CREATE TABLE Product (" +
                 "id INT not NULL, " +
                 "name VARCHAR(255), " +
                 "description VARCHAR(255), " +
-                "data VARCHAR(" + dataSize + "), "  +
-                "PRIMARY KEY (id)" +
+                "data VARCHAR(" + dataSize + ") "  +
                 ")";
         String createInvoice = "CREATE TABLE Invoice (" +
                 "id INT not NULL, " +
@@ -102,10 +100,23 @@ public class Workload {
         psProducts.close();
     }
 
+    public static void createIndexes(Connection c) throws Exception{
+        String i1 = "create index cid on invoice(clientID);";
+        String i2= "create index i2 on invoice(productID);";
+        String v = "vacuum analyze;";
+
+        Statement s = c.createStatement();
+        s.executeUpdate( i1 );
+        s.executeUpdate( i2 );
+        s.executeUpdate( v );
+        s.close();
+    }
+
     /* --- populates database ------------------------------------------------------------------ */
     public static void populate(Random rand, Connection c) throws Exception {
         createTables(c);
         tableInsertions(c,rand);
+        createIndexes( c );
     }
 
     /* --- makes a random transaction (sell, account, top10) ----------------------------------- */
