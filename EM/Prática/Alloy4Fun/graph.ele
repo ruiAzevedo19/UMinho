@@ -27,7 +27,7 @@ The graph is acyclic, ie, contains no directed cycles.
 http://mathworld.wolfram.com/AcyclicDigraph.html
 */
 pred acyclic {
-	all n : Node | n not in n.^adj
+	no (iden & ^adj)
 }
 
 /*
@@ -51,7 +51,7 @@ The graph is weakly connected, ie, it is possible to reach every node from every
 http://mathworld.wolfram.com/WeaklyConnectedDigraph.html
 */
 pred weaklyConnected {
-	one Node || all n : Node | Node in n.^(adj + ~adj)
+	Node->Node in *(adj + ~adj)
 }
 
 /*
@@ -59,7 +59,7 @@ The graph is strongly connected, ie, it is possible to reach every node from eve
 http://mathworld.wolfram.com/StronglyConnectedDigraph.html
 */
 pred stonglyConnected {
-	one Node or ( all n : Node | Node in n.^adj )
+	Node->Node in *adj
 }
 
 /*
@@ -67,7 +67,7 @@ The graph is transitive, ie, if two nodes are connected through a third node, th
 http://mathworld.wolfram.com/TransitiveDigraph.html
 */
 pred transitive {
-  	all n : Node | n->n.adj.adj in adj
+  	adj.adj in adj
 
 }
 
