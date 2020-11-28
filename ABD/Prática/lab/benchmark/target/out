@@ -1,0 +1,64 @@
+# no indexes
+
+Number of client threads: 1
+throughput (txn/s) = 318.2
+response time (s) = 0.003140099831238215
+abort rate (%) = 0.0
+-
+Number of client threads: 2
+throughput (txn/s) = 376.8
+response time (s) = 0.0053108356833864116
+abort rate (%) = 0.0
+-
+Number of client threads: 4
+throughput (txn/s) = 419.4
+response time (s) = 0.009535088443133046
+abort rate (%) = 0.0
+-
+Number of client threads: 8
+throughput (txn/s) = 400.7
+response time (s) = 0.019938095089967557
+abort rate (%) = 0.0
+-
+Number of client threads: 16
+throughput (txn/s) = 414.75
+response time (s) = 0.038522915178420734
+abort rate (%) = 0.0
+-
+Number of client threads: 32
+throughput (txn/s) = 397.85
+response time (s) = 0.0803209190184743
+abort rate (%) = 0.0
+-
+# indexes
+
+Number of client threads: 1
+throughput (txn/s) = 307.75
+response time (s) = 0.003246907177254265
+abort rate (%) = 0.0
+-
+Number of client threads: 2
+throughput (txn/s) = 368.3
+response time (s) = 0.00542808371205539
+abort rate (%) = 0.0
+-
+Number of client threads: 4
+throughput (txn/s) = 421.7
+response time (s) = 0.009480483136827129
+abort rate (%) = 0.0
+-
+Number of client threads: 8
+throughput (txn/s) = 424.2
+response time (s) = 0.018853027827675624
+abort rate (%) = 0.0
+-
+Number of client threads: 16
+throughput (txn/s) = 423.2
+response time (s) = 0.037728224196479206
+abort rate (%) = 0.0
+-
+Number of client threads: 32
+throughput (txn/s) = 431.95
+response time (s) = 0.07394239334078018
+abort rate (%) = 0.0
+-

@@ -1,0 +1,51 @@
+open util/ordering[Id]
+
+sig Node{
+	id : one Id, 
+	succ : one Node,
+	var inbox : set Id,
+	var outbox: set Id
+}
+
+sig elected in Node{}
+
+sig Id{}
+
+fact ring{
+    all i : Id | lone id.i
+    all n : Node | Node in n.^succ
+}
+
+fun elected : set Node {
+    { n : Node | once (n.id in n.inbox) }
+}
+
+/*
+pred send[n : Node]{
+    some i : n.outbox {
+        n.outbox' = n.succ.inbox + i
+        n.succ.inbox' = n.succ.inbox + i
+    }
+    // frame conditions - what does not change
+    all m : Node - n.succ | m.inbox' = m.inbox
+    all m : Node - n | m.outbox' = m.outbox
+}
+*/
+
+pred send[n : Node]{
+	some i : n.outbox {
+		outbox' = outbox - n->i
+		inbox' = inbox + n.succ->i
+	}
+}
+
+pred compute[]{
+	some i : n.inbox {
+		n.inbox' = n.inbox - i
+
+		// Ite[i, n.id] implies n.outbox' = n.outbox else n.outbox' = n.outbox + i
+		n.outbox' = n.outbox + (i - n.id.*(~next))
+	}
+	all m : Node - n | m.inbox' = m.inbox
+	all m : Node - n | m.outbox' = m.outbox
+}
