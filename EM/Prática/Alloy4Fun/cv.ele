@@ -29,16 +29,16 @@ pred Inv1 { // The works publicly visible in a curriculum must be part of its pr
 
 
 pred Inv2 { // A user profile can only have works added by himself or some external institution
-	all u : User , w : u.profile | w.source = u || w.source in Institution
+	all u : User, w : u.profile | w.source = u || some (w.source) & Institution
 }
 
 
 pred Inv3 { // The works added to a profile by a given source cannot have common identifiers
-	all u : User | 
+	
 }
 
 
 pred Inv4 { // The profile of a user cannot have two visible versions of the same work
-    
+
 }
 

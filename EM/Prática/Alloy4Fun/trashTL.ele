@@ -18,12 +18,12 @@ var sig Protected in File {}
 
 // initially the trash is empty and there are no protected file
 pred prop1 {
-	no Trash and no Protected
+	no (Trash + Protected)
 }
 
 // initially there are no files, but some are immediately created
 pred prop2 {
-	no File and after some File
+	no File and some File'
 }
 
 // there is always some file in the system
@@ -38,12 +38,12 @@ pred prop4 {
 
 // some file will eventually be deleted
 pred prop5 {
-	
+	 
 }
 
 // whenever a file is sent to the trash, it remains in there forever
 pred prop6 {
-
+	always all f : Trash | always f in Trash
 }
 
 // some file will be protected
@@ -53,22 +53,22 @@ pred prop7 {
 
 // whenever a link exists, it will eventually be in the trash
 pred prop8 {
-
+	always all f : link.File | eventually f in Trash 
 }
 
 // a protected file is at no time sent to the trash
 pred prop9 {
-	always no Protected & Trash
+	always no (Protected & Trash)
 }
 
 // the protected status never changes
 pred prop10 {
-
+	always Protected' = Protected
 }
 
 // every unprotected file becomes protected in the succeeding state
 pred prop11 {
-
+	always (File - Protected) in Protected'
 }
 
 // a file will eventually be sent to the trash and remain there indefinitely
@@ -78,37 +78,37 @@ pred prop12 {
 
 // if a file is ever in the trash, it was once outside
 pred prop13 {
-	all f : File | eventually f in Trash => once f not in Trash
+	always all f : Trash | once f not in Trash
 }
 
 // whenever a protected file is in the trash, in the succeeding state it no longer is protected
 pred prop14 {
-
+    always no Protected & Trash & Protected'
 }
 
 // anytime a file exists, it will eventually be sent to the trash
 pred prop15 {
-
+	always all f : File | eventually f in Trash
 }
 
 // if a file is protected, it has always been so
 pred prop16 {
-
+	always all f : Protected | historically f in Protected
 }
 
 // when a file is sent to the trash, it is deleted in the succeeding state
 pred prop17 {
-
+    always no File' & File & Trash 
 }
 
 // protected files will only be deprotected if sent to the trash
 pred prop18 {
-
+	
 }
 
 // all protected files will be sent to the trash but remain protected until then
 pred prop19 {
-
+	always all f : Protected | f in Protected until f in Trash
 }
 
 // whenever a file is in the trash, it has been so since it was deprotected
