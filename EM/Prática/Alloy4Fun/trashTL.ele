@@ -38,7 +38,7 @@ pred prop4 {
 
 // some file will eventually be deleted
 pred prop5 {
-	 
+	eventually some f : File | eventually f not in File
 }
 
 // whenever a file is sent to the trash, it remains in there forever
@@ -103,7 +103,7 @@ pred prop17 {
 
 // protected files will only be deprotected if sent to the trash
 pred prop18 {
-	
+	always all f : Protected | f not in Protected' => f in Trash
 }
 
 // all protected files will be sent to the trash but remain protected until then
@@ -113,7 +113,7 @@ pred prop19 {
 
 // whenever a file is in the trash, it has been so since it was deprotected
 pred prop20 {
-
+	always all f : Trash | f in Trash since f not in Protected
 }
 
 

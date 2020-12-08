@@ -1,0 +1,86 @@
+var abstract sig Person {
+	var parents : set Person,
+	var spouse : lone Person
+}
+
+var sig Man extends Person {}
+var lone sig Adam extends Man {}
+
+var sig Woman extends Person {}
+var lone sig Eve extends Woman {}
+
+// Specify some of the expected invariants
+
+assert Acyclic {
+	// Nobody can be their own ancestor
+
+}
+
+assert Spouses {
+	// Marriage is reciprocal
+
+}
+
+assert Parents {
+	// Everyone except Adam and Eve has one female and one male parent
+
+}
+
+assert Legal {
+	// Nobody can marry their ancestors
+
+}
+
+// Specify the following events
+
+// Reproduction
+pred reproduce [m : Man, w : Woman] {
+
+}
+
+// Marriage
+pred marry [x : Person, y : Person] {
+
+}
+
+pred nop {
+	Person' = Person
+	parents' = parents
+	spouse' = spouse
+}
+
+// Specify the initial state
+
+fact init {
+
+}
+
+fact events {
+	always (
+		nop or
+		(some m : Man, w : Woman | reproduce[m,w]) or
+		(some x,y : Person | marry[x,y])
+	)
+}
+
+// Checking the expected invariants
+
+check Acyclic
+check Spouses
+check Parents
+check Legal
+
+// Specify a scenario where Adam and Eve marry and only afterwards have 
+// children and grandchildren
+// Configure the theme to color differently man and woman and layout
+// the geneology as a tree
+
+run Genesis {
+
+}
+
+// Find a scenario where someone ends up being their own "grandparent"
+
+run OwnGrandparent {
+
+}

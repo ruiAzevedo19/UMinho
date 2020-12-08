@@ -1,0 +1,136 @@
+// Model of a distributed two-phase commit protocol
+
+// Possible internal node states
+abstract sig State {}
+one sig Working,Committed,Aborted,Prepared extends State {}
+
+sig Message {
+	type : one State,
+	from : one Node
+}
+
+// All current and previously sent messages
+var sig Sent in Message {}
+
+abstract sig Node {
+	var state : one State
+}
+one sig Master extends Node {
+	// Set of workers the master already know to be prepared
+	var prepared : set Worker
+}
+sig Worker extends Node {}
+
+// Some of the desired properties for the protocol
+
+assert MessageTypes {
+	// Master can only send messages of type Committed or Aborted
+	// Workers can only send messages of type Prepared
+	always { 
+		all m : Sent | m.from in Master implies m.type in Committed+Aborted else m.type in Prepared
+	}
+}
+
+assert MasterState {
+	// Master can never be in the Prepared state
+	always Master.state != Prepared
+}
+
+assert Consistency {
+	-- It is impossible for one node to be in the committed state 
+	-- and another to be in the aborted state
+	always (no state.Committed or no state.Aborted)
+}
+
+assert Stability {
+	-- Once a node has entered the committed or aborted state
+	-- it remains in that state forever
+	all n : Node | always (n.state in Committed+Aborted implies always n.state' = n.state)
+}
+
+assert EventuallyAllCommitted {
+	-- Once one node commits all will eventually commit
+	always (some state.Committed implies eventually Node in state.Committed)
+}
+
+// Specify the initial conditions of the protocol, namely
+// every node is working, there are no sent messages, and
+// the master does not know any prepared workers
+
+fact Init {
+
+}
+
+// Specify the protocol operations, ensuring all safety properties
+
+check MessageTypes for 5
+check MasterState for 5
+check Consistency for 5
+check Stability for 5
+
+-- Worker finishes task and sends prepared message to master
+pred finish [w : Worker] {
+
+}
+
+-- Worker aborts spontenously while working
+pred spontaneousAbort [w : Worker] {
+
+}
+
+-- Worker commits after receiving the respective message from master 
+pred workerCommit [w : Worker] {
+
+}
+
+-- Worker aborts after receiving the respective message from master 
+pred workerAbort [w : Worker] {
+
+}
+
+-- Master receives prepared message from worker
+pred receivePrepared {
+
+}
+
+-- Master tells everyone to commit when it knows every worker is prepared
+pred masterCommit {
+
+}
+
+-- Master spontenously decides to tell everyone to abort (maybe due to timeout)
+pred masterAbort {
+
+}
+
+pred stutter {
+	state' = state
+	Sent' = Sent
+	prepared' = prepared
+}
+
+fact Transitions {
+	always {
+		stutter or receivePrepared or masterCommit or masterAbort or some w : Worker {
+			finish[w] or spontaneousAbort[w] or workerCommit[w] or workerAbort[w]
+		}
+	}
+}
+
+// Specify a scenario where 3 Workers will all be committed
+// Parametrize the theme to show only the sent messages
+// show all relations of arity one as attributes, hidding
+// state atoms, and highlighting committed nodes
+
+run Example {
+
+}
+
+// Specify the fairness conditions needed to verify the liveness property
+
+fact Fairness {
+
+}
+
+check EventuallyAllCommitted for 5
+

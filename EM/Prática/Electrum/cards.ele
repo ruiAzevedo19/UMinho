@@ -1,0 +1,93 @@
+// Modelo abstracto de um sistema de emissão de cartões bancários
+
+abstract sig Status {}
+one sig Unissued, Issued, Cancelled extends Status {}
+
+sig Card {
+	var status : one Status
+}
+
+sig Client {
+	var cards : set Card
+}
+
+// Algumas das propriedades desejadas para o sistema
+
+assert NoUnissuedCards {
+  	always Unissued not in Client.cards.status
+}
+ 
+assert NoSharedCards {
+	always all disj x, y : Client, c : x.cards | always (c not in y.cards)
+}
+
+assert AllCancelled {
+	all c : Card | always (c.status = Issued implies eventually c.status = Cancelled)
+}
+
+// Especifique as condições iniciais do sistema
+
+fact Init {
+	Card.status in Unissued
+	no cards
+}
+
+// Especifique as operações do sistema por forma a garantir as propriedades
+// de segurança
+
+check NoUnissuedCards
+check NoSharedCards
+
+// Operação de emitir um cartão para um cliente
+pred emit [c : Card, a : Client] {
+	c.status' = Issued
+	c.status in Unissued
+	a.cards' = a.cards + c
+	(Card - c).status' = Card.status
+	(Client - a).cards' = Client.cards
+	all c1 : Card - c | c1.status' = c1.status
+	all p : Client - a | p.cards' = p.cards
+	
+}
+// Operação de cancelar um cartão
+pred cancel [c : Card] {
+	--efeito
+	c.status in Issued
+	c.status' = Cancelled
+	(Client->c) not in cards'  
+	(cards.c).cards'=(cards.c).cards -c
+	
+	--manter o estado do resto
+	all c1:Card-c | c1.status' = c1.status
+	all cl:(Client - cards.c) | cl.cards' = cl.cards
+}
+
+pred nop {
+	status' = status
+	cards' = cards
+}
+
+fact Traces {
+	always (nop or some c : Card | cancel[c] or some a : Client | emit[c,a])
+}
+
+// Especifique um cenário onde 3 cartões são emitidos a pelo menos 2
+// clientes e são todos inevitavelmente cancelados, usando os scopes
+// para controlar a cardinalidade das assinaturas
+// Tente também definir um theme onde os cartões emitidos são verdes
+// e os cancelados são vermelhos, ocultando depois toda a informação que
+// seja redundante 
+// Pode introduzir definições auxiliares no modelo se necessário
+
+run Exemplo {
+
+} for 3 but exactly 3 Card 
+
+// Especifique as condições de justiça estritamente necessárias para garantir a
+// propriedade de animação
+
+fact Fairness {
+
+}
+
+check AllCancelled
