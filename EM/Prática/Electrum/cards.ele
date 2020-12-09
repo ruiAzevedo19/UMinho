@@ -40,26 +40,26 @@ check NoSharedCards
 
 // Operação de emitir um cartão para um cliente
 pred emit [c : Card, a : Client] {
+	// o estado passa de unissued para issued
 	c.status' = Issued
-	c.status in Unissued
-	a.cards' = a.cards + c
-	(Card - c).status' = Card.status
-	(Client - a).cards' = Client.cards
-	all c1 : Card - c | c1.status' = c1.status
-	all p : Client - a | p.cards' = p.cards
-	
+	c.status = Unissued
+	// o cartao e associado ao cliente
+	cards' = cards + a->c
+	// tudo o resto se mantem
+	status' - c->Status = status - c->Status
+	cards' - a->c = cards
 }
+
 // Operação de cancelar um cartão
 pred cancel [c : Card] {
-	--efeito
-	c.status in Issued
+	// o estado passa de issued para cancelled
+	c.status = Issued
 	c.status' = Cancelled
-	(Client->c) not in cards'  
-	(cards.c).cards'=(cards.c).cards -c
-	
-	--manter o estado do resto
-	all c1:Card-c | c1.status' = c1.status
-	all cl:(Client - cards.c) | cl.cards' = cl.cards
+	// o cartao fica desassociado ao cliente
+	cards' = cards - Client->c
+	// tudo o resto de mantem
+	status' - c->Status = status - c->Status
+	cards' = cards - Client->c
 }
 
 pred nop {
@@ -81,7 +81,7 @@ fact Traces {
 
 run Exemplo {
 
-} for 3 but exactly 3 Card 
+}  
 
 // Especifique as condições de justiça estritamente necessárias para garantir a
 // propriedade de animação
