@@ -4,26 +4,27 @@ var abstract sig Person {
 }
 
 var sig Man extends Person {}
-var lone sig Adam extends Man {}
+var one sig Adam extends Man {}
 
 var sig Woman extends Person {}
-var lone sig Eve extends Woman {}
+var one sig Eve extends Woman {}
 
 // Specify some of the expected invariants
 
 assert Acyclic {
 	// Nobody can be their own ancestor
-
+	always no (iden & ^parents)
 }
 
 assert Spouses {
 	// Marriage is reciprocal
+	spouse = ~spouse
 
 }
 
 assert Parents {
 	// Everyone except Adam and Eve has one female and one male parent
-
+	all p : Person - Adam - Eve | one p.parents & Man and one p.parents & Woman
 }
 
 assert Legal {
@@ -35,12 +36,21 @@ assert Legal {
 
 // Reproduction
 pred reproduce [m : Man, w : Woman] {
-
+	some p : Person' | {
+		p not in Person
+		Person' = Person + p
+		parents' = parents + (p->m + p->w)
+	}
+	spouse' = spouse
 }
 
 // Marriage
 pred marry [x : Person, y : Person] {
-
+	x != y
+	no x.spouse and y = x.spouse' 
+	no y.spouse and x = y.spouse'
+	parents' = parents
+	spouse' - (x->y + y->x) = spouse - (x->y + y->x)
 }
 
 pred nop {
@@ -52,14 +62,16 @@ pred nop {
 // Specify the initial state
 
 fact init {
-
+	no parents
+	no spouse
+	no Person - Adam - Eve
 }
 
 fact events {
 	always (
 		nop or
 		(some m : Man, w : Woman | reproduce[m,w]) or
-		(some x,y : Person | marry[x,y])
+	       (some x,y : Person | marry[x,y])
 	)
 }
 

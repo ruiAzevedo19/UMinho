@@ -79,15 +79,37 @@ fact Traces {
 // seja redundante 
 // Pode introduzir definições auxiliares no modelo se necessário
 
-run Exemplo {
+fun IssuedCards : set Card {
+	status.Issued
+}
 
-}  
+fun UnissuedCards : set Card {
+	status.Unissued
+}
+
+fun CancelledCards : set Card {
+	status.Cancelled
+}
+
+fun ClientsNoCards: set Client {
+	Client - cards.Card
+}
+
+run Exemplo {
+	eventually all c : Client | some c.cards
+	// as condicoes de baixo sao demasiado fortes
+	//eventually Client <: iden in cards.~cards 
+	//eventually Card <: iden in ~cards.cards
+} for exactly 3 Card, exactly 2 Client
 
 // Especifique as condições de justiça estritamente necessárias para garantir a
 // propriedade de animação
 
+// 
 fact Fairness {
-
+	all c : Card | {
+		eventually always c.status = Issued => always eventually cancel[c]
+	}
 }
 
 check AllCancelled
