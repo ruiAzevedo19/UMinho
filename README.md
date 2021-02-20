@@ -7,7 +7,7 @@ Projects developed during the computer engineering course.
 ## Projects:
 
 * **2nd year**:
-  - [Computer Labs III](https://github.com/ruiAzevedo19/UMinho/tree/master/2\302\272 ano/LI3) - Sales management system using C and Java languages
+  - [Computer Labs III](https://github.com/ruiAzevedo19/UMinho/tree/master/2ano/LI3) - Sales management system using C and Java languages
   
   - [Object Oriented Programming](https://github.com/ruiAzevedo19/UMinho/tree/master/POO) -Application To Generate Invoices And Calculate Tax Deduction.
   
