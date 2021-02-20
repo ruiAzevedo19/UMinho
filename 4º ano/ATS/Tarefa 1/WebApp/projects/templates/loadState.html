@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <link rel="stylesheet"  href="{%  static  'css/loadState.css'  %}">
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <div class="load">
+        <h2 class="state"><i class="img-color fas fa-check-circle"></i>Projects loaded with sucess:     {{ nrprojects }} </h2>
+        {% if failed|length > 0 %}
+            <h2 class="state"><i class="img-color fas fa-times-circle"></i>The following projects have failed:</h2>
+            {% for p in failed %}
+                <p>{{ p }}</p>
+            {% endfor %}
+        {% endif %}
+
+    </div>
+{% endblock %}

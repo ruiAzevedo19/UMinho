@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <!-- link to css -->
+    <link rel="stylesheet"  href="{%  static  'css/home.css'  %}">
+    <!-- Description -->
+    <div>
+        <h1 class="jca-description-title">Java Code Analyzer</h1>
+        <p class="jca-description">Java Code Analyzer is a software piece that allows batch code analysis. You may provide
+        a folder where your Java projects are stored and a destination folder which JCA will use as target. When <b style="color:#ff7517">Run Analyzer</b>
+        button is pressed, metrics and code smells will be calculated for each project.</p>
+    </div>
+    <!-- Choose Folders -->
+    <form action="run" method="post">
+        {% csrf_token %}
+        <div class="row folderPaths">
+            <div class="col"></div>
+            <div class="col-6">
+                <h4>Path where your Java Projects are stored</h4>
+                <input name="sourcePath" class="form-control form-control-lg" type="text" placeholder="Source Path">
+            </div>
+            <div class="col"></div>
+        </div>
+        <div class="row folderPaths">
+            <div class="col"></div>
+            <div class="col-6">
+                <h4>Path where you want to store the modified files</h4>
+                <input name="destPath" class="form-control form-control-lg" type="text" placeholder="Destination Path">
+            </div>
+            <div class="col"></div>
+        </div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-6">
+                <div class="center">
+                   <button type="submit" class="center run-btn btn btn-dark">Run Analyzer</button>
+                </div>
+            </div>
+            <div class="col"></div>
+        </div>
+    </form>
+{% endblock %}

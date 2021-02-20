@@ -1,0 +1,9 @@
+setup.cfg
+setup.py
+django_npm.egg-info/PKG-INFO
+django_npm.egg-info/SOURCES.txt
+django_npm.egg-info/dependency_links.txt
+django_npm.egg-info/requires.txt
+django_npm.egg-info/top_level.txt
+npm/__init__.py
+npm/finders.py

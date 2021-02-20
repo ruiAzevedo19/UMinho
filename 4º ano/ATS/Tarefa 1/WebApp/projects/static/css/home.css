@@ -1,0 +1,27 @@
+.folderPaths, .run-btn{
+    margin-top: 30px ;
+    margin-bottom: 30px;
+}
+
+.jca-description-title{
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+}
+
+.jca-description{
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+    text-align: justify;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+

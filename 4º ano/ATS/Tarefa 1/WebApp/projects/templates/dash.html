@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet"  href="{% static  'css/dash.css'  %}">
+
+
+    <h2 class="center">Dashboard</h2>
+
+    <div class="dashboard">
+        <h4 class="header"><b>Overall</b></h4>
+        <hr class="break">
+        <table class="tab w3-table w3-striped">
+            <thead>
+            <tr>
+                <th>Metric</th>
+                <th>Highest</th>
+                <th>Lowest</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for name, value in overall.items %}
+                <tr>
+                    <td>{{ name }}</td>
+                    <td>
+                        <div>
+                            {#                            <img class="far fa-file-code">#}
+                            <p>Project: {{ value.highest_file|slice:"7:" }}</p>
+                            {#                            <i class="fas fa-sort-numeric-up"></i>#}
+                            <p>Value: {{ value.highest_val }}</p>
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            {#                            <i class="far fa-file-code"></i>#}
+                            <p>Project: {{ value.lowest_file|slice:"7:" }}</p>
+                            {#                            <i class="fas fa-sort-numeric-up"></i>#}
+                            <p>Value: {{ value.lowest_val }}</p>
+                        </div>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <h4 class="header"><b>Technical Debt</b></h4>
+        <hr class="break">
+        <div class="row" style="margin-top: 30px">
+            <div class="col-6">
+                <p class="center" style="margin-bottom: 30px"><b>Highest Technical Debt</b></p>
+                <canvas id="top-proj" ></canvas>
+            </div>
+            <div class="col-6">
+                <p class="center" style="margin-bottom: 30px"><b>Lowest Technical Debt</b></p>
+                <canvas id="btm-proj" ></canvas>
+            </div>
+        </div>
+        <h4 class="header"><b>Grouping</b></h4>
+        <hr class="break">
+        <div></div>
+        <div id="container">
+            {{ plot|safe }}
+        </div>
+    </div>
+    <script>
+        var ctx = document.getElementById('top-proj');
+        var top = new Chart(ctx, {
+            type: 'polarArea',
+            data: {
+                labels: {{ domain|safe }},
+                datasets: [{
+                    data: {{ top_val|safe }},
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgb(217,104,0)',
+                        'rgb(54,162,235)',
+                        'rgb(255,206,86)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scale: {
+                    ticks: {
+                        beginAtZero: true,
+                        max: 800 ,
+                        min: 0,
+                        stepSize: 100
+                    }
+                }
+            }
+        });
+        var cty = document.getElementById('btm-proj');
+        var btm = new Chart(cty, {
+            type: 'polarArea',
+            data: {
+                labels: {{ domain|safe }},
+                datasets: [{
+                    data: {{ btm_val|safe }},
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgb(217,104,0)',
+                        'rgb(54,162,235)',
+                        'rgb(255,206,86)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scale: {
+                    ticks: {
+                        beginAtZero: true,
+                        max: 800 ,
+                        min: 0,
+                        stepSize: 100
+                    }
+                }
+            }
+        });
+    </script>
+
+{% endblock %}
+

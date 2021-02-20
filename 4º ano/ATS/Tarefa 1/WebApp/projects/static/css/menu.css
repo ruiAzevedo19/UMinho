@@ -1,0 +1,25 @@
+ul.navbar-nav a:hover { color: #ff7517 !important; }
+
+.jca {
+    color: #ff7517 !important;
+}
+
+.jca::after{
+    content: '|>';
+    padding: 0  0.5em;
+}
+
+.jca::before{
+    content: '<|';
+    padding: 0  0.5em;
+}
+.navbar-custom {
+    background-color: #232931 !important ;
+}
+
+.fst-menu-item{
+    margin-left: 0px;
+}
+.navbar-nav > .active > a {
+    color: #ff7517 !important;
+}

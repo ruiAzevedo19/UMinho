@@ -1,0 +1,25 @@
+.center{
+    margin: auto;
+    width: 50%;
+    text-align: center;
+}
+
+.dashboard{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.header{
+    margin-left: 10px;
+    margin-bottom: 0;
+    margin-top: 50px;
+}
+
+.break{
+    margin-top: 0;
+}
+
+.tab{
+    margin-top: 30px;
+}
+

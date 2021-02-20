@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <!-- link to css -->
+    <link rel="stylesheet"  href="{%  static  'css/projects.css'  %}">
+
+    {% if projects|length == 0 %}
+        <p>No projects loaded</p>
+    {% else %}
+        <div class="projects">
+            <h1>Projects</h1>
+        </div>
+            {% for name, metric in projects.items %}
+                <div id="accordion" class="projects-accordion">
+                <div class="card">
+                    <div class="c card-header" id="heading{{ name }}">
+                        <h5 class="mb-0">
+                            <button class="proj btn btn-link" data-toggle="collapse" data-target="#collapse{{ name }}" aria-expanded="true" aria-controls="collapse{{ name }}">
+                                <b>{{ name|slice:"7:" }}</b>
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapse{{ name }}" class="collapse" aria-labelledby="heading{{ name }}" data-parent="#accordion">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="domains col-4">
+                                    <div class="list-group" id="list-tab" role="tablist">
+                                        {% for m in metric%}
+                                            {% if forloop.first %}
+                                                <a class="list-group-item list-group-item-action active" id="list-{{ name }}{{ m }}-list" data-toggle="list" href="#list-{{ name }}{{ m }}" role="tab" aria-controls="{{ name }}{{ m }}">{{ m }}</a>
+                                            {% else %}
+                                                <a class="list-group-item list-group-item-action" id="list-{{ name }}{{ m }}-list" data-toggle="list" href="#list-{{ name }}{{ m }}" role="tab" aria-controls="{{ name }}{{ m }}">{{ m }}</a>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <div class="col-8">
+                                    <div class="metrics tab-content" id="nav-tabContent">
+                                        {% for mname, mnvalue in metric.items %}
+                                            {% if forloop.first %}
+                                                <div class="tab-pane fade show active" id="list-{{ name }}{{ mname }}" role="tabpanel" aria-labelledby="list-{{ name }}{{ mname }}-list">
+                                                    <dl class="row">
+                                                        {% for m in mnvalue %}
+                                                            <dt class="metric col-sm-5">{{ m.0 }}</dt>
+                                                            <dd class="metric col-sm-7">{{ m.1 }}</dd>
+                                                        {% endfor %}
+                                                    </dl>
+                                                </div>
+                                            {% else %}
+                                                <div class="tab-pane fade show" id="list-{{ name }}{{ mname }}" role="tabpanel" aria-labelledby="list-{{ name }}{{ mname }}-list">
+                                                    <dl class="row">
+                                                        {% for m in mnvalue %}
+                                                            <dt class="metric col-sm-5">{{ m.0 }}</dt>
+                                                            <dd class="metric col-sm-7">{{ m.1 }}</dd>
+                                                        {% endfor %}
+                                                    </dl>
+                                                </div>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                </div>
+            {% endfor %}
+
+    {% endif %}
+{% endblock %}
+

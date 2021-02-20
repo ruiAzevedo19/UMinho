@@ -1,0 +1,39 @@
+.projects-accordion{
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.metrics{
+    margin-left: 16px;
+}
+
+.metric{
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+a.list-group-item.active {
+    background-color: #232931 !important;
+    border-color: black !important;
+    color: #ff7517;
+}
+
+
+.c{
+    background-color: white !important;
+    text-align: center;
+}
+
+.proj{
+    color: #ff7517;
+}
+
+a.list-group-item:focus{
+    background-color: #232931;
+}
+
+.projects{
+    text-align: center;
+    margin-top:50px;
+    margin-bottom: 50px;
+}
