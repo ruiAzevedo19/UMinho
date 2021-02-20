@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<alloy>
+
+<view>
+
+<defaultnode/>
+
+<defaultedge/>
+
+<node>
+   <type name="Ack"/>
+   <type name="Int"/>
+   <type name="Rel"/>
+   <type name="String"/>
+   <type name="univ"/>
+   <type name="C/Ord"/>
+   <type name="P/Ord"/>
+   <type name="seq/Int"/>
+</node>
+
+<node color="Blue">
+   <type name="Queue"/>
+</node>
+
+<node color="Gray">
+   <type name="Process"/>
+</node>
+
+<node color="Red">
+   <type name="CriticalSection"/>
+</node>
+
+<node numberatoms="no">
+   <type name="Req"/>
+</node>
+
+<node numberatoms="no" shape="Inv Trapezoid">
+   <type name="Message"/>
+</node>
+
+<node shape="Lined Circle" color="Blue">
+   <type name="Network"/>
+</node>
+
+<node showlabel="no" color="Green">
+   <set name="$requestsQueue" type="Message"/>
+</node>
+
+<node showlabel="no" color="Red">
+   <set name="$procInCritical" type="Process"/>
+</node>
+
+<node visible="no">
+   <type name="Clock"/>
+   <set name="$acksNotInQueue" type="Ack"/>
+   <set name="$lostMessages" type="Message"/>
+</node>
+
+<edge attribute="no">
+   <relation name="requests"> <type name="Process"/> <type name="Req"/> </relation>
+</edge>
+
+<edge attribute="yes">
+   <relation name="clock"> <type name="Process"/> <type name="Clock"/> </relation>
+   <relation name="timeStamp"> <type name="Message"/> <type name="Clock"/> </relation>
+</edge>
+
+<edge style="Dashed">
+   <relation name="inbox"> <type name="Network"/> <type name="Process"/> <type name="Process"/> <type name="Queue"/> </relation>
+</edge>
+
+<edge visible="no" attribute="yes">
+   <relation name="acks"> <type name="Process"/> <type name="Process"/> </relation>
+   <relation name="from"> <type name="Message"/> <type name="Process"/> </relation>
+</edge>
+
+</view>
+
+</alloy>

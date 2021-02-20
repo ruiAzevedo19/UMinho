@@ -1,0 +1,2 @@
+name throughput(tx/s) response_time(s) abort_rate
+/home/Joel/dat_results/clients/80warehouses_90clients.dat 577.0042867250253 0.03050230572078419 0.04099589118795855

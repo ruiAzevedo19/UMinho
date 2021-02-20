@@ -1,0 +1,7 @@
+---
+# MUST BE RUN WITH -K
+-   name: MinIO installation
+    hosts: minio_one
+    become: yes
+    roles:
+        - install_minio

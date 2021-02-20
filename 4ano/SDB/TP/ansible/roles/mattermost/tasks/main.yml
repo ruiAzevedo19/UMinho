@@ -1,0 +1,92 @@
+---
+- name: Download binary from MatterMost website
+  get_url: 
+    url: https://releases.mattermost.com/{{ mattermost_version }}/mattermost-{{ mattermost_version }}-linux-amd64.tar.gz
+    dest: /tmp/
+    
+- name: unpack mattermost archive
+  unarchive: 
+    src: "/tmp/mattermost-{{ mattermost_version }}-linux-amd64.tar.gz"
+    dest: /opt/
+    copy: no
+
+- name: Edit /opt/mattermost/config/config.json to set Driver
+  lineinfile:
+    dest: /opt/mattermost/config/config.json
+    regexp: '"DriverName": "postgres"'
+    line: '        "DriverName": "{{ mm_db_driver }}",'
+    backrefs: yes
+
+- name: Edit /opt/mattermost/config/config.json to set Data source
+  lineinfile:
+    dest: /opt/mattermost/config/config.json
+    regexp: '"DataSource":'
+    line: '        "DataSource": "{{ mm_db_user }}:{{ mm_db_password }}@tcp({{ groups["master_internal_ip"][0] }}:{{ mm_db_port }})/{{ mm_db_name }}?charset=utf8mb4,utf8&readTimeout=30s&writeTimeout=30s",'
+    backrefs: yes
+
+- name: Edit /opt/mattermost/config/config.json to add the Read Replicas
+  lineinfile:
+    dest: /opt/mattermost/config/config.json
+    regexp: '"DataSourceReplicas":'
+    line: '        "DataSourceReplicas": "{{ mm_db_user }}:{{ mm_db_password }}@tcp({{ groups["rr_01_internal_ip"][0] }}:{{ mm_db_port }})/{{ mm_db_name }}?charset=utf8mb4,utf8&readTimeout=30s&writeTimeout=30s, {{ mm_db_user }}:{{ mm_db_password }}@tcp({{ groups["rr_02_internal_ip"][0] }}:{{ mm_db_port }})/{{ mm_db_name }}?charset=utf8mb4,utf8&readTimeout=30s&writeTimeout=30s",'
+    backrefs: yes    
+  
+- name: Edit /opt/mattermost/config/config.json to set Driver Name of MinIO
+  lineinfile:
+    dest: /opt/mattermost/config/config.json
+    regexp: '"DriverName": "local"'
+    line: '        "DriverName": "amazons3",'
+    backrefs: yes
+
+- name: Edit /opt/mattermost/config/config.json to set Access Key of MinIO
+  lineinfile:
+    dest: /opt/mattermost/config/config.json
+    regexp: '"AmazonS3AccessKeyId":'
+    line: '        "AmazonS3AccessKeyId": "access_key",'
+    backrefs: yes
+
+- name: Edit /opt/mattermost/config/config.json to set Secret access Key of MinIO
+  lineinfile:
+    dest: /opt/mattermost/config/config.json
+    regexp: '"AmazonS3SecretAccessKey":'
+    line: '        "AmazonS3SecretAccessKey": "secret_key",'
+    backrefs: yes   
+
+- name: Edit /opt/mattermost/config/config.json to set Amazon S3 Bucket
+  lineinfile:
+    dest: /opt/mattermost/config/config.json
+    regexp: '"AmazonS3Bucket":'
+    line: '        "AmazonS3Bucket": "mattermost-media",'
+    backrefs: yes   
+
+- name: Edit /opt/mattermost/config/config.json to set Amazon S3 Bucket
+  lineinfile:
+    dest: /opt/mattermost/config/config.json
+    regexp: '"AmazonS3Endpoint":'
+    line: '        "AmazonS3Endpoint": "{{ groups["minio_internal_ip"][0] }}",'
+    backrefs: yes   
+
+- name: Create mattermost user
+  user: 
+    name: "{{ mattermost_user }}"
+    system: yes
+    createhome: no        
+
+- name: Create mattermost systemd service
+  template:
+    src: mattermost.service.j2
+    dest: /etc/systemd/system/mattermost.service
+    owner: root
+    group: root
+    mode: 0664
+
+- name: Change mattermost directory permissions
+  file:
+    path: /opt/mattermost
+    state: directory
+    owner: "{{ mattermost_user }}"
+    group: "{{ mattermost_user }}"
+    recurse: yes
+
+- name: Start mattermost
+  shell: sudo -u mmuser /opt/mattermost/bin/mattermost

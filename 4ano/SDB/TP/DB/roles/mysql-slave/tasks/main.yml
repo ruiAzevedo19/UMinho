@@ -1,0 +1,76 @@
+---
+
+- name: Pause to assure master status is ok
+  pause:
+    minutes: 1
+  tags:
+    - db-slave
+    - db
+
+- name: MySQL - Upgrade
+  shell: mysql_upgrade
+  tags:
+    - slave-mysqlupgrade
+    - db-slave
+    - db
+
+- name: MySQL - Restart 
+  service: 
+    name: mysql
+    state: restarted
+  tags:
+    - slave-mysqlrestart
+    - db-slave
+    - db
+
+- name: MySQL - Stop Slave
+  mysql_query:
+    query: STOP SLAVE
+  tags: 
+    - slave-stopslave
+    - db-slave
+    - db
+
+- name: MySQL - Change Master to Use Replication 
+  mysql_replication:
+    mode: changemaster
+    master_host: "{{ groups['db_master_internal_ip'][0] }}" 
+    master_user: 'mmuser'  
+    master_password: 'mattermost'
+  tags:
+    - slave-changemaster
+    - db-slave
+    - db
+
+- name: MySQL - Get Master Public Key
+  mysql_query:
+    query: "CHANGE MASTER TO GET_MASTER_PUBLIC_KEY = 1"
+  tags:
+    - slave-masterkey
+    - db-slave
+    - db
+
+- name: MySQL - Copy Dump File
+  copy: 
+    src: /tmp/masterdump.sql 
+    dest: /tmp/
+  tags:
+    - slave-copydump
+    - db-slave
+    - db
+
+- name: MySQL - Read Dump File
+  shell: mysql -uroot < /tmp/masterdump.sql
+  tags:
+    - slave-readdump
+    - db-slave
+    - db
+
+- name: MySQL - Start Slave
+  mysql_query:
+    query: START SLAVE
+  tags: 
+    - slave-startslave
+    - db-slave
+    - db
+

@@ -1,0 +1,505 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1611333502022,126,GET /,200,OK,Thread Group 1-6,text,true,,3181,118,25,25,http://35.190.33.180/,123,0,61
+1611333502022,126,GET /,200,OK,Thread Group 1-2,text,true,,3284,118,25,25,http://35.190.33.180/,125,0,62
+1611333502022,126,GET /,200,OK,Thread Group 1-9,text,true,,3284,118,25,25,http://35.190.33.180/,125,0,61
+1611333502022,126,GET /,200,OK,Thread Group 1-10,text,true,,3284,118,25,25,http://35.190.33.180/,125,0,61
+1611333502022,126,GET /,200,OK,Thread Group 1-5,text,true,,3284,118,25,25,http://35.190.33.180/,126,0,61
+1611333502022,126,GET /,200,OK,Thread Group 1-12,text,true,,3181,118,25,25,http://35.190.33.180/,123,0,61
+1611333502022,126,GET /,200,OK,Thread Group 1-1,text,true,,3284,118,25,25,http://35.190.33.180/,125,0,61
+1611333502053,95,GET /,200,OK,Thread Group 1-16,text,true,,3284,118,25,25,http://35.190.33.180/,94,0,30
+1611333502022,132,GET /,200,OK,Thread Group 1-8,text,true,,3181,118,26,26,http://35.190.33.180/,132,0,61
+1611333502022,132,GET /,200,OK,Thread Group 1-4,text,true,,3181,118,26,26,http://35.190.33.180/,132,0,61
+1611333502022,132,GET /,200,OK,Thread Group 1-11,text,true,,3181,118,26,26,http://35.190.33.180/,132,0,61
+1611333502022,132,GET /,200,OK,Thread Group 1-3,text,true,,3181,118,26,26,http://35.190.33.180/,132,0,62
+1611333502034,121,GET /,200,OK,Thread Group 1-14,text,true,,3181,118,26,26,http://35.190.33.180/,121,0,49
+1611333502064,91,GET /,200,OK,Thread Group 1-17,text,true,,3284,118,26,26,http://35.190.33.180/,91,0,29
+1611333502022,133,GET /,200,OK,Thread Group 1-7,text,true,,3181,118,26,26,http://35.190.33.180/,133,0,61
+1611333502044,111,GET /,200,OK,Thread Group 1-15,text,true,,3181,118,26,26,http://35.190.33.180/,111,0,40
+1611333502024,131,GET /,200,OK,Thread Group 1-13,text,true,,3181,118,26,26,http://35.190.33.180/,131,0,60
+1611333502073,92,GET /,200,OK,Thread Group 1-18,text,true,,3284,118,27,27,http://35.190.33.180/,92,0,38
+1611333502084,90,GET /,200,OK,Thread Group 1-19,text,true,,3284,118,28,28,http://35.190.33.180/,90,0,32
+1611333502094,89,GET /,200,OK,Thread Group 1-20,text,true,,3284,118,29,29,http://35.190.33.180/,89,0,31
+1611333502103,93,GET /,200,OK,Thread Group 1-21,text,true,,3284,118,30,30,http://35.190.33.180/,93,0,35
+1611333502112,90,GET /,200,OK,Thread Group 1-22,text,true,,3181,118,30,30,http://35.190.33.180/,90,0,36
+1611333502153,49,GET /login,200,OK,Thread Group 1-1,text,true,,2226,123,30,30,http://35.190.33.180/login,49,0,0
+1611333502153,57,GET /login,200,OK,Thread Group 1-12,text,true,,2329,123,31,31,http://35.190.33.180/login,57,0,0
+1611333502153,57,GET /login,200,OK,Thread Group 1-16,text,true,,2329,123,31,31,http://35.190.33.180/login,57,0,0
+1611333502153,70,GET /login,200,OK,Thread Group 1-10,text,true,,2329,123,32,32,http://35.190.33.180/login,70,0,0
+1611333502157,66,GET /login,200,OK,Thread Group 1-17,text,true,,2329,123,32,32,http://35.190.33.180/login,66,0,0
+1611333502153,70,GET /login,200,OK,Thread Group 1-5,text,true,,2226,123,32,32,http://35.190.33.180/login,70,0,0
+1611333502155,68,GET /login,200,OK,Thread Group 1-4,text,true,,2226,123,32,32,http://35.190.33.180/login,68,0,0
+1611333502124,99,GET /,200,OK,Thread Group 1-23,text,true,,3284,118,32,32,http://35.190.33.180/,99,0,34
+1611333502155,68,GET /login,200,OK,Thread Group 1-11,text,true,,2226,123,32,32,http://35.190.33.180/login,68,0,0
+1611333502153,70,GET /login,200,OK,Thread Group 1-2,text,true,,2329,123,32,32,http://35.190.33.180/login,70,0,0
+1611333502157,66,GET /login,200,OK,Thread Group 1-14,text,true,,2329,123,32,32,http://35.190.33.180/login,66,0,0
+1611333502166,57,GET /login,200,OK,Thread Group 1-18,text,true,,2226,123,32,32,http://35.190.33.180/login,57,0,0
+1611333502133,90,GET /,200,OK,Thread Group 1-24,text,true,,3284,118,32,32,http://35.190.33.180/,90,0,32
+1611333502157,66,GET /login,200,OK,Thread Group 1-13,text,true,,2329,123,32,32,http://35.190.33.180/login,66,0,0
+1611333502153,70,GET /login,200,OK,Thread Group 1-9,text,true,,2329,123,32,32,http://35.190.33.180/login,70,0,0
+1611333502157,66,GET /login,200,OK,Thread Group 1-15,text,true,,2226,123,32,32,http://35.190.33.180/login,66,0,0
+1611333502155,68,GET /login,200,OK,Thread Group 1-8,text,true,,2226,123,32,32,http://35.190.33.180/login,68,0,0
+1611333502153,70,GET /login,200,OK,Thread Group 1-6,text,true,,2329,123,32,32,http://35.190.33.180/login,70,0,0
+1611333502155,68,GET /login,200,OK,Thread Group 1-3,text,true,,2329,123,32,32,http://35.190.33.180/login,68,0,0
+1611333502157,66,GET /login,200,OK,Thread Group 1-7,text,true,,2226,123,32,32,http://35.190.33.180/login,66,0,0
+1611333502175,54,GET /login,200,OK,Thread Group 1-19,text,true,,2329,123,33,33,http://35.190.33.180/login,54,0,0
+1611333502154,85,GET /,200,OK,Thread Group 1-26,text,true,,3284,118,34,34,http://35.190.33.180/,85,0,29
+1611333502184,55,GET /login,200,OK,Thread Group 1-20,text,true,,2329,123,34,34,http://35.190.33.180/login,55,0,0
+1611333502144,95,GET /,200,OK,Thread Group 1-25,text,true,,3284,118,34,34,http://35.190.33.180/,95,0,39
+1611333502163,85,GET /,200,OK,Thread Group 1-27,text,true,,3284,118,35,35,http://35.190.33.180/,85,0,25
+1611333502197,55,GET /login,200,OK,Thread Group 1-21,text,true,,2226,123,36,36,http://35.190.33.180/login,55,0,0
+1611333502173,88,GET /,200,OK,Thread Group 1-28,text,true,,3284,118,36,36,http://35.190.33.180/,88,0,29
+1611333502203,58,GET /login,200,OK,Thread Group 1-22,text,true,,2329,123,36,36,http://35.190.33.180/login,58,0,0
+1611333502184,96,GET /,200,OK,Thread Group 1-29,text,true,,3284,118,38,38,http://35.190.33.180/,96,0,39
+1611333502226,54,GET /login,200,OK,Thread Group 1-24,text,true,,2329,123,38,38,http://35.190.33.180/login,54,0,0
+1611333502224,442,GET /login,200,OK,Thread Group 1-23,text,true,,2329,123,77,77,http://35.190.33.180/login,442,0,0
+1611333502281,405,GET /login,200,OK,Thread Group 1-29,text,true,,2329,123,79,79,http://35.190.33.180/login,404,0,0
+1611333502363,343,GET /,200,OK,Thread Group 1-47,text,true,,3284,118,81,81,http://35.190.33.180/,343,0,29
+1611333502303,403,GET /,200,OK,Thread Group 1-41,text,true,,3284,118,81,81,http://35.190.33.180/,403,0,28
+1611333502253,453,GET /,200,OK,Thread Group 1-36,text,true,,3284,118,81,81,http://35.190.33.180/,453,0,33
+1611333502374,332,GET /,200,OK,Thread Group 1-48,text,true,,3284,118,81,81,http://35.190.33.180/,332,0,24
+1611333502214,492,GET /,200,OK,Thread Group 1-32,text,true,,3284,118,81,81,http://35.190.33.180/,492,0,47
+1611333502224,482,GET /,200,OK,Thread Group 1-33,text,true,,3284,118,81,81,http://35.190.33.180/,482,0,37
+1611333502264,442,GET /,200,OK,Thread Group 1-37,text,true,,3284,118,81,81,http://35.190.33.180/,442,0,29
+1611333502323,385,GET /,200,OK,Thread Group 1-43,text,true,,3284,118,81,81,http://35.190.33.180/,385,0,36
+1611333502294,421,GET /,200,OK,Thread Group 1-40,text,true,,3284,118,82,82,http://35.190.33.180/,421,0,28
+1611333502434,281,GET /,200,OK,Thread Group 1-54,text,true,,3284,118,82,82,http://35.190.33.180/,281,0,29
+1611333502404,311,GET /,200,OK,Thread Group 1-51,text,true,,3284,118,82,82,http://35.190.33.180/,311,0,32
+1611333502453,262,GET /,200,OK,Thread Group 1-56,text,true,,3284,118,82,82,http://35.190.33.180/,262,0,31
+1611333502443,272,GET /,200,OK,Thread Group 1-55,text,true,,3284,118,82,82,http://35.190.33.180/,272,0,31
+1611333502474,241,GET /,200,OK,Thread Group 1-58,text,true,,3284,118,82,82,http://35.190.33.180/,241,0,24
+1611333502383,332,GET /,200,OK,Thread Group 1-49,text,true,,3284,118,82,82,http://35.190.33.180/,332,0,39
+1611333502503,212,GET /,200,OK,Thread Group 1-61,text,true,,3284,118,82,82,http://35.190.33.180/,212,0,26
+1611333502534,181,GET /,200,OK,Thread Group 1-64,text,true,,3284,118,82,82,http://35.190.33.180/,181,0,28
+1611333502463,252,GET /,200,OK,Thread Group 1-57,text,true,,3284,118,82,82,http://35.190.33.180/,252,0,29
+1611333502604,112,GET /,200,OK,Thread Group 1-71,text,true,,3284,118,82,82,http://35.190.33.180/,112,0,26
+1611333502613,103,GET /,200,OK,Thread Group 1-72,text,true,,3284,118,82,82,http://35.190.33.180/,103,0,29
+1611333502644,86,GET /,200,OK,Thread Group 1-75,text,true,,3284,118,83,83,http://35.190.33.180/,86,0,29
+1611333502708,339,GET /login,200,OK,Thread Group 1-41,text,true,,2329,123,100,100,http://35.190.33.180/login,339,0,0
+1611333502708,346,GET /login,200,OK,Thread Group 1-37,text,true,,2329,123,100,100,http://35.190.33.180/login,346,0,0
+1611333502708,346,GET /login,200,OK,Thread Group 1-33,text,true,,2329,123,100,100,http://35.190.33.180/login,346,0,0
+1611333502683,466,GET /,200,OK,Thread Group 1-79,text,true,,3284,118,100,100,http://35.190.33.180/,466,0,32
+1611333502716,433,GET /login,200,OK,Thread Group 1-40,text,true,,2329,123,100,100,http://35.190.33.180/login,433,0,0
+1611333502717,432,GET /login,200,OK,Thread Group 1-61,text,true,,2329,123,100,100,http://35.190.33.180/login,432,0,0
+1611333502783,366,GET /,200,OK,Thread Group 1-89,text,true,,3284,118,100,100,http://35.190.33.180/,366,0,26
+1611333502716,433,GET /login,200,OK,Thread Group 1-54,text,true,,2329,123,100,100,http://35.190.33.180/login,433,0,0
+1611333502873,276,GET /,200,OK,Thread Group 1-98,text,true,,3284,118,100,100,http://35.190.33.180/,276,0,31
+1611333502717,432,GET /login,200,OK,Thread Group 1-56,text,true,,2329,123,100,100,http://35.190.33.180/login,432,0,0
+1611333502734,416,GET /,200,OK,Thread Group 1-84,text,true,,3284,118,100,100,http://35.190.33.180/,416,0,25
+1611333502709,440,GET /login,200,OK,Thread Group 1-43,text,true,,2329,123,100,100,http://35.190.33.180/login,440,0,0
+1611333502724,425,GET /,200,OK,Thread Group 1-83,text,true,,3284,118,100,100,http://35.190.33.180/,425,0,27
+1611333502804,351,GET /,200,OK,Thread Group 1-91,text,true,,3284,118,100,100,http://35.190.33.180/,351,0,32
+1611333502864,291,GET /,200,OK,Thread Group 1-97,text,true,,3284,118,100,100,http://35.190.33.180/,291,0,29
+1611333502775,380,GET /,200,OK,Thread Group 1-88,text,true,,3284,118,100,100,http://35.190.33.180/,380,0,34
+1611333502664,491,GET /,200,OK,Thread Group 1-77,text,true,,3284,118,100,100,http://35.190.33.180/,491,0,31
+1611333503150,48,GET /login,200,OK,Thread Group 1-79,text,true,,2329,123,100,100,http://35.190.33.180/login,48,0,0
+1611333503156,60,GET /login,200,OK,Thread Group 1-88,text,true,,2329,123,100,100,http://35.190.33.180/login,60,0,0
+1611333502240,1081,GET /login,200,OK,Thread Group 1-26,text,true,,2226,123,100,100,http://35.190.33.180/login,1081,0,0
+1611333502240,1248,GET /login,200,OK,Thread Group 1-25,text,true,,2329,123,100,100,http://35.190.33.180/login,1248,0,0
+1611333502194,1517,GET /,200,OK,Thread Group 1-30,text,true,,3284,118,100,100,http://35.190.33.180/,1517,0,36
+1611333502353,1358,GET /,200,OK,Thread Group 1-46,text,true,,3284,118,100,100,http://35.190.33.180/,1358,0,39
+1611333502314,1397,GET /,200,OK,Thread Group 1-42,text,true,,3284,118,100,100,http://35.190.33.180/,1397,0,28
+1611333502203,1508,GET /,200,OK,Thread Group 1-31,text,true,,3284,118,100,100,http://35.190.33.180/,1508,0,36
+1611333503713,53,GET /login,200,OK,Thread Group 1-42,text,true,,2329,123,100,100,http://35.190.33.180/login,53,0,0
+1611333503713,53,GET /login,200,OK,Thread Group 1-31,text,true,,2329,123,100,100,http://35.190.33.180/login,53,0,0
+1611333503713,53,GET /login,200,OK,Thread Group 1-46,text,true,,2329,123,100,100,http://35.190.33.180/login,53,0,0
+1611333502717,1243,GET /login,200,OK,Thread Group 1-64,text,true,,2329,123,100,100,http://35.190.33.180/login,1243,0,0
+1611333503151,809,GET /login,200,OK,Thread Group 1-83,text,true,,2329,123,100,100,http://35.190.33.180/login,809,0,0
+1611333502718,1242,GET /login,200,OK,Thread Group 1-72,text,true,,2329,123,100,100,http://35.190.33.180/login,1242,0,0
+1611333502716,1594,GET /login,200,OK,Thread Group 1-51,text,true,,2329,123,100,100,http://35.190.33.180/login,1594,0,0
+1611333502413,1897,GET /,200,OK,Thread Group 1-52,text,true,,3284,118,100,100,http://35.190.33.180/,1897,0,30
+1611333502708,1602,GET /login,200,OK,Thread Group 1-47,text,true,,2329,123,100,100,http://35.190.33.180/login,1602,0,0
+1611333503151,1159,GET /login,200,OK,Thread Group 1-89,text,true,,2329,123,100,100,http://35.190.33.180/login,1159,0,0
+1611333503156,1154,GET /login,200,OK,Thread Group 1-77,text,true,,2329,123,100,100,http://35.190.33.180/login,1154,0,0
+1611333502717,1593,GET /login,200,OK,Thread Group 1-57,text,true,,2329,123,100,100,http://35.190.33.180/login,1593,0,0
+1611333503151,1159,GET /login,200,OK,Thread Group 1-84,text,true,,2329,123,100,100,http://35.190.33.180/login,1159,0,0
+1611333502224,2203,POST /graphql - Login,200,OK,Thread Group 1-5,text,true,,1453,708,100,100,http://35.190.33.180/graphql,2203,0,0
+1611333503150,1379,POST /graphql - Login,200,OK,Thread Group 1-40,text,true,,1453,708,100,100,http://35.190.33.180/graphql,1379,0,0
+1611333502686,1843,POST /graphql - Login,200,OK,Thread Group 1-29,text,true,,1453,708,100,100,http://35.190.33.180/graphql,1843,0,0
+1611333502233,2311,GET /,200,OK,Thread Group 1-34,text,true,,3284,118,100,100,http://35.190.33.180/,2310,0,32
+1611333502523,2081,GET /,200,OK,Thread Group 1-63,text,true,,3284,118,100,100,http://35.190.33.180/,2081,0,29
+1611333502484,2120,GET /,200,OK,Thread Group 1-59,text,true,,3284,118,100,100,http://35.190.33.180/,2120,0,37
+1611333502226,2414,POST /graphql - Login,200,OK,Thread Group 1-9,text,true,,1453,708,100,100,http://35.190.33.180/graphql,2414,0,0
+1611333503767,964,POST /graphql - Login,200,OK,Thread Group 1-42,text,true,,1453,708,100,100,http://35.190.33.180/graphql,964,0,0
+1611333502206,2601,POST /graphql - Login,200,OK,Thread Group 1-1,text,true,,1453,708,100,100,http://35.190.33.180/graphql,2601,0,0
+1611333502544,2485,GET /,200,OK,Thread Group 1-65,text,true,,3284,118,100,100,http://35.190.33.180/,2485,0,30
+1611333502514,2522,GET /,200,OK,Thread Group 1-62,text,true,,3284,118,100,100,http://35.190.33.180/,2522,0,30
+1611333502694,2342,GET /,200,OK,Thread Group 1-80,text,true,,3284,118,100,100,http://35.190.33.180/,2342,0,27
+1611333502844,2192,GET /,200,OK,Thread Group 1-95,text,true,,3284,118,100,100,http://35.190.33.180/,2192,0,32
+1611333502211,2825,POST /graphql - Login,200,OK,Thread Group 1-12,text,true,,1453,708,100,100,http://35.190.33.180/graphql,2825,0,0
+1611333504455,586,POST /graphql - Page Search,200,OK,Thread Group 1-5,text,true,,672,1242,100,100,http://35.190.33.180/graphql,586,0,0
+1611333502225,2921,POST /graphql - Login,200,OK,Thread Group 1-2,text,true,,1453,708,100,100,http://35.190.33.180/graphql,2921,0,0
+1611333502262,2906,GET /login,200,OK,Thread Group 1-28,text,true,,2226,123,100,100,http://35.190.33.180/login,2906,0,0
+1611333502708,2460,GET /login,200,OK,Thread Group 1-48,text,true,,2226,123,100,100,http://35.190.33.180/login,2460,0,0
+1611333502249,2919,GET /login,200,OK,Thread Group 1-27,text,true,,2226,123,100,100,http://35.190.33.180/login,2919,0,0
+1611333504545,702,GET /login,200,OK,Thread Group 1-34,text,true,,2329,123,100,100,http://35.190.33.180/login,702,0,0
+1611333504605,642,GET /login,200,OK,Thread Group 1-59,text,true,,2329,123,100,100,http://35.190.33.180/login,642,0,0
+1611333505037,393,GET /login,200,OK,Thread Group 1-62,text,true,,2329,123,100,100,http://35.190.33.180/login,393,0,0
+1611333505030,400,GET /login,200,OK,Thread Group 1-65,text,true,,2329,123,100,100,http://35.190.33.180/login,400,0,0
+1611333503961,1470,POST /graphql - Login,200,OK,Thread Group 1-83,text,true,,1453,708,100,100,http://35.190.33.180/graphql,1469,0,0
+1611333505037,399,GET /login,200,OK,Thread Group 1-95,text,true,,2329,123,100,100,http://35.190.33.180/login,399,0,0
+1611333504641,795,POST /graphql - Page Search,200,OK,Thread Group 1-9,text,true,,672,1242,100,100,http://35.190.33.180/graphql,795,0,0
+1611333504531,905,POST /graphql - Page Search,200,OK,Thread Group 1-29,text,true,,672,1242,100,100,http://35.190.33.180/graphql,905,0,0
+1611333504808,635,POST /graphql - Page Search,200,OK,Thread Group 1-1,text,true,,672,1242,100,100,http://35.190.33.180/graphql,635,0,0
+1611333504311,1140,GET /login,200,OK,Thread Group 1-52,text,true,,2329,123,100,100,http://35.190.33.180/login,1140,0,0
+1611333504312,1139,POST /graphql - Login,200,OK,Thread Group 1-57,text,true,,1453,708,100,100,http://35.190.33.180/graphql,1139,0,0
+1611333502224,3340,POST /graphql - Login,200,OK,Thread Group 1-17,text,true,,1453,708,100,100,http://35.190.33.180/graphql,3340,0,0
+1611333504312,1345,POST /graphql - Login,200,OK,Thread Group 1-77,text,true,,1453,708,100,100,http://35.190.33.180/graphql,1345,0,0
+1611333502823,2886,GET /,200,OK,Thread Group 1-93,text,true,,3284,118,100,100,http://35.190.33.180/,2886,0,37
+1611333502653,3056,GET /,200,OK,Thread Group 1-76,text,true,,3284,118,100,100,http://35.190.33.180/,3056,0,32
+1611333502592,3117,GET /,200,OK,Thread Group 1-70,text,true,,3284,118,100,100,http://35.190.33.180/,3117,0,35
+1611333502765,2945,GET /,200,OK,Thread Group 1-87,text,true,,3284,118,100,100,http://35.190.33.180/,2945,0,32
+1611333503713,2016,GET /login,200,OK,Thread Group 1-30,text,true,,2226,123,100,100,http://35.190.33.180/login,2016,0,0
+1611333502423,3320,GET /,200,OK,Thread Group 1-53,text,true,,3181,118,100,100,http://35.190.33.180/,3320,0,33
+1611333502283,3460,GET /,200,OK,Thread Group 1-39,text,true,,3181,118,100,100,http://35.190.33.180/,3460,0,39
+1611333502583,3160,GET /,200,OK,Thread Group 1-69,text,true,,3181,118,100,100,http://35.190.33.180/,3160,0,33
+1611333502393,3355,GET /,200,OK,Thread Group 1-50,text,true,,3181,118,100,100,http://35.190.33.180/,3355,0,32
+1611333502224,3590,POST /graphql - Login,200,OK,Thread Group 1-10,text,true,,1453,708,100,100,http://35.190.33.180/graphql,3590,0,0
+1611333502225,3589,POST /graphql - Login,200,OK,Thread Group 1-11,text,true,,1453,708,100,100,http://35.190.33.180/graphql,3589,0,0
+1611333504605,1490,GET /login,200,OK,Thread Group 1-63,text,true,,2226,123,100,100,http://35.190.33.180/login,1490,0,0
+1611333502708,3401,GET /login,200,OK,Thread Group 1-32,text,true,,2226,123,100,100,http://35.190.33.180/login,3401,0,0
+1611333502708,3409,GET /login,200,OK,Thread Group 1-36,text,true,,2226,123,100,100,http://35.190.33.180/login,3409,0,0
+1611333502227,3907,POST /graphql - Login,200,OK,Thread Group 1-7,text,true,,1453,708,100,100,http://35.190.33.180/graphql,3907,0,0
+1611333505744,404,GET /login,200,OK,Thread Group 1-69,text,true,,2329,123,100,100,http://35.190.33.180/login,404,0,0
+1611333505432,828,POST /graphql - Page Search,200,OK,Thread Group 1-83,text,true,,672,1242,100,100,http://35.190.33.180/graphql,828,0,0
+1611333505037,1242,GET /login,200,OK,Thread Group 1-80,text,true,,2226,123,100,100,http://35.190.33.180/login,1242,0,0
+1611333505748,531,GET /login,200,OK,Thread Group 1-50,text,true,,2226,123,100,100,http://35.190.33.180/login,531,0,0
+1611333502226,4053,POST /graphql - Login,200,OK,Thread Group 1-15,text,true,,1453,708,100,100,http://35.190.33.180/graphql,4053,0,0
+1611333502224,4056,POST /graphql - Login,200,OK,Thread Group 1-4,text,true,,1453,708,100,100,http://35.190.33.180/graphql,4056,0,0
+1611333502717,3567,GET /login,200,OK,Thread Group 1-49,text,true,,2226,123,100,100,http://35.190.33.180/login,3567,0,0
+1611333502717,3567,GET /login,200,OK,Thread Group 1-58,text,true,,2226,123,100,100,http://35.190.33.180/login,3567,0,0
+1611333502717,3567,GET /login,200,OK,Thread Group 1-55,text,true,,2226,123,100,100,http://35.190.33.180/login,3567,0,0
+1611333502624,3666,GET /,200,OK,Thread Group 1-73,text,true,,3181,118,100,100,http://35.190.33.180/,3666,0,35
+1611333502731,3559,GET /login,200,OK,Thread Group 1-75,text,true,,2226,123,100,100,http://35.190.33.180/login,3559,0,0
+1611333502718,3572,GET /login,200,OK,Thread Group 1-71,text,true,,2226,123,100,100,http://35.190.33.180/login,3572,0,0
+1611333502814,3482,GET /,200,OK,Thread Group 1-92,text,true,,3181,118,100,100,http://35.190.33.180/,3482,0,29
+1611333502634,3662,GET /,200,OK,Thread Group 1-74,text,true,,3181,118,100,100,http://35.190.33.180/,3662,0,25
+1611333505744,607,GET /login,200,OK,Thread Group 1-39,text,true,,2226,123,100,100,http://35.190.33.180/login,607,0,0
+1611333505744,607,GET /login,200,OK,Thread Group 1-53,text,true,,2226,123,100,100,http://35.190.33.180/login,607,0,0
+1611333503151,3217,GET /login,200,OK,Thread Group 1-98,text,true,,2226,123,100,100,http://35.190.33.180/login,3217,0,0
+1611333502244,4132,GET /,200,OK,Thread Group 1-35,text,true,,3181,118,100,100,http://35.190.33.180/,4132,0,36
+1611333502334,4043,GET /,200,OK,Thread Group 1-44,text,true,,3181,118,100,100,http://35.190.33.180/,4043,0,36
+1611333502274,4103,GET /,200,OK,Thread Group 1-38,text,true,,3181,118,100,100,http://35.190.33.180/,4103,0,33
+1611333502494,3883,GET /,200,OK,Thread Group 1-60,text,true,,3181,118,100,100,http://35.190.33.180/,3883,0,27
+1611333502344,4033,GET /,200,OK,Thread Group 1-45,text,true,,3181,118,100,100,http://35.190.33.180/,4033,0,30
+1611333503156,3236,GET /login,200,OK,Thread Group 1-91,text,true,,2226,123,100,100,http://35.190.33.180/login,3236,0,0
+1611333503156,3279,GET /login,200,OK,Thread Group 1-97,text,true,,2226,123,100,100,http://35.190.33.180/login,3279,0,0
+1611333505710,737,GET /login,200,OK,Thread Group 1-76,text,true,,2329,123,100,100,http://35.190.33.180/login,737,0,0
+1611333505452,996,POST /graphql - Page Search,200,OK,Thread Group 1-57,text,true,,672,1242,100,100,http://35.190.33.180/graphql,995,0,0
+1611333505710,737,GET /login,200,OK,Thread Group 1-70,text,true,,2329,123,100,100,http://35.190.33.180/login,737,0,0
+1611333505815,632,POST /graphql - Page Search,200,OK,Thread Group 1-10,text,true,,672,1242,100,100,http://35.190.33.180/graphql,632,0,0
+1611333502240,4292,POST /graphql - Login,200,OK,Thread Group 1-20,text,true,,1453,708,100,100,http://35.190.33.180/graphql,4292,0,0
+1611333505710,830,GET /login,200,OK,Thread Group 1-93,text,true,,2329,123,100,100,http://35.190.33.180/login,830,0,0
+1611333505710,830,GET /login,200,OK,Thread Group 1-87,text,true,,2329,123,100,100,http://35.190.33.180/login,830,0,0
+1611333506379,171,GET /login,200,OK,Thread Group 1-60,text,true,,2329,123,100,100,http://35.190.33.180/login,171,0,0
+1611333502262,4288,POST /graphql - Login,200,OK,Thread Group 1-22,text,true,,1453,708,100,100,http://35.190.33.180/graphql,4288,0,0
+1611333506379,270,GET /login,200,OK,Thread Group 1-45,text,true,,2329,123,100,100,http://35.190.33.180/login,270,0,0
+1611333503217,3432,POST /graphql - Login,200,OK,Thread Group 1-88,text,true,,1453,708,100,100,http://35.190.33.180/graphql,3432,0,0
+1611333505147,1502,POST /graphql - Page Search,200,OK,Thread Group 1-2,text,true,,672,1242,100,100,http://35.190.33.180/graphql,1502,0,0
+1611333503055,3594,POST /graphql - Login,200,OK,Thread Group 1-37,text,true,,1453,708,100,100,http://35.190.33.180/graphql,3594,0,0
+1611333505815,842,POST /graphql - Page Search,200,OK,Thread Group 1-11,text,true,,672,1242,100,100,http://35.190.33.180/graphql,842,0,0
+1611333503322,3335,POST /graphql - Login,200,OK,Thread Group 1-26,text,true,,1453,708,100,100,http://35.190.33.180/graphql,3335,0,0
+1611333503961,2702,POST /graphql - Login,200,OK,Thread Group 1-72,text,true,,1453,708,100,100,http://35.190.33.180/graphql,2702,0,0
+1611333502574,4177,GET /,200,OK,Thread Group 1-68,text,true,,3181,118,100,100,http://35.190.33.180/,4177,0,35
+1611333502563,4188,GET /,200,OK,Thread Group 1-67,text,true,,3181,118,100,100,http://35.190.33.180/,4188,0,32
+1611333505444,1307,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-1,text,true,,3165,887,100,100,http://35.190.33.180/en/teste3,1307,0,0
+1611333502553,4198,GET /,200,OK,Thread Group 1-66,text,true,,3181,118,100,100,http://35.190.33.180/,4198,0,28
+1611333505437,1621,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-9,text,true,,3268,887,99,99,http://35.190.33.180/en/teste3,1621,0,0
+1611333505437,1633,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-29,text,true,,3268,887,98,98,http://35.190.33.180/en/teste3,1633,0,0
+1611333505248,1912,POST /graphql - Login,200,OK,Thread Group 1-59,text,true,,1453,708,97,97,http://35.190.33.180/graphql,1912,0,0
+1611333506281,879,POST /graphql - Page Search,200,OK,Thread Group 1-4,text,true,,672,1242,97,97,http://35.190.33.180/graphql,879,0,0
+1611333505169,1991,POST /graphql - Login,200,OK,Thread Group 1-48,text,true,,1453,708,97,97,http://35.190.33.180/graphql,1991,0,0
+1611333506297,966,GET /login,200,OK,Thread Group 1-74,text,true,,2226,123,97,97,http://35.190.33.180/login,966,0,0
+1611333506297,966,GET /login,200,OK,Thread Group 1-92,text,true,,2226,123,97,97,http://35.190.33.180/login,966,0,0
+1611333506291,972,GET /login,200,OK,Thread Group 1-73,text,true,,2226,123,97,97,http://35.190.33.180/login,972,0,0
+1611333504531,2839,POST /graphql - Page Search,200,OK,Thread Group 1-40,text,true,,672,1242,97,97,http://35.190.33.180/graphql,2839,0,0
+1611333504732,2638,POST /graphql - Page Search,200,OK,Thread Group 1-42,text,true,,672,1242,97,97,http://35.190.33.180/graphql,2638,0,0
+1611333506753,718,GET /login,200,OK,Thread Group 1-66,text,true,,2329,123,97,97,http://35.190.33.180/login,718,0,0
+1611333503961,3510,POST /graphql - Login,200,OK,Thread Group 1-64,text,true,,1453,708,97,97,http://35.190.33.180/graphql,3510,0,0
+1611333506561,918,POST /graphql - Page Search,200,OK,Thread Group 1-22,text,true,,672,1242,97,97,http://35.190.33.180/graphql,918,0,0
+1611333502674,4907,GET /,200,OK,Thread Group 1-78,text,true,,3181,118,97,97,http://35.190.33.180/,4907,0,32
+1611333502704,4877,GET /,200,OK,Thread Group 1-81,text,true,,3181,118,97,97,http://35.190.33.180/,4877,0,33
+1611333505043,2538,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-5,text,true,,3165,887,97,97,http://35.190.33.180/en/teste3,2538,0,0
+1611333506378,1221,GET /login,200,OK,Thread Group 1-44,text,true,,2329,123,96,96,http://35.190.33.180/login,1221,0,0
+1611333503767,3832,POST /graphql - Login,200,OK,Thread Group 1-31,text,true,,1453,708,96,96,http://35.190.33.180/graphql,3832,0,0
+1611333505565,2034,POST /graphql - Page Search,200,OK,Thread Group 1-17,text,true,,672,1242,96,96,http://35.190.33.180/graphql,2034,0,0
+1611333503055,4551,POST /graphql - Login,200,OK,Thread Group 1-33,text,true,,1453,708,96,96,http://35.190.33.180/graphql,4551,0,0
+1611333503151,4455,POST /graphql - Login,200,OK,Thread Group 1-54,text,true,,1453,708,96,96,http://35.190.33.180/graphql,4455,0,0
+1611333506135,1477,POST /graphql - Page Search,200,OK,Thread Group 1-7,text,true,,672,1242,96,96,http://35.190.33.180/graphql,1477,0,0
+1611333505037,2748,POST /graphql - Page Search,200,OK,Thread Group 1-12,text,true,,672,1242,96,96,http://35.190.33.180/graphql,2748,0,0
+1611333506753,1170,GET /login,200,OK,Thread Group 1-68,text,true,,2329,123,96,96,http://35.190.33.180/login,1170,0,0
+1611333506261,1694,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-83,text,true,,3268,887,96,96,http://35.190.33.180/en/teste3,1694,0,0
+1611333506533,1525,POST /graphql - Page Search,200,OK,Thread Group 1-20,text,true,,672,1242,95,95,http://35.190.33.180/graphql,1525,0,0
+1611333507582,677,GET /login,200,OK,Thread Group 1-81,text,true,,2329,123,95,95,http://35.190.33.180/login,677,0,0
+1611333507161,1098,POST /graphql - Page Search,200,OK,Thread Group 1-59,text,true,,672,1242,95,95,http://35.190.33.180/graphql,1098,0,0
+1611333506651,1707,POST /graphql - Page Search,200,OK,Thread Group 1-37,text,true,,672,1242,95,95,http://35.190.33.180/graphql,1706,0,0
+1611333507924,434,POST /graphql - Login,502,Bad Gateway,Thread Group 1-68,text,false,,488,708,95,95,http://35.190.33.180/graphql,433,0,0
+1611333506659,1717,POST /graphql - Page Search,200,OK,Thread Group 1-26,text,true,,672,1242,95,95,http://35.190.33.180/graphql,1716,0,0
+1611333507607,858,POST /graphql - Page Search,200,OK,Thread Group 1-33,text,true,,672,1242,95,95,http://35.190.33.180/graphql,858,0,0
+1611333507372,1278,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-40,text,true,,3268,887,95,95,http://35.190.33.180/en/teste3,1278,0,0
+1611333507480,1170,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-22,text,true,,3268,887,95,95,http://35.190.33.180/en/teste3,1170,0,0
+1611333506379,2318,GET /login,200,OK,Thread Group 1-38,text,true,,2226,123,93,93,http://35.190.33.180/login,2318,0,0
+1611333506377,2320,GET /login,200,OK,Thread Group 1-35,text,true,,2226,123,93,93,http://35.190.33.180/login,2320,0,0
+1611333505658,3045,POST /graphql - Page Search,200,OK,Thread Group 1-77,text,true,,672,1242,93,93,http://35.190.33.180/graphql,3045,0,0
+1611333507607,1146,POST /graphql - Page Search,200,OK,Thread Group 1-54,text,true,,672,1242,93,93,http://35.190.33.180/graphql,1146,0,0
+1611333507600,1289,POST /graphql - Page Search,200,OK,Thread Group 1-31,text,true,,672,1242,93,93,http://35.190.33.180/graphql,1289,0,0
+1611333507613,1352,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-7,text,true,,3268,887,93,93,http://35.190.33.180/en/teste3,1352,0,0
+1611333507786,1179,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-12,text,true,,3268,887,93,93,http://35.190.33.180/en/teste3,1179,0,0
+1611333508060,905,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-20,text,true,,3268,887,93,93,http://35.190.33.180/en/teste3,905,0,0
+1611333508260,706,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-59,text,true,,3268,887,93,93,http://35.190.33.180/en/teste3,706,0,0
+1611333508377,681,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-26,text,true,,3268,887,89,89,http://35.190.33.180/en/teste3,681,0,0
+1611333508467,591,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-33,text,true,,3268,887,89,89,http://35.190.33.180/en/teste3,591,0,0
+1611333502745,6371,GET /,200,OK,Thread Group 1-85,text,true,,3181,118,87,87,http://35.190.33.180/,6371,0,32
+1611333502884,6233,GET /,200,OK,Thread Group 1-99,text,true,,3181,118,87,87,http://35.190.33.180/,6233,0,26
+1611333502833,6284,GET /,200,OK,Thread Group 1-94,text,true,,3181,118,87,87,http://35.190.33.180/,6284,0,27
+1611333502854,6263,GET /,200,OK,Thread Group 1-96,text,true,,3181,118,87,87,http://35.190.33.180/,6263,0,31
+1611333502794,6323,GET /,200,OK,Thread Group 1-90,text,true,,3181,118,87,87,http://35.190.33.180/,6323,0,35
+1611333502714,6404,GET /,200,OK,Thread Group 1-82,text,true,,3181,118,87,87,http://35.190.33.180/,6403,0,29
+1611333502755,6362,GET /,200,OK,Thread Group 1-86,text,true,,3181,118,87,87,http://35.190.33.180/,6362,0,34
+1611333502893,6228,GET /,200,OK,Thread Group 1-100,text,true,,3181,118,87,87,http://35.190.33.180/,6228,0,32
+1611333506449,2729,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-57,text,true,,3268,887,87,87,http://35.190.33.180/en/teste3,2729,0,0
+1611333506352,2982,POST /graphql - Login,200,OK,Thread Group 1-39,text,true,,1453,708,86,86,http://35.190.33.180/graphql,2982,0,0
+1611333506659,2681,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-11,text,true,,3268,887,86,86,http://35.190.33.180/en/teste3,2681,0,0
+1611333506540,2819,POST /graphql - Login,200,OK,Thread Group 1-87,text,true,,1453,708,85,85,http://35.190.33.180/graphql,2819,0,0
+1611333505432,3934,POST /graphql - Login,200,OK,Thread Group 1-65,text,true,,1453,708,85,85,http://35.190.33.180/graphql,3934,0,0
+1611333506281,3126,POST /graphql - Login,200,OK,Thread Group 1-80,text,true,,1453,708,85,85,http://35.190.33.180/graphql,3126,0,0
+1611333507264,2155,POST /graphql - Login,200,OK,Thread Group 1-74,text,true,,1453,708,85,85,http://35.190.33.180/graphql,2155,0,0
+1611333504312,5127,POST /graphql - Login,200,OK,Thread Group 1-84,text,true,,1453,708,85,85,http://35.190.33.180/graphql,5127,0,0
+1611333506650,2796,POST /graphql - Login,200,OK,Thread Group 1-45,text,true,,1453,708,85,85,http://35.190.33.180/graphql,2796,0,0
+1611333509408,57,POST /graphql - Page Search,200,OK,Thread Group 1-80,text,true,,672,1242,85,85,http://35.190.33.180/graphql,57,0,0
+1611333509447,54,POST /graphql - Page Search,200,OK,Thread Group 1-45,text,true,,672,1242,85,85,http://35.190.33.180/graphql,54,0,0
+1611333509466,56,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-80,text,true,,3268,887,85,85,http://35.190.33.180/en/teste3,56,0,0
+1611333509119,428,GET /login,200,OK,Thread Group 1-94,text,true,,2329,123,84,84,http://35.190.33.180/login,428,0,0
+1611333507161,2386,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-4,text,true,,3268,887,84,84,http://35.190.33.180/en/teste3,2386,0,0
+1611333505169,4379,POST /graphql - Login,200,OK,Thread Group 1-27,text,true,,1453,708,84,84,http://35.190.33.180/graphql,4379,0,0
+1611333504312,5246,POST /graphql - Login,200,OK,Thread Group 1-47,text,true,,1453,708,83,83,http://35.190.33.180/graphql,5246,0,0
+1611333504312,5246,POST /graphql - Login,200,OK,Thread Group 1-89,text,true,,1453,708,83,83,http://35.190.33.180/graphql,5246,0,0
+1611333505248,4310,POST /graphql - Login,200,OK,Thread Group 1-34,text,true,,1453,708,83,83,http://35.190.33.180/graphql,4310,0,0
+1611333505730,3833,POST /graphql - Login,200,OK,Thread Group 1-30,text,true,,1453,708,83,83,http://35.190.33.180/graphql,3833,0,0
+1611333506149,3423,POST /graphql - Login,200,OK,Thread Group 1-69,text,true,,1453,708,83,83,http://35.190.33.180/graphql,3423,0,0
+1611333506096,3476,POST /graphql - Login,200,OK,Thread Group 1-63,text,true,,1453,708,83,83,http://35.190.33.180/graphql,3476,0,0
+1611333506281,3291,POST /graphql - Login,200,OK,Thread Group 1-50,text,true,,1453,708,83,83,http://35.190.33.180/graphql,3291,0,0
+1611333506449,3130,POST /graphql - Login,200,OK,Thread Group 1-70,text,true,,1453,708,83,83,http://35.190.33.180/graphql,3130,0,0
+1611333506291,3288,POST /graphql - Login,200,OK,Thread Group 1-71,text,true,,1453,708,83,83,http://35.190.33.180/graphql,3288,0,0
+1611333509549,53,POST /graphql - Page Search,200,OK,Thread Group 1-27,text,true,,672,1242,83,83,http://35.190.33.180/graphql,53,0,0
+1611333509564,54,POST /graphql - Page Search,200,OK,Thread Group 1-30,text,true,,672,1242,83,83,http://35.190.33.180/graphql,54,0,0
+1611333506285,3381,POST /graphql - Login,200,OK,Thread Group 1-49,text,true,,1453,708,83,83,http://35.190.33.180/graphql,3381,0,0
+1611333509560,191,POST /graphql - Page Search,200,OK,Thread Group 1-34,text,true,,672,1242,83,83,http://35.190.33.180/graphql,191,0,0
+1611333506561,3190,POST /graphql - Login,200,OK,Thread Group 1-60,text,true,,1453,708,83,83,http://35.190.33.180/graphql,3190,0,0
+1611333507264,2487,POST /graphql - Login,200,OK,Thread Group 1-92,text,true,,1453,708,83,83,http://35.190.33.180/graphql,2487,0,0
+1611333508260,1501,POST /graphql - Login,200,OK,Thread Group 1-81,text,true,,1453,708,83,83,http://35.190.33.180/graphql,1501,0,0
+1611333509119,654,GET /login,200,OK,Thread Group 1-90,text,true,,2329,123,83,83,http://35.190.33.180/login,654,0,0
+1611333507472,2301,POST /graphql - Login,200,OK,Thread Group 1-66,text,true,,1453,708,83,83,http://35.190.33.180/graphql,2301,0,0
+1611333509753,59,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-34,text,true,,3268,887,83,83,http://35.190.33.180/en/teste3,59,0,0
+1611333509573,403,POST /graphql - Page Search,200,OK,Thread Group 1-63,text,true,,672,1242,82,82,http://35.190.33.180/graphql,403,0,0
+1611333509581,395,POST /graphql - Page Search,200,OK,Thread Group 1-70,text,true,,672,1242,82,82,http://35.190.33.180/graphql,395,0,0
+1611333509977,52,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-70,text,true,,3268,887,82,82,http://35.190.33.180/en/teste3,52,0,0
+1611333508697,1401,POST /graphql - Login,200,OK,Thread Group 1-35,text,true,,1453,708,81,81,http://35.190.33.180/graphql,1401,0,0
+1611333509360,835,POST /graphql - Page Search,200,OK,Thread Group 1-87,text,true,,672,1242,81,81,http://35.190.33.180/graphql,835,0,0
+1611333509440,765,POST /graphql - Page Search,200,OK,Thread Group 1-84,text,true,,672,1242,81,81,http://35.190.33.180/graphql,764,0,0
+1611333509559,853,POST /graphql - Page Search,200,OK,Thread Group 1-47,text,true,,672,1242,81,81,http://35.190.33.180/graphql,853,0,0
+1611333509581,831,POST /graphql - Page Search,200,OK,Thread Group 1-71,text,true,,672,1242,81,81,http://35.190.33.180/graphql,831,0,0
+1611333508697,1715,POST /graphql - Login,200,OK,Thread Group 1-38,text,true,,1453,708,81,81,http://35.190.33.180/graphql,1715,0,0
+1611333509667,745,POST /graphql - Page Search,200,OK,Thread Group 1-49,text,true,,672,1242,81,81,http://35.190.33.180/graphql,745,0,0
+1611333509502,1104,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-45,text,true,,3268,887,81,81,http://35.190.33.180/en/teste3,1104,0,0
+1611333509753,853,POST /graphql - Page Search,200,OK,Thread Group 1-92,text,true,,672,1242,81,81,http://35.190.33.180/graphql,853,0,0
+1611333509619,987,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-30,text,true,,3268,887,81,81,http://35.190.33.180/en/teste3,987,0,0
+1611333509603,1003,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-27,text,true,,3268,887,81,81,http://35.190.33.180/en/teste3,1003,0,0
+1611333509774,841,POST /graphql - Page Search,200,OK,Thread Group 1-66,text,true,,672,1242,78,78,http://35.190.33.180/graphql,841,0,0
+1611333510413,300,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-47,text,true,,3268,887,78,78,http://35.190.33.180/en/teste3,300,0,0
+1611333510414,299,POST /graphql - Page Search,200,OK,Thread Group 1-38,text,true,,672,1242,78,78,http://35.190.33.180/graphql,299,0,0
+1611333510414,301,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-49,text,true,,3268,887,77,77,http://35.190.33.180/en/teste3,301,0,0
+1611333509548,1167,POST /graphql - Login,200,OK,Thread Group 1-94,text,true,,1453,708,77,77,http://35.190.33.180/graphql,1167,0,0
+1611333510414,301,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-71,text,true,,3268,887,77,77,http://35.190.33.180/en/teste3,301,0,0
+1611333510616,99,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-66,text,true,,3268,887,77,77,http://35.190.33.180/en/teste3,99,0,0
+1611333509774,946,POST /graphql - Login,200,OK,Thread Group 1-90,text,true,,1453,708,74,74,http://35.190.33.180/graphql,945,0,0
+1611333510714,58,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-38,text,true,,3268,887,74,74,http://35.190.33.180/en/teste3,58,0,0
+1611333510716,56,POST /graphql - Page Search,200,OK,Thread Group 1-94,text,true,,672,1242,74,74,http://35.190.33.180/graphql,56,0,0
+1611333510774,58,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-94,text,true,,3268,887,73,73,http://35.190.33.180/en/teste3,58,0,0
+1611333506753,4092,GET /login,200,OK,Thread Group 1-67,text,true,,2226,123,72,72,http://35.190.33.180/login,4092,0,0
+1611333509573,1272,POST /graphql - Page Search,502,Bad Gateway,Thread Group 1-69,text,false,,488,1242,72,72,http://35.190.33.180/graphql,1272,0,0
+1611333506281,4671,POST /graphql - Page Search,200,OK,Thread Group 1-15,text,true,,672,1242,72,72,http://35.190.33.180/graphql,4671,0,0
+1611333502211,8847,POST /graphql - Login,200,OK,Thread Group 1-16,text,true,,1453,708,72,72,http://35.190.33.180/graphql,8847,0,0
+1611333502227,8831,POST /graphql - Login,200,OK,Thread Group 1-8,text,true,,1453,708,72,72,http://35.190.33.180/graphql,8831,0,0
+1611333502225,8833,POST /graphql - Login,200,OK,Thread Group 1-14,text,true,,1453,708,72,72,http://35.190.33.180/graphql,8833,0,0
+1611333502227,8839,POST /graphql - Login,200,OK,Thread Group 1-6,text,true,,1453,708,72,72,http://35.190.33.180/graphql,8839,0,0
+1611333511060,63,POST /graphql - Page Search,200,OK,Thread Group 1-8,text,true,,672,1242,72,72,http://35.190.33.180/graphql,63,0,0
+1611333511060,63,POST /graphql - Page Search,200,OK,Thread Group 1-14,text,true,,672,1242,72,72,http://35.190.33.180/graphql,63,0,0
+1611333511124,54,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-8,text,true,,3268,887,72,72,http://35.190.33.180/en/teste3,54,0,0
+1611333511124,54,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-14,text,true,,3268,887,72,72,http://35.190.33.180/en/teste3,54,0,0
+1611333509119,3957,GET /login,200,OK,Thread Group 1-86,text,true,,2226,123,70,70,http://35.190.33.180/login,3957,0,0
+1611333509119,3957,GET /login,200,OK,Thread Group 1-82,text,true,,2226,123,70,70,http://35.190.33.180/login,3957,0,0
+1611333507582,5494,GET /login,200,OK,Thread Group 1-78,text,true,,2226,123,70,70,http://35.190.33.180/login,5494,0,0
+1611333509117,3959,GET /login,200,OK,Thread Group 1-85,text,true,,2226,123,70,70,http://35.190.33.180/login,3959,0,0
+1611333510846,2239,POST /graphql - Login,502,Bad Gateway,Thread Group 1-67,text,false,,488,708,70,70,http://35.190.33.180/graphql,2239,0,0
+1611333502227,10858,POST /graphql - Login,200,OK,Thread Group 1-3,text,true,,1453,708,70,70,http://35.190.33.180/graphql,10858,0,0
+1611333511067,2018,POST /graphql - Page Search,502,Bad Gateway,Thread Group 1-6,text,false,,488,1242,70,70,http://35.190.33.180/graphql,2018,0,0
+1611333502226,10865,POST /graphql - Login,200,OK,Thread Group 1-18,text,true,,1453,708,70,70,http://35.190.33.180/graphql,10865,0,0
+1611333502226,11072,POST /graphql - Login,200,OK,Thread Group 1-13,text,true,,1453,708,70,70,http://35.190.33.180/graphql,11072,0,0
+1611333506651,6647,POST /graphql - Page Search,200,OK,Thread Group 1-88,text,true,,672,1242,70,70,http://35.190.33.180/graphql,6647,0,0
+1611333502230,11068,POST /graphql - Login,200,OK,Thread Group 1-19,text,true,,1453,708,70,70,http://35.190.33.180/graphql,11068,0,0
+1611333502253,11054,POST /graphql - Login,200,OK,Thread Group 1-21,text,true,,1453,708,70,70,http://35.190.33.180/graphql,11054,0,0
+1611333513088,428,POST /graphql - Page Search,200,OK,Thread Group 1-67,text,true,,672,538,70,70,http://35.190.33.180/graphql,428,0,0
+1611333513094,422,POST /graphql - Page Search,200,OK,Thread Group 1-18,text,true,,672,1242,70,70,http://35.190.33.180/graphql,422,0,0
+1611333513088,444,POST /graphql - Page Search,200,OK,Thread Group 1-3,text,true,,672,1242,70,70,http://35.190.33.180/graphql,444,0,0
+1611333513309,223,POST /graphql - Page Search,200,OK,Thread Group 1-21,text,true,,672,1242,70,70,http://35.190.33.180/graphql,223,0,0
+1611333513534,54,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-3,text,true,,3268,887,70,70,http://35.190.33.180/en/teste3,54,0,0
+1611333513534,54,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-21,text,true,,3268,887,70,70,http://35.190.33.180/en/teste3,54,0,0
+1611333513301,673,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-88,text,true,,3268,887,68,68,http://35.190.33.180/en/teste3,673,0,0
+1611333513517,457,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-18,text,true,,3268,887,68,68,http://35.190.33.180/en/teste3,457,0,0
+1611333513088,886,GET /en/{searched-page} - View the Searched Page,404,Not Found,Thread Group 1-6,text,false,,2767,1761,68,68,http://35.190.33.180/en,422,0,0
+1611333513088,422,GET /en/{searched-page} - View the Searched Page-0,301,Moved Permanently,Thread Group 1-6,text,true,,425,881,68,68,http://35.190.33.180/en/,422,0,0
+1611333513511,463,GET /en/{searched-page} - View the Searched Page-1,404,Not Found,Thread Group 1-6,text,false,,2342,880,68,68,http://35.190.33.180/en,463,0,0
+1611333513078,917,POST /graphql - Login,200,OK,Thread Group 1-78,text,true,,1453,708,65,65,http://35.190.33.180/graphql,917,0,0
+1611333513078,941,POST /graphql - Login,200,OK,Thread Group 1-86,text,true,,1453,708,65,65,http://35.190.33.180/graphql,941,0,0
+1611333513078,952,POST /graphql - Login,200,OK,Thread Group 1-85,text,true,,1453,708,65,65,http://35.190.33.180/graphql,952,0,0
+1611333513078,969,POST /graphql - Login,200,OK,Thread Group 1-82,text,true,,1453,708,65,65,http://35.190.33.180/graphql,969,0,0
+1611333513996,62,POST /graphql - Page Search,200,OK,Thread Group 1-78,text,true,,672,1242,65,65,http://35.190.33.180/graphql,62,0,0
+1611333514020,57,POST /graphql - Page Search,200,OK,Thread Group 1-86,text,true,,672,1242,65,65,http://35.190.33.180/graphql,57,0,0
+1611333514048,58,POST /graphql - Page Search,200,OK,Thread Group 1-82,text,true,,672,1242,65,65,http://35.190.33.180/graphql,58,0,0
+1611333514078,53,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-86,text,true,,3268,887,65,65,http://35.190.33.180/en/teste3,53,0,0
+1611333514107,53,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-82,text,true,,3268,887,64,64,http://35.190.33.180/en/teste3,53,0,0
+1611333509122,6006,GET /login,200,OK,Thread Group 1-100,text,true,,2226,123,63,63,http://35.190.33.180/login,6006,0,0
+1611333509119,6009,GET /login,200,OK,Thread Group 1-99,text,true,,2226,123,63,63,http://35.190.33.180/login,6009,0,0
+1611333509119,6009,GET /login,200,OK,Thread Group 1-96,text,true,,2226,123,63,63,http://35.190.33.180/login,6009,0,0
+1611333507162,8183,POST /graphql - Page Search,200,OK,Thread Group 1-48,text,true,,672,1242,63,63,http://35.190.33.180/graphql,8183,0,0
+1611333506664,8681,POST /graphql - Page Search,200,OK,Thread Group 1-72,text,true,,672,1242,63,63,http://35.190.33.180/graphql,8681,0,0
+1611333515347,51,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-48,text,true,,3268,887,63,63,http://35.190.33.180/en/teste3,51,0,0
+1611333509367,6082,POST /graphql - Page Search,200,OK,Thread Group 1-65,text,true,,672,1242,62,62,http://35.190.33.180/graphql,6082,0,0
+1611333509335,6114,POST /graphql - Page Search,200,OK,Thread Group 1-39,text,true,,672,1242,62,62,http://35.190.33.180/graphql,6114,0,0
+1611333507473,7983,POST /graphql - Page Search,200,OK,Thread Group 1-64,text,true,,672,1242,62,62,http://35.190.33.180/graphql,7983,0,0
+1611333509420,6036,POST /graphql - Page Search,200,OK,Thread Group 1-74,text,true,,672,1242,62,62,http://35.190.33.180/graphql,6036,0,0
+1611333508360,7096,POST /graphql - Page Search,200,OK,Thread Group 1-68,text,true,,672,538,62,62,http://35.190.33.180/graphql,7096,0,0
+1611333515451,58,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-65,text,true,,3268,887,62,62,http://35.190.33.180/en/teste3,58,0,0
+1611333515458,58,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-64,text,true,,3268,887,61,61,http://35.190.33.180/en/teste3,58,0,0
+1611333509559,7237,POST /graphql - Page Search,200,OK,Thread Group 1-89,text,true,,672,1242,60,60,http://35.190.33.180/graphql,7237,0,0
+1611333509753,7051,POST /graphql - Page Search,200,OK,Thread Group 1-60,text,true,,672,1242,60,60,http://35.190.33.180/graphql,7051,0,0
+1611333509574,7230,POST /graphql - Page Search,200,OK,Thread Group 1-50,text,true,,672,1242,60,60,http://35.190.33.180/graphql,7230,0,0
+1611333506651,10153,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-2,text,true,,3165,887,60,60,http://35.190.33.180/en/teste3,10153,0,0
+1611333507372,9432,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-42,text,true,,3165,887,60,60,http://35.190.33.180/en/teste3,9432,0,0
+1611333510099,6705,POST /graphql - Page Search,200,OK,Thread Group 1-35,text,true,,672,1242,60,60,http://35.190.33.180/graphql,6705,0,0
+1611333509762,7048,POST /graphql - Page Search,200,OK,Thread Group 1-81,text,true,,672,1242,58,58,http://35.190.33.180/graphql,7048,0,0
+1611333506449,10361,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-10,text,true,,3165,887,58,58,http://35.190.33.180/en/teste3,10361,0,0
+1611333510720,6090,POST /graphql - Page Search,200,OK,Thread Group 1-90,text,true,,672,1242,58,58,http://35.190.33.180/graphql,6090,0,0
+1611333510847,5998,GET /en/{searched-page} - View the Searched Page,404,Not Found,Thread Group 1-69,text,false,,2767,1761,57,57,http://35.190.33.180/en,5942,0,0
+1611333510847,5942,GET /en/{searched-page} - View the Searched Page-0,301,Moved Permanently,Thread Group 1-69,text,true,,425,881,57,57,http://35.190.33.180/en/,5942,0,0
+1611333516790,55,GET /en/{searched-page} - View the Searched Page-1,404,Not Found,Thread Group 1-69,text,false,,2342,880,57,57,http://35.190.33.180/en,55,0,0
+1611333516798,54,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-89,text,true,,3268,887,56,56,http://35.190.33.180/en/teste3,54,0,0
+1611333516806,56,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-60,text,true,,3268,887,55,55,http://35.190.33.180/en/teste3,56,0,0
+1611333516806,56,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-50,text,true,,3268,887,55,55,http://35.190.33.180/en/teste3,56,0,0
+1611333516812,56,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-90,text,true,,3268,887,53,53,http://35.190.33.180/en/teste3,56,0,0
+1611333513301,4316,POST /graphql - Page Search,200,OK,Thread Group 1-19,text,true,,672,1242,52,52,http://35.190.33.180/graphql,4316,0,0
+1611333510607,7015,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-92,text,true,,3165,887,52,52,http://35.190.33.180/en/teste3,7015,0,0
+1611333511060,6562,POST /graphql - Page Search,200,OK,Thread Group 1-16,text,true,,672,1242,52,52,http://35.190.33.180/graphql,6562,0,0
+1611333510206,7417,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-84,text,true,,3165,887,52,52,http://35.190.33.180/en/teste3,7417,0,0
+1611333507600,10023,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-17,text,true,,3165,887,52,52,http://35.190.33.180/en/teste3,10023,0,0
+1611333508359,9264,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-37,text,true,,3165,887,52,52,http://35.190.33.180/en/teste3,9264,0,0
+1611333510196,7427,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-87,text,true,,3165,887,52,52,http://35.190.33.180/en/teste3,7427,0,0
+1611333517617,53,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-19,text,true,,3268,887,47,47,http://35.190.33.180/en/teste3,53,0,0
+1611333508705,9311,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-77,text,true,,3165,887,46,46,http://35.190.33.180/en/teste3,9311,0,0
+1611333508890,9126,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-31,text,true,,3165,887,46,46,http://35.190.33.180/en/teste3,9126,0,0
+1611333508755,9261,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-54,text,true,,3165,887,46,46,http://35.190.33.180/en/teste3,9261,0,0
+1611333510953,7063,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-15,text,true,,3165,887,46,46,http://35.190.33.180/en/teste3,7063,0,0
+1611333509977,8039,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-63,text,true,,3165,887,46,46,http://35.190.33.180/en/teste3,8039,0,0
+1611333514059,4130,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-78,text,true,,3165,887,41,41,http://35.190.33.180/en/teste3,4130,0,0
+1611333513301,4888,POST /graphql - Page Search,200,OK,Thread Group 1-13,text,true,,672,1242,41,41,http://35.190.33.180/graphql,4888,0,0
+1611333514031,4158,POST /graphql - Page Search,200,OK,Thread Group 1-85,text,true,,672,1242,41,41,http://35.190.33.180/graphql,4158,0,0
+1611333518190,56,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-85,text,true,,3268,887,40,40,http://35.190.33.180/en/teste3,56,0,0
+1611333513517,4786,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-67,text,true,,3177,183,39,39,http://35.190.33.180/en/teste3,4786,0,0
+1611333516806,1592,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-35,text,true,,3165,887,38,38,http://35.190.33.180/en/teste3,1592,0,0
+1611333515347,3053,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-72,text,true,,3165,887,37,37,http://35.190.33.180/en/teste3,3053,0,0
+1611333515458,2942,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-74,text,true,,3165,887,37,37,http://35.190.33.180/en/teste3,2941,0,0
+1611333515458,2941,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-68,text,true,,3177,183,37,37,http://35.190.33.180/en/teste3,2941,0,0
+1611333515451,2949,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-39,text,true,,3165,887,37,37,http://35.190.33.180/en/teste3,2949,0,0
+1611333516812,1692,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-81,text,true,,3165,887,33,33,http://35.190.33.180/en/teste3,1692,0,0
+1611333518190,334,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-13,text,true,,3165,887,32,32,http://35.190.33.180/en/teste3,334,0,0
+1611333517623,901,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-16,text,true,,3165,887,32,32,http://35.190.33.180/en/teste3,901,0,0
+1611333503768,15068,POST /graphql - Login,200,OK,Thread Group 1-46,text,true,,1453,708,30,30,http://35.190.33.180/graphql,15068,0,0
+1611333503489,15347,POST /graphql - Login,200,OK,Thread Group 1-25,text,true,,1453,708,30,30,http://35.190.33.180/graphql,15347,0,0
+1611333518837,58,POST /graphql - Page Search,200,OK,Thread Group 1-46,text,true,,672,1242,30,30,http://35.190.33.180/graphql,58,0,0
+1611333503151,15891,POST /graphql - Login,200,OK,Thread Group 1-56,text,true,,1453,708,30,30,http://35.190.33.180/graphql,15891,0,0
+1611333503150,15892,POST /graphql - Login,200,OK,Thread Group 1-61,text,true,,1453,708,30,30,http://35.190.33.180/graphql,15892,0,0
+1611333503049,15993,POST /graphql - Login,200,OK,Thread Group 1-41,text,true,,1453,708,30,30,http://35.190.33.180/graphql,15993,0,0
+1611333505437,13614,POST /graphql - Login,200,OK,Thread Group 1-95,text,true,,1453,708,30,30,http://35.190.33.180/graphql,13614,0,0
+1611333505432,13619,POST /graphql - Login,200,OK,Thread Group 1-62,text,true,,1453,708,30,30,http://35.190.33.180/graphql,13619,0,0
+1611333504311,14740,POST /graphql - Login,200,OK,Thread Group 1-51,text,true,,1453,708,30,30,http://35.190.33.180/graphql,14740,0,0
+1611333505169,13889,POST /graphql - Login,200,OK,Thread Group 1-28,text,true,,1453,708,30,30,http://35.190.33.180/graphql,13889,0,0
+1611333505452,13606,POST /graphql - Login,200,OK,Thread Group 1-52,text,true,,1453,708,30,30,http://35.190.33.180/graphql,13606,0,0
+1611333502281,16777,POST /graphql - Login,200,OK,Thread Group 1-24,text,true,,1453,708,30,30,http://35.190.33.180/graphql,16777,0,0
+1611333502667,16397,POST /graphql - Login,200,OK,Thread Group 1-23,text,true,,1453,708,30,30,http://35.190.33.180/graphql,16397,0,0
+1611333519044,59,POST /graphql - Page Search,200,OK,Thread Group 1-41,text,true,,672,1242,30,30,http://35.190.33.180/graphql,59,0,0
+1611333519044,59,POST /graphql - Page Search,200,OK,Thread Group 1-61,text,true,,672,1242,30,30,http://35.190.33.180/graphql,59,0,0
+1611333519044,59,POST /graphql - Page Search,200,OK,Thread Group 1-56,text,true,,672,1242,30,30,http://35.190.33.180/graphql,59,0,0
+1611333519053,62,POST /graphql - Page Search,200,OK,Thread Group 1-51,text,true,,672,1242,30,30,http://35.190.33.180/graphql,62,0,0
+1611333519052,63,POST /graphql - Page Search,200,OK,Thread Group 1-62,text,true,,672,1242,30,30,http://35.190.33.180/graphql,63,0,0
+1611333519052,63,POST /graphql - Page Search,200,OK,Thread Group 1-95,text,true,,672,1242,30,30,http://35.190.33.180/graphql,63,0,0
+1611333519065,58,POST /graphql - Page Search,200,OK,Thread Group 1-23,text,true,,672,1242,30,30,http://35.190.33.180/graphql,58,0,0
+1611333519059,64,POST /graphql - Page Search,200,OK,Thread Group 1-24,text,true,,672,1242,30,30,http://35.190.33.180/graphql,64,0,0
+1611333519104,57,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-56,text,true,,3268,887,30,30,http://35.190.33.180/en/teste3,56,0,0
+1611333519104,62,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-61,text,true,,3268,887,29,29,http://35.190.33.180/en/teste3,62,0,0
+1611333519116,58,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-62,text,true,,3268,887,28,28,http://35.190.33.180/en/teste3,58,0,0
+1611333519116,58,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-51,text,true,,3268,887,28,28,http://35.190.33.180/en/teste3,58,0,0
+1611333519124,50,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-24,text,true,,3268,887,28,28,http://35.190.33.180/en/teste3,50,0,0
+1611333506285,12988,POST /graphql - Login,200,OK,Thread Group 1-58,text,true,,1453,708,25,25,http://35.190.33.180/graphql,12988,0,0
+1611333506110,13163,POST /graphql - Login,200,OK,Thread Group 1-32,text,true,,1453,708,25,25,http://35.190.33.180/graphql,13163,0,0
+1611333503151,16122,POST /graphql - Login,200,OK,Thread Group 1-43,text,true,,1453,708,25,25,http://35.190.33.180/graphql,16122,0,0
+1611333519274,57,POST /graphql - Page Search,200,OK,Thread Group 1-32,text,true,,672,1242,25,25,http://35.190.33.180/graphql,57,0,0
+1611333519274,63,POST /graphql - Page Search,200,OK,Thread Group 1-43,text,true,,672,1242,25,25,http://35.190.33.180/graphql,63,0,0
+1611333519332,50,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-32,text,true,,3268,887,25,25,http://35.190.33.180/en/teste3,50,0,0
+1611333519339,51,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-43,text,true,,3268,887,24,24,http://35.190.33.180/en/teste3,51,0,0
+1611333506118,13293,POST /graphql - Login,200,OK,Thread Group 1-36,text,true,,1453,708,23,23,http://35.190.33.180/graphql,13293,0,0
+1611333506353,13058,POST /graphql - Login,200,OK,Thread Group 1-53,text,true,,1453,708,23,23,http://35.190.33.180/graphql,13058,0,0
+1611333503199,16212,POST /graphql - Login,200,OK,Thread Group 1-79,text,true,,1453,708,23,23,http://35.190.33.180/graphql,16212,0,0
+1611333506285,13136,POST /graphql - Login,200,OK,Thread Group 1-55,text,true,,1453,708,23,23,http://35.190.33.180/graphql,13136,0,0
+1611333506291,13130,POST /graphql - Login,200,OK,Thread Group 1-75,text,true,,1453,708,23,23,http://35.190.33.180/graphql,13130,0,0
+1611333518837,584,POST /graphql - Page Search,200,OK,Thread Group 1-25,text,true,,672,1242,23,23,http://35.190.33.180/graphql,584,0,0
+1611333507264,12162,POST /graphql - Login,200,OK,Thread Group 1-73,text,true,,1453,708,23,23,http://35.190.33.180/graphql,12162,0,0
+1611333506369,13057,POST /graphql - Login,200,OK,Thread Group 1-98,text,true,,1453,708,23,23,http://35.190.33.180/graphql,13057,0,0
+1611333506436,12990,POST /graphql - Login,200,OK,Thread Group 1-97,text,true,,1453,708,23,23,http://35.190.33.180/graphql,12990,0,0
+1611333506393,13066,POST /graphql - Login,200,OK,Thread Group 1-91,text,true,,1453,708,23,23,http://35.190.33.180/graphql,13066,0,0
+1611333506449,13010,POST /graphql - Login,200,OK,Thread Group 1-76,text,true,,1453,708,23,23,http://35.190.33.180/graphql,13010,0,0
+1611333507600,11868,POST /graphql - Login,200,OK,Thread Group 1-44,text,true,,1453,708,23,23,http://35.190.33.180/graphql,11868,0,0
+1611333519059,409,POST /graphql - Page Search,200,OK,Thread Group 1-28,text,true,,672,1242,23,23,http://35.190.33.180/graphql,409,0,0
+1611333515131,4338,POST /graphql - Login,200,OK,Thread Group 1-99,text,true,,1453,708,23,23,http://35.190.33.180/graphql,4338,0,0
+1611333519059,409,POST /graphql - Page Search,200,OK,Thread Group 1-52,text,true,,672,1242,23,23,http://35.190.33.180/graphql,409,0,0
+1611333506540,12928,POST /graphql - Login,200,OK,Thread Group 1-93,text,true,,1453,708,23,23,http://35.190.33.180/graphql,12928,0,0
+1611333519413,61,POST /graphql - Page Search,200,OK,Thread Group 1-79,text,true,,672,1242,23,23,http://35.190.33.180/graphql,61,0,0
+1611333518896,578,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-46,text,true,,3165,887,23,23,http://35.190.33.180/en/teste3,578,0,0
+1611333519274,200,POST /graphql - Page Search,200,OK,Thread Group 1-58,text,true,,672,1242,23,23,http://35.190.33.180/graphql,200,0,0
+1611333519413,61,POST /graphql - Page Search,200,OK,Thread Group 1-36,text,true,,672,1242,23,23,http://35.190.33.180/graphql,61,0,0
+1611333519116,366,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-95,text,true,,3165,887,22,22,http://35.190.33.180/en/teste3,366,0,0
+1611333519104,378,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-41,text,true,,3165,887,22,22,http://35.190.33.180/en/teste3,378,0,0
+1611333519124,358,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-23,text,true,,3165,887,22,22,http://35.190.33.180/en/teste3,358,0,0
+1611333519422,60,POST /graphql - Page Search,200,OK,Thread Group 1-55,text,true,,672,1242,22,22,http://35.190.33.180/graphql,60,0,0
+1611333515131,4352,POST /graphql - Login,200,OK,Thread Group 1-96,text,true,,1453,708,22,22,http://35.190.33.180/graphql,4352,0,0
+1611333519413,69,POST /graphql - Page Search,200,OK,Thread Group 1-53,text,true,,672,1242,22,22,http://35.190.33.180/graphql,69,0,0
+1611333519428,60,POST /graphql - Page Search,200,OK,Thread Group 1-98,text,true,,672,1242,19,19,http://35.190.33.180/graphql,60,0,0
+1611333519428,60,POST /graphql - Page Search,200,OK,Thread Group 1-73,text,true,,672,1242,19,19,http://35.190.33.180/graphql,60,0,0
+1611333519422,66,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-25,text,true,,3268,887,19,19,http://35.190.33.180/en/teste3,66,0,0
+1611333519422,73,POST /graphql - Page Search,200,OK,Thread Group 1-75,text,true,,672,1242,18,18,http://35.190.33.180/graphql,73,0,0
+1611333515131,4365,POST /graphql - Login,200,OK,Thread Group 1-100,text,true,,1453,708,18,18,http://35.190.33.180/graphql,4365,0,0
+1611333519428,67,POST /graphql - Page Search,200,OK,Thread Group 1-97,text,true,,672,1242,18,18,http://35.190.33.180/graphql,67,0,0
+1611333519460,52,POST /graphql - Page Search,200,OK,Thread Group 1-91,text,true,,672,1242,18,18,http://35.190.33.180/graphql,52,0,0
+1611333519460,52,POST /graphql - Page Search,200,OK,Thread Group 1-76,text,true,,672,1242,18,18,http://35.190.33.180/graphql,52,0,0
+1611333519469,54,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-28,text,true,,3268,887,18,18,http://35.190.33.180/en/teste3,54,0,0
+1611333519469,54,POST /graphql - Page Search,200,OK,Thread Group 1-99,text,true,,672,1242,18,18,http://35.190.33.180/graphql,54,0,0
+1611333519469,54,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-52,text,true,,3268,887,18,18,http://35.190.33.180/en/teste3,54,0,0
+1611333519475,53,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-79,text,true,,3268,887,16,16,http://35.190.33.180/en/teste3,53,0,0
+1611333519469,59,POST /graphql - Page Search,200,OK,Thread Group 1-44,text,true,,672,1242,16,16,http://35.190.33.180/graphql,59,0,0
+1611333519476,52,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-58,text,true,,3268,887,16,16,http://35.190.33.180/en/teste3,52,0,0
+1611333519483,51,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-55,text,true,,3268,887,14,14,http://35.190.33.180/en/teste3,51,0,0
+1611333519470,64,POST /graphql - Page Search,200,OK,Thread Group 1-93,text,true,,672,1242,14,14,http://35.190.33.180/graphql,64,0,0
+1611333519476,58,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-36,text,true,,3165,887,14,14,http://35.190.33.180/en/teste3,58,0,0
+1611333519489,58,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-98,text,true,,3268,887,12,12,http://35.190.33.180/en/teste3,58,0,0
+1611333519484,63,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-53,text,true,,3268,887,12,12,http://35.190.33.180/en/teste3,63,0,0
+1611333519496,52,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-75,text,true,,3268,887,12,12,http://35.190.33.180/en/teste3,52,0,0
+1611333519484,63,POST /graphql - Page Search,200,OK,Thread Group 1-96,text,true,,672,1242,12,12,http://35.190.33.180/graphql,63,0,0
+1611333519497,56,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-97,text,true,,3268,887,9,9,http://35.190.33.180/en/teste3,56,0,0
+1611333519489,64,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-73,text,true,,3268,887,9,9,http://35.190.33.180/en/teste3,64,0,0
+1611333519496,57,POST /graphql - Page Search,200,OK,Thread Group 1-100,text,true,,672,1242,9,9,http://35.190.33.180/graphql,57,0,0
+1611333519513,56,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-76,text,true,,3268,887,7,7,http://35.190.33.180/en/teste3,56,0,0
+1611333519513,56,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-91,text,true,,3268,887,7,7,http://35.190.33.180/en/teste3,56,0,0
+1611333519529,51,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-44,text,true,,3268,887,5,5,http://35.190.33.180/en/teste3,51,0,0
+1611333519524,56,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-99,text,true,,3268,887,5,5,http://35.190.33.180/en/teste3,56,0,0
+1611333519536,57,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-93,text,true,,3268,887,3,3,http://35.190.33.180/en/teste3,57,0,0
+1611333519554,52,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-100,text,true,,3268,887,2,2,http://35.190.33.180/en/teste3,52,0,0
+1611333519548,58,GET /en/{searched-page} - View the Searched Page,200,OK,Thread Group 1-96,text,true,,3268,887,2,2,http://35.190.33.180/en/teste3,58,0,0

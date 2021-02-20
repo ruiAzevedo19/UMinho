@@ -1,0 +1,2 @@
+name throughput(tx/s) response_time(s) abort_rate
+/home/Joel/dat_results/settings/full_page_writes/full_page_writes_off.dat 671.3272068447666 0.02221098149637973 0.037180480247869865

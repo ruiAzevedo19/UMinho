@@ -1,0 +1,2 @@
+name throughput(tx/s) response_time(s) abort_rate
+/home/Joel/dat_results/settings/commit_delay/commit_delay_200.dat 424.3797477515596 0.04513395820488266 0.044090538591761236

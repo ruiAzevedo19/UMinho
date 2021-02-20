@@ -1,0 +1,2 @@
+name throughput(tx/s) response_time(s) abort_rate
+/home/Joel/dat_results/checkpoint/checkpoint_warning/checkpoint_warning_10.dat 619.6465367376297 0.03007012920660958 0.04239321227935402

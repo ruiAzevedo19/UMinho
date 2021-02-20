@@ -1,0 +1,2 @@
+name throughput(tx/s) response_time(s) abort_rate
+/home/Joel/dat_results/settings/wal_sync_method/wal_sync_method_fsync.dat 480.0986824031032 0.03988332169792965 0.04326165031534688

@@ -1,0 +1,92 @@
+--- 
+- name: Install NodeJS
+  apt:
+    name: nodejs
+    update_cache: yes
+    state: present
+
+- name: Create Wiki.js user
+  user:
+    name: "{{ wikijs_unix_user }}"
+    create_home: yes
+
+- name: Create Wiki.js directory
+  file:
+    path: "{{ wikijs_dir }}"
+    state: directory
+    owner: "{{ wikijs_unix_user }}"
+
+- name: Download Wiki.js distribution
+  get_url:
+    url: "https://github.com/Requarks/wiki/releases/download/2.1.113/wiki-js.tar.gz"
+    dest: "{{ wikijs_dir }}/"
+    owner: "{{ wikijs_unix_user }}"
+
+- name: Extract Wiki.js
+  unarchive:
+    src: "{{ wikijs_dir }}/wiki-js.tar.gz"
+    dest: "{{ wikijs_dir }}"
+    remote_src: true
+    
+- name: Create config file
+  copy:
+    src: "{{ wikijs_dir }}/config.sample.yml"
+    dest: "{{ wikijs_dir }}/config.yml"
+    remote_src: yes
+    owner: "{{ wikijs_unix_user }}"
+
+- name: Wiki.js Configuration - bind port
+  lineinfile:
+    regexp: "^port: \\d*"
+    line: "port: {{ wikijs_port }}"
+    path: "{{ wikijs_dir }}/config.yml"
+
+- name: Wiki.js Configuration - database type
+  lineinfile:
+    regexp: "^\\s{2}type: [a-z]*"
+    line: "  type: {{ wikijs_db_type }}"
+    path: "{{ wikijs_dir }}/config.yml"
+
+- name: Wiki.js Configuration - database ip
+  lineinfile:
+    regexp: "^\\s{2}host: [a-z0-9.]*"
+    line: "  host: {{ wikijs_db_ip }}"
+    path: "{{ wikijs_dir }}/config.yml"
+
+- name: Wiki.js Configuration - database port
+  lineinfile:
+    regexp: "^\\s{2}port: \\d*"
+    line: "  port: {{ wikijs_db_port }}"
+    path: "{{ wikijs_dir }}/config.yml"
+
+- name: Wiki.js Configuration - database user
+  lineinfile:
+    regexp: "^\\s{2}user: \\w*"
+    line: "  user: {{ wikijs_db_user }}"
+    path: "{{ wikijs_dir }}/config.yml"
+
+- name: Wiki.js Configuration - database password
+  lineinfile:
+    regexp: "^\\s{2}pass: \\S*"
+    line: "  pass: {{ wikijs_db_password }}"
+    path: "{{ wikijs_dir }}/config.yml"
+
+- name: Wiki.js Configuration - database name
+  lineinfile:
+    regexp: "^\\s{2}db: \\w*"
+    line: "  db: {{ wikijs_db_name }}"
+    path: "{{ wikijs_dir }}/config.yml"
+
+- name: Give user permissions to the directory
+  shell: chown -R {{ wikijs_unix_user }}:{{ wikijs_unix_user }} {{ wikijs_dir }}
+
+- name: Create Wiki.js Service
+  template:
+    src: "wikijs.service.j2"
+    dest: "/etc/systemd/system/wikijs.service"
+    owner: root
+    mode: '644'
+  notify:
+    - reload daemon
+    - enable wikijs
+    - start wikijs

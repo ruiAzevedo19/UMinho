@@ -1,0 +1,4 @@
+---
+wikijs_unix_user: "wikijs"
+wikijs_dir: "/home/{{ wikijs_unix_user }}/wikijs"  
+wikijs_port: 10000

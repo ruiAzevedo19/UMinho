@@ -1,0 +1,13 @@
+---
+- name: reload daemon
+  command: systemctl daemon-reload
+
+- name: enable wikijs
+  service:
+    name: wikijs    
+    enabled: yes
+    
+- name: start wikijs
+  service:
+    name: wikijs    
+    state: started

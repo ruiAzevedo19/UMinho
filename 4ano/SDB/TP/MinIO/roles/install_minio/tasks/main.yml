@@ -1,0 +1,12 @@
+---
+
+- name: Update System Packages
+  apt:
+      update_cache: yes
+      upgrade: "no"
+
+- name: Install minio server and launch it
+  include_tasks: minio_server.yaml
+
+- name: Install aws and create a bucket for minio
+  include_tasks: aws.yaml

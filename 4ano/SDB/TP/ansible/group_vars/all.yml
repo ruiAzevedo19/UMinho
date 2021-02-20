@@ -1,0 +1,10 @@
+---
+# Mattermost database settings
+mm_db_name: mattermost
+mm_db_user: mmuser
+mm_db_password: mmpassword
+mm_db_driver: mysql
+mm_db_port: 3306
+
+# Docker settings
+docker_stack_name: mattermost

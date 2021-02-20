@@ -1,0 +1,2 @@
+name throughput(tx/s) response_time(s) abort_rate
+/home/Joel/dat_results/settings/synchronous_commit/synchronous_commit_remote_apply.dat 580.9083923560069 0.03275599200586621 0.043064900042652135

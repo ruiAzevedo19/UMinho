@@ -1,0 +1,31 @@
+- name: VM configuration
+  hosts: all
+  become: yes
+  roles:
+      - common
+  tags:
+      - provision
+
+- name: Elastic Configure and Deploy
+  hosts: elastic
+  become: yes
+  roles:
+      - elasticsearch
+  tags:
+      - elastic_install
+
+- name: Kibana Configure and Deploy
+  hosts: kib
+  become: yes
+  roles:
+      - kibana
+  tags:
+      - kibana_install
+
+- name: Beats Configure and Deploy
+  hosts: app
+  become: yes
+  roles:
+      - beats
+  tags:
+      - beats_install

@@ -1,0 +1,222 @@
+drop function if exists tpcc_neworder(int,int,int,int,int,unknown,unknown,unknown);
+
+create function tpcc_neworder(int,int,int,int,int,character,character,character) returns refcursor as 
+'
+declare 
+   _w_id alias for $1;
+   _d_id alias for $2;
+   _c_id alias for $3;
+   _o_ol_cnt alias for $4;
+   _o_all_local alias for $5;
+   __i_id alias for $6; __s_w_id alias for $7; __ol_qty alias for $8;
+
+   _w_tax numeric(4,4);
+   _d_tax numeric(4,4);
+   _c_last char(16);
+   _c_credit char(2);
+   _c_discount numeric(4,4);
+   _i_price numeric(5,2);
+   _i_name char(24);
+   _i_data char(50);
+   _o_entry_d timestamp;
+   _remote_flag int;
+   _s_quantity int;
+   _s_data char(50);
+   _s_dist char(24);
+   _li_no int;
+   _o_id int;
+   _commit_flag int;
+   _li_id int;
+   _li_s_w_id int;
+   _li_qty int;
+   _ol_number int;
+   _c_id_local int;
+
+   _retdistrict district%rowtype;
+   _retitem item%rowtype;
+   _retstock stock%rowtype;
+   _retcustomer customer%rowtype;
+   _retwarehouse warehouse%rowtype;
+   _curtime timestamp;
+   _tempqtd int;
+   _s_remote_cnt int;
+   _s_quantaty int;
+
+   _ret refcursor;
+   
+   _tempinfoi_id text;
+   _tempinfos_w_id text;
+   _tempinfool_qty text;
+   _subinfo text;
+   _posat int;
+   _sep text default '','';
+  
+begin
+
+   _tempinfoi_id:= __i_id;
+   _tempinfos_w_id:= __s_w_id;
+   _tempinfool_qty:= __ol_qty;
+
+   update district set
+   d_next_o_id = d_next_o_id + 1
+   where d_w_id = _w_id and
+   d_id = _d_id;
+
+   select into _retdistrict * from district
+   where d_w_id = _w_id and
+   d_id = _d_id;
+
+   select into _curtime current_timestamp;
+
+   _d_tax := _retdistrict.d_tax; 
+   _o_id := _retdistrict.d_next_o_id;
+   _li_no := 0;
+   _commit_flag := 1;
+
+   while _li_no < _o_ol_cnt loop
+      _li_no := _li_no + 1;
+
+      _posat:=strpos(_tempinfoi_id,_sep);
+      _subinfo:=substr(_tempinfoi_id,1,_posat - 1);
+      _li_id:=cast(_subinfo as int);
+      _tempinfoi_id:=substr(_tempinfoi_id,_posat + 1,length(_tempinfoi_id) - _posat);
+
+      _posat:=strpos(_tempinfos_w_id,_sep);
+      _subinfo:=substr(_tempinfos_w_id,1,_posat - 1);
+       _li_s_w_id := cast(_subinfo as int);
+      _tempinfos_w_id:=substr(_tempinfos_w_id,_posat + 1,length(_tempinfos_w_id) - _posat);
+
+      _posat:=strpos(_tempinfool_qty,_sep);
+      _subinfo:=substr(_tempinfool_qty,1,_posat - 1);
+      _li_qty := cast(_subinfo as int);
+      _tempinfool_qty:=substr(_tempinfool_qty,_posat + 1,length(_tempinfool_qty) - _posat);
+
+      select into _retitem *
+      from item 
+      where i_id = _li_id;
+
+      _i_price := _retitem.i_price;
+      _i_name := _retitem.i_name;
+      _i_data := _retitem.i_data;
+
+      update stock
+         set s_ytd = s_ytd + _li_qty,
+         s_order_cnt = s_order_cnt + 1
+      where s_i_id = _li_id and
+      s_w_id = _li_s_w_id;
+
+      select into _retstock *
+      from stock
+      where s_i_id = _li_id and
+      s_w_id = _li_s_w_id;
+
+      if (_retstock.s_quantity - _li_qty) < 10 then
+         _tempqtd := 91; 
+      else 
+         _tempqtd := 0; 
+      end if;
+      _s_quantity := _retstock.s_quantity - _li_qty + _tempqtd;
+         
+      if _li_s_w_id = _w_id then 
+        _tempqtd:=0; 
+      else 
+        _tempqtd:=1;
+      end if;
+      _s_remote_cnt := _retstock.s_remote_cnt + _tempqtd;
+      _s_data := _retstock.s_data;
+
+      if _d_id = 1 then
+         _s_dist = _retstock.s_dist_01;
+      end if;
+
+      if _d_id = 2 then
+         _s_dist = _retstock.s_dist_02;
+      end if;
+
+      if _d_id = 3 then
+         _s_dist = _retstock.s_dist_03;
+      end if;
+      
+      if _d_id = 4 then
+         _s_dist = _retstock.s_dist_04;
+      end if;
+
+      if _d_id = 5 then
+         _s_dist = _retstock.s_dist_05;
+      end if;
+
+      if _d_id = 6 then
+         _s_dist = _retstock.s_dist_06;
+      end if;
+
+      if _d_id = 7 then
+         _s_dist = _retstock.s_dist_07;
+      end if;
+
+      if _d_id = 8 then
+         _s_dist = _retstock.s_dist_08;
+      end if;
+
+      if _d_id = 9 then
+         _s_dist = _retstock.s_dist_09;
+      end if;
+
+      if _d_id = 10 then
+         _s_dist = _retstock.s_dist_10;
+      end if;
+
+      update stock set s_quantity = _s_quantity,
+      s_remote_cnt = _s_remote_cnt
+      where s_i_id = _li_id and
+      s_w_id = _li_s_w_id;
+
+      if found then
+       -- insert order_line data (using data from item and stock)
+       insert into order_line 
+       (ol_o_id,ol_d_id,ol_w_id,ol_number,ol_i_id,ol_supply_w_id,ol_delivery_d,ol_quantity,ol_amount,ol_dist_info) values
+       (_o_id,_d_id,_w_id,_li_no,_li_id,_li_s_w_id,''dec 31, 1899'',_li_qty,_i_price * _li_qty,_s_dist);
+      else
+        -- no item (or stock) found - triggers rollback condition
+        _commit_flag := 0;
+      end if;
+   end loop;
+
+   -- get customer last name, discount, and credit rating
+   select into _retcustomer *
+   from customer 
+   where c_id = _c_id and
+   c_w_id = _w_id and
+   c_d_id = _d_id;
+   
+   _c_last := _retcustomer.c_last;
+   _c_discount := _retcustomer.c_discount;
+   _c_credit := _retcustomer.c_credit;
+   _c_id_local := _retcustomer.c_id;
+
+   -- insert fresh row into orders table
+   insert into orders 
+   (o_id,o_d_id,o_w_id,o_c_id,o_entry_d,o_carrier_id,o_ol_cnt,o_all_local) values
+   (_o_id, _d_id, _w_id, _c_id_local, _o_entry_d, 0, _o_ol_cnt, _o_all_local);
+
+   -- insert corresponding row into new-order table
+   insert into new_order 
+   (no_o_id,no_d_id,no_w_id) 
+   values (_o_id, _d_id, _w_id);
+   
+   -- select warehouse tax
+   select into _retwarehouse * 
+   from warehouse 
+   where w_id = _w_id;
+   
+   _w_tax:=_retwarehouse.w_tax;
+
+   if not _commit_flag = 1 then
+    raise exception ''TPC-C Generated Abort''; 
+   end if;
+
+   open _ret for select d_next_o_id from district where d_w_id = _w_id and
+                 d_id = _d_id;
+   return _ret;
+end
+'
+language 'plpgsql';

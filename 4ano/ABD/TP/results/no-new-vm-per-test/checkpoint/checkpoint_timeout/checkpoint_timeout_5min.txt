@@ -1,0 +1,2 @@
+name throughput(tx/s) response_time(s) abort_rate
+/home/Joel/dat_results/checkpoint/checkpoint_timeout/checkpoint_timeout_5min.dat 600.6853184988208 0.031709436946633474 0.043614083611935354

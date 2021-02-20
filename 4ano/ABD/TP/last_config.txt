@@ -1,0 +1,12 @@
+# settings
+wal_buffers=32MB
+wal_writer_delay=2000ms
+wal_writer_flush_after=2MB
+commit_delay=10ms
+commit_siblings=16
+#checkpoints
+checkpoint_timeout=15
+max_wal_size=5GB
+min_wal_size=160MB
+checkpoint_completion_target=0.2
+checkpoint_warning=120s

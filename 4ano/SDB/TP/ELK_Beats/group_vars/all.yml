@@ -1,0 +1,4 @@
+---
+#VARS
+elastic_ip: 10.166.0.3
+kibana_ip: 10.132.0.10

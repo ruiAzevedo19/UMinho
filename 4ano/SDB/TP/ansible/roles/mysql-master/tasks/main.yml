@@ -1,0 +1,49 @@
+---
+
+- name: MySQL Configuration File - Uncomment log_bin
+  replace:
+    path: /etc/mysql/mysql.conf.d/mysqld.cnf
+    regexp: '^# log_bin'
+    replace: "log_bin"
+  notify:
+    - Restart MySQL
+  tags:
+    - master-logbin
+    - db-master
+    - db 
+
+- name: MySQL - Create User 
+  mysql_query:
+    query: "CREATE USER IF NOT EXISTS '{{ mm_db_user }}'@'%' IDENTIFIED
+              WITH caching_sha2_password 
+              BY '{{ mm_db_password }}'"
+  tags:
+    - master-createuser
+    - db-master
+    - db
+
+
+- name: MySQL - Grant Replication Slave
+  mysql_query:
+    query: "GRANT REPLICATION SLAVE ON *.* TO '{{ mm_db_user }}'@'%'"
+  tags:
+    - master-grant-replication-slave
+    - db-master
+    - db
+
+- name: MySQL - Dump Mattermost Database
+  shell: mysqldump -uroot --all-databases --master-data --get-server-public-key > /tmp/masterdump.sql
+  tags:
+    - master-dump
+    - db-master
+    - db 
+
+- name: MySQL - Copy Dump File
+  fetch: 
+    src: /tmp/masterdump.sql 
+    dest: /tmp/ 
+    flat: yes
+  tags:
+    - master-fetchdump
+    - db-master
+    - db

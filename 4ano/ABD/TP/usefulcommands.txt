@@ -1,0 +1,93 @@
+##################################################################################
+#								 COMANDOS SCRIPTS 								 #
+##################################################################################
+
+# Copiar pasta scripts para servidor na google cloud
+gcloud compute scp --recurse ./scripts/ server-joel:
+gcloud compute scp --recurse ./scripts/ bench-joel:
+
+----------------------------- Testes Automáticos (Bench Server Side)
+
+# Teste automático para os clientes (80 warehouses), dump.file precisa de ser o path completo
+./scripts/autotest_clients.sh Joel 80 dump.file
+
+# Teste automático para as settings (80 warehouses, 100 cli), dump.file precisa de ser o path completo
+./scripts/autotest_settings.sh Joel 80 dump.file 100
+
+# Teste automático para o archiving (80 warehouses, 100 cli), dump.file precisa de ser o path completo
+./scripts/autotest_archiving.sh Joel 80 dump.file 100
+
+# Teste automático para o checkpoint (80 warehouses, 100 cli), dump.file precisa de ser o path completo
+./scripts/autotest_checkpoint.sh Joel 80 dump.file 100
+
+# Teste automatico para o isolation (80 warehouses, 100 cli), dump.file precisa de ser o path completo
+./scripts/autotest_isolation.sh Joel 80 dump.file 100
+
+# Teste automatico para as combinações (80 warehouses, 100 cli), dump.file precisa de ser o path completo
+./scripts/autotest_combinations.sh Joel 80 dump.file 100
+
+----------------------------- Database Server Side Scripts
+
+# Opção -i é para configurar de início (clean install), -d é para usar discos locais da Google
+./scripts/dbserverconfiguration.sh -a server-joel -n 10.128.0.0 -d -i
+
+# Recuperação depois de dar Restart ao servidor na Google Cloud (só não tem a opção -i)
+./scripts/dbserverconfiguration.sh -a server-joel -n 10.128.0.0 -d
+
+# Apagar pasta data do PostgresSQL e criar uma nova e lançar server, caso se usem discos locais usar opção -d
+./scripts/dbservercleanpostgresdata.sh -a server-joel -n 10.128.0.0 -d
+
+----------------------------- Bench Server Side Scripts
+
+# Fazer clean install do servidor de benchmark, EXECUTA o load.sh
+./scripts/benchmarkconfiguration.sh -s server-joel -u Joel -w 80
+
+# Limpar base de dados previamente configurada (drop tpcc) e EXECUTA o load.sh
+./scripts/cleancreatedb.sh -s server-joel -u Joel -w 80
+
+# Restaurar a base de dados a partir de um ficheiro de backup
+./scripts/restoredb.sh -s server-joel -w 80 -b tpcc.dump
+
+# Correr o script de transações (run.sh) dado servidor, user da base de dados e o numero de warehouses e clientes
+# Vai alterar o database.properties do tpcc, antes não o fazia e quando queríamos testar num server diferente do inicial foi necessário isto.
+./scripts/runclients.sh -s server-joel -u Joel -w 80 -c 100
+
+##################################################################################
+#						     ENF OF COMANDOS SCRIPTS 							 #
+##################################################################################
+
+# Ver tamanho da BD
+SELECT pg_size_pretty( pg_database_size('tpcc') );
+
+# Iniciar postgres
+/usr/lib/postgresql/12/bin/postgres -D /mnt/disks/postgresql/data -k.
+
+# Parar postgres
+/usr/lib/postgresql/12/bin/pg_ctl -D /mnt/disks/postgresql/data stop
+
+# Backup da base de dados
+pg_dump -h server-joel -Fc tpcc > tpcc.dump
+
+# Restaurar base de dados (a opção -c é para apagar os dados anteriores)
+pg_restore -h server-joel -c -d tpcc < tpcc.dump
+
+# Correr carga transacional (pasta: ~/tpc-c-0.1-SNAPSHOT)
+./run.sh
+
+# Copiar ficheiro resultante do run para máquina local (correr este comando dentro da pasta de benchmark/results/<nclients>)
+gcloud compute scp bench-joel:~/tpc-c-0.1-SNAPSHOT/TPCC\* .
+
+# Ver resultados do benchmark na linha de comandos
+./showtpc.py -bc TPCC.......dat
+
+# Ver resultados do benchmark com plot de gráfico
+./showtpc.py -bc -p TPCC.......dat
+
+# Ver transações executadas
+vi TPCC.......dat
+
+# Filtrar resultados por transação e ver na linha de comandos
+./showtpc.py -bc -t "neworder" TPCC.......dat
+
+# Filtrar resultados por transação e ver com plot de gráfico
+./showtpc.py -bc -p -t "neworder" TPCC.......dat

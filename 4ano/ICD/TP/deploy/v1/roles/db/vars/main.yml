@@ -1,0 +1,10 @@
+---
+db_packages:
+  - postgresql-{{ postgresql_version }}
+  - postgresql-client-{{ postgresql_version }}
+  - postgresql-contrib-{{ postgresql_version }}
+  - libpq-dev
+  - python3-pip
+  - acl
+
+

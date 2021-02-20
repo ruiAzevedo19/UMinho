@@ -1,0 +1,41 @@
+drop function if exists tpcc_stocklevel(int,int,int);
+
+create function tpcc_stocklevel(int,int,int) returns refcursor as
+'
+declare
+__w_id alias for $1;
+__d_id alias for $2;
+__threshhold alias for $3;
+
+_o_id_low int;
+_o_id_high int;
+
+_retdistrict district%rowtype;
+_ret refcursor;
+
+begin
+
+   select into _retdistrict *
+   from district
+   where d_w_id = __w_id and
+   d_id = __d_id;
+
+
+   _o_id_low = _retdistrict.d_next_o_id - 20;
+   _o_id_high = _retdistrict.d_next_o_id - 1;
+
+   open _ret for select count(distinct(s_i_id))
+       from stock, order_line
+   where ol_w_id = __w_id and
+   ol_d_id = __d_id and
+   ol_o_id between _o_id_low and
+   _o_id_high and
+   s_w_id = ol_w_id and
+   s_i_id = ol_i_id and
+   s_quantity < __threshhold;
+
+   return _ret;
+
+end
+'
+language 'plpgsql';

@@ -1,0 +1,2 @@
+name throughput(tx/s) response_time(s) abort_rate
+/home/Joel/dat_results/settings/commit_delay/commit_delay_10.dat 624.3614693958217 0.029525395339022164 0.04175267720980394

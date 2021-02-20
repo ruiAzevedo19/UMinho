@@ -1,0 +1,2 @@
+name throughput(tx/s) response_time(s) abort_rate
+/home/Joel/dat_results/settings/fsync/fsync.dat 694.5720953069228 0.008775799623519693 0.011218747913909755

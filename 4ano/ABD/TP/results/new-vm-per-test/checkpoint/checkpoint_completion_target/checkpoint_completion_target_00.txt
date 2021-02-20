@@ -1,0 +1,2 @@
+name throughput(tx/s) response_time(s) abort_rate
+/home/Joel/dat_results/checkpoint/checkpoint_completion_target/checkpoint_completion_target_00.dat 557.7997169677025 0.03419419632804408 0.04461878262865011

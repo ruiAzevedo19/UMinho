@@ -1,0 +1,49 @@
+---
+
+- name: Update package list
+  apt:
+    update_cache: yes
+  tags:
+    - db-install
+
+- name: Install MySQL
+  apt:
+    name: 
+      - mysql-server
+      - vim
+      - python3-mysqldb
+    state: present
+  tags:
+    - db-install
+    - db
+
+- name: Start MySQL service
+  service: 
+    name: mysql
+    state: started
+    enabled: true
+  tags:
+    - db-install
+
+- name: MySQL Configuration File - Set bind address 
+  replace:
+    path: /etc/mysql/mysql.conf.d/mysqld.cnf
+    regexp: '^bind-address.*'
+    replace: "bind-address = {{ ansible_all_ipv4_addresses[0] }}"
+  notify:
+    - Restart MySQL
+  tags:
+    - db-install
+    - db
+
+- name: MySQL Configuration File - Set server-id
+  replace:
+    path: /etc/mysql/mysql.conf.d/mysqld.cnf
+    regexp: '^# server-id.*'
+    replace: "server-id = {{ id }}"
+  notify:
+    - Restart MySQL
+  tags:
+    - db-install
+    - db
+

@@ -1,0 +1,9 @@
+---
+- name: restart beats
+  service:
+    name: "{{ item }}"
+    state: restarted
+  with_items:
+    - metricbeat
+    - filebeat
+    - packetbeat

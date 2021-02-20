@@ -1,0 +1,125 @@
+drop function if exists tpcc_delivery(int,int);
+
+create function tpcc_delivery(int,int) returns refcursor as
+'
+  declare
+     _w_id alias for $1;
+     _o_carrier_id alias for $2;
+     _ret refcursor;
+
+     _retneworder new_order%rowtype;
+     _retorders orders%rowtype;
+     _retorderline order_line%rowtype;
+
+     _d_id int;
+     _o_id int;
+     _c_id int;
+     _total numeric(12,2);
+     _oid1 int;
+     _oid2 int;
+     _oid3 int;
+     _oid4 int;
+     _oid5 int;
+     _oid6 int;
+     _oid7 int;
+     _oid8 int;
+     _oid9 int;
+     _oid10 int;
+
+  begin
+
+     _d_id := 0;
+
+     while _d_id < 10 loop
+        _d_id := _d_id + 1;
+        _total := 0;
+        _o_id := 0;
+
+        select into _retneworder * 
+        from new_order
+        where no_w_id = _w_id and no_d_id = _d_id
+        order by no_o_id asc
+        limit 1;
+
+        _o_id := _retneworder.no_o_id;
+
+        if found then
+           delete from new_order
+           where no_w_id = _w_id and
+           no_d_id = _d_id and
+           no_o_id = _o_id;
+
+           update orders
+           set o_carrier_id = _o_carrier_id
+           where o_w_id = _w_id and
+           o_d_id = _d_id and
+           o_id = _o_id;
+
+           select into _retorders * 
+           from orders
+           where o_w_id = _w_id and
+           o_d_id = _d_id and
+           o_id = _o_id;
+
+           _c_id := _retorders.o_c_id;
+
+           update order_line
+             set ol_delivery_d = current_timestamp
+             where ol_w_id = _w_id and
+             ol_d_id = _d_id and
+             ol_o_id = _o_id;
+
+          select into _retorderline * 
+          from order_line
+             where ol_w_id = _w_id and
+             ol_d_id = _d_id and
+             ol_o_id = _o_id;
+
+           _total := _total + _retorderline.ol_amount;
+           
+           update customer
+           set c_balance = c_balance + _total,
+           c_delivery_cnt = c_delivery_cnt + 1
+           where c_w_id = _w_id and
+           c_d_id = _d_id and
+           c_id = _c_id;
+        end if;
+   
+        if _d_id = 1 then 
+            _oid1:=_o_id;
+        end if;
+        if _d_id = 2 then 
+            _oid2:=_o_id;
+        end if;
+        if _d_id = 3 then 
+            _oid3:=_o_id;
+        end if;
+        if _d_id = 4 then 
+            _oid4:=_o_id;
+        end if;
+        if _d_id = 5 then 
+            _oid5:=_o_id;
+        end if;
+        if _d_id = 6 then 
+            _oid6:=_o_id;
+        end if;
+        if _d_id = 7 then 
+            _oid7:=_o_id;
+        end if;
+        if _d_id = 8 then 
+            _oid8:=_o_id;
+        end if;
+        if _d_id = 9 then 
+            _oid9:=_o_id;
+        end if;
+        if _d_id = 10 then 
+            _oid10:=_o_id;
+        end if;
+   end loop;
+
+   open _ret for select _oid1,_oid2,_oid3,_oid4,_oid5,
+                       _oid6,_oid7,_oid8,_oid9,_oid10;
+   return _ret;
+end
+'
+language 'plpgsql';

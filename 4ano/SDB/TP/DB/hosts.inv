@@ -1,0 +1,10 @@
+[db_master_server]
+34.69.179.70
+
+[db_master_internal_ip]
+10.128.0.45
+
+[db_read_servers]
+35.192.175.37
+34.71.45.167
+

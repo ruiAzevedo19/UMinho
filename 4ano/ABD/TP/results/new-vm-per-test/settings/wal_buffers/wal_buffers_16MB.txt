@@ -1,0 +1,2 @@
+name throughput(tx/s) response_time(s) abort_rate
+/home/Joel/dat_results/settings/wal_buffers/wal_buffers_16MB.dat 601.4456399577349 0.03146636439043031 0.04348988861204096

@@ -1,0 +1,35 @@
+- name: Update System Packages
+  apt:
+      update_cache: yes
+      upgrade: "no"
+
+- name: Install pip3
+  apt:
+    name: python3-pip
+    state: present
+
+- name: Install nginx
+  apt:
+    name: nginx
+    state: present
+
+- name: Copy template into correct location 
+  template:
+    src: mm_nginx_config
+    dest: "/etc/nginx/sites-available/mattermost"
+    owner: root
+    group: root
+
+- name: Delete default nginx file
+  file:
+    path: "/etc/nginx/sites-enabled/default"
+    state: absent
+
+- name: Create symlink for the mattermost config file
+  file:
+    src: "/etc/nginx/sites-available/mattermost"
+    dest: "/etc/nginx/sites-enabled/mattermost"
+    owner: root
+    group: root
+    state: link
+  notify: restart nginx

@@ -1,0 +1,48 @@
+---
+#
+# Installing Kibana
+#
+
+# Adds the apt-key for Elasticsearch
+- name: Add Elasticsearch apt-key
+  apt_key:
+    url: "https://packages.elastic.co/GPG-KEY-elasticsearch"
+    state: present
+
+# Add Kibana APT-repository
+- name: Adding Kibana APT repository
+  apt_repository:
+    repo: deb https://artifacts.elastic.co/packages/7.x/apt stable main
+    state: present
+
+# Install Kibana
+- name: Update repositories cache and install Kibana
+  apt:
+    name: kibana
+    update_cache: yes
+
+# Update kibana config file to only accept local connections
+- name: Updating the config file to restrict outside access
+  lineinfile:
+    destfile: /etc/kibana/kibana.yml
+    # Line to Search/Match against
+    regexp: "{{ item.From }}"
+    # Line to Replace with
+    line: "{{ item.To }}"
+    state: present 
+  with_items:
+    - { From: '#server.host: "localhost"', To: 'server.host: 0.0.0.0'}
+    - { From: '#elasticsearch.hosts: ["http://localhost:9200"]', To: 'elasticsearch.hosts: ["http://{{ elastic_host }}:9200"]'} 
+
+# Enable Kibana service
+- name: Enabling Kibana service
+  systemd:
+    name: kibana
+    enabled: yes
+    daemon_reload: yes
+
+# Start Kibana service
+- name: Starting Kibana service
+  systemd:
+    name: kibana
+    state: started

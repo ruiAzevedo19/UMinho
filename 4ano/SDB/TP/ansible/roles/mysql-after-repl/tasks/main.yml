@@ -1,0 +1,9 @@
+---
+
+- name: MySQL - Create Mattermost Database
+  mysql_query:
+    query: "CREATE DATABASE {{ mm_db_name }}"
+  tags:
+    - master-createdb
+    - db-after-repl
+    - db

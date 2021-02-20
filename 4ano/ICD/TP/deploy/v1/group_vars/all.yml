@@ -1,0 +1,9 @@
+---
+# Wiki JS database settings
+postgresql_version: 12
+wikijs_db_type: postgres
+wikijs_db_ip: 10.132.0.19
+wikijs_db_port: 5432
+wikijs_db_name: wiki
+wikijs_db_user: wikijs
+wikijs_db_password: wikijsrocks

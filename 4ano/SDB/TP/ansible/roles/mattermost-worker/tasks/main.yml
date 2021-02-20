@@ -1,0 +1,60 @@
+---
+
+- name: install required software
+  apt:
+    name: ['wget', 'apt-transport-https', 'ca-certificates', 'curl', 'software-properties-common']
+    state: latest
+
+- name: add docker repo key
+  apt_key: 
+    url: https://download.docker.com/linux/ubuntu/gpg
+    id: 0EBFCD88
+    state: present
+
+- name: add docker repository
+  apt_repository:
+    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable
+    state: present
+
+- name: install required software
+  apt:
+    name: ['python3-pip','docker-ce']
+    state: latest
+
+- name: normal user permitions
+  command: usermod -aG docker ${USER}
+
+- name: download and install docker-compose
+  get_url: 
+        url: https://github.com/docker/compose/releases/download/1.23.1/docker-compose-linux-x86_64 
+        dest: /usr/local/bin/docker-compose
+        mode: u+x
+
+- name: install docker-py for ansible docker modules
+  command: pip3 install docker docker-compose
+
+- name: create necessary folders to mount the stack
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: root
+    group: root
+    mode: 0775
+  loop:
+    - /var/lib/mattermost/cert
+    - /var/lib/mattermost/config
+    - /var/lib/mattermost/data
+    - /var/lib/mattermost/logs
+    - /var/lib/mattermost/plugins
+
+- name: change folders permissions
+  shell: chown -R 2000:2000 /var/lib/mattermost/
+
+- name: enter in the docker swarm cluster
+  docker_swarm:
+    state: join
+    advertise_addr: "{{ groups['mm-app-01'][1] }}"
+    join_token: "{{ hostvars[groups['mm-app-01'][0]]['swarm_worker_token']['stdout'] }}"
+    remote_addrs: [ "{{ groups['mm-app-01'][1] }}:2377" ]
+
+

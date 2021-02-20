@@ -1,0 +1,2 @@
+name throughput(tx/s) response_time(s) abort_rate
+/home/Joel/dat_results/checkpoint/max_wal_size/max_wal_size_3GB.dat 604.2296838298664 0.030708374701103297 0.04291169621427743

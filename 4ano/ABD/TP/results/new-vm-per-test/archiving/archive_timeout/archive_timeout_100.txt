@@ -1,0 +1,2 @@
+name throughput(tx/s) response_time(s) abort_rate
+/home/Joel/dat_results/archiving/archive_timeout/archive_timeout_100.dat 564.7061457266465 0.033626174430128844 0.04277169298491108

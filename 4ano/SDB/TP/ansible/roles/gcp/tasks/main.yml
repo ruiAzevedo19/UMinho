@@ -1,0 +1,145 @@
+---
+- name: create a disk
+  gcp_compute_disk:
+    name: "{{ item }}"
+    size_gb: "{{ disk_size }}"
+    source_image: "{{ source_image }}"
+    zone: "{{ gcp_zone }}"
+    project: "{{ gcp_project }}"
+    auth_kind: "{{ gcp_cred_kind }}"
+    service_account_file: "{{ gcp_cred_file }}"
+    state: present
+  register: disk
+  loop: "{{ disks }}"
+
+- name: create a network
+  gcp_compute_network:
+    name: "mattermost-network"
+    auto_create_subnetworks: 'true'
+    project: "{{ gcp_project }}"
+    auth_kind: "{{ gcp_cred_kind }}"
+    service_account_file: "{{ gcp_cred_file }}"
+    state: present
+  register: network
+
+- name: create a address
+  gcp_compute_address:
+    name: "{{ item }}"
+    region: "{{ gcp_region }}"
+    project: "{{ gcp_project }}"
+    auth_kind: "{{ gcp_cred_kind }}"
+    service_account_file: "{{ gcp_cred_file }}"
+    state: present
+  register: address
+  loop: "{{ addresses }}"
+
+- name: internal/external firewall rules
+  gcp_compute_firewall:
+    name: "internal-external-rules"
+    allowed:
+      - ip_protocol: tcp
+        ports:
+          - '22'
+          - '80'
+          - '10022'
+          - '10080'
+          - '9200'
+          - '9300'
+          - '5601'
+      - ip_protocol: icmp
+    network: {"global/networks/{{ network }}"}
+    project: "{{ gcp_project }}"
+    auth_kind: "{{ gcp_cred_kind }}"
+    service_account_file: "{{ gcp_cred_file }}"
+    state: present
+
+- name: internal firewall rules
+  gcp_compute_firewall:
+    name: "internal-rules"
+    allowed:
+      - ip_protocol: tcp
+        ports:
+          - '6380'
+          - '5432'
+          - '10022'
+          - '10080'
+    source_ranges:
+      - '10.132.0.0/20'
+    network: {"global/networks/{{ network }}"}
+    project: "{{ gcp_project }}"
+    auth_kind: "{{ gcp_cred_kind }}"
+    service_account_file: "{{ gcp_cred_file }}"
+    state: present
+
+- name: create a instance
+  gcp_compute_instance:
+    name: "instance-{{ item.tag }}"
+    machine_type: "{{ gcp_machine_type }}"
+    disks:
+      - auto_delete: true
+        boot: true
+        source: "{{ disk.results[item.index - 1] }}"
+    metadata:
+      startup-script: |
+        #!/bin/bash
+        ls
+    tags:
+      items: "{{ item.tag }}"
+    network_interfaces:
+      - network: "{{ network }}"
+        access_configs:
+        - name: External NAT
+          nat_ip: "{{ address.results[item.index - 1] }}"
+          type: ONE_TO_ONE_NAT
+    zone: "{{ gcp_zone }}"
+    project: "{{ gcp_project }}"
+    auth_kind: "{{ gcp_cred_kind }}"
+    service_account_file: "{{ gcp_cred_file }}"
+    state: present
+  register: instance
+  loop: "{{ instances }}"
+
+- name: Add hosts to in memory inventory
+  add_host:
+    name: "{{ item.networkInterfaces[0].accessConfigs[0].natIP }}"
+    groups: "{{ item.tags['items'] | join(',') }}"
+  loop: "{{ instance.results }}"
+
+- name: Wait for instances to respond
+  wait_for:
+    host: "{{ item }}"
+    port: 22
+  loop: "{{ groups['all'] }}"
+
+- name: wait for SSH for instances
+  wait_for:
+    delay: 10
+    host: "{{ instance.results[0].networkInterfaces[0].accessConfigs[0].natIP }}"
+    port: 22
+    state: started
+
+- name: Add master sql internal ip to in memory inventory
+  add_host:
+    name: "{{ instance.results[3].networkInterfaces[0].networkIP }}"
+    groups: master_internal_ip
+
+- name: Add read replica sql internal ip to in memory inventory
+  add_host:
+    name: "{{ instance.results[4].networkInterfaces[0].networkIP }}"
+    groups: rr_01_internal_ip
+
+- name: Add read replica sql internal ip to in memory inventory
+  add_host:
+    name: "{{ instance.results[5].networkInterfaces[0].networkIP }}"
+    groups: rr_02_internal_ip
+
+- name: Add elastic internal ip to in memory inventory
+  add_host:
+    name: "{{ instance.results[2].networkInterfaces[0].networkIP }}"
+    groups: elastic_internal_ip
+
+- name: Add MinIO internal ip to in memory inventory
+  add_host:
+    name: "{{ instance.results[7].networkInterfaces[0].networkIP }}"
+    groups: minio_internal_ip
+

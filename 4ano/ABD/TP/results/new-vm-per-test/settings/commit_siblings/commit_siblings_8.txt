@@ -1,0 +1,2 @@
+name throughput(tx/s) response_time(s) abort_rate
+/home/Joel/dat_results/settings/commit_siblings/commit_siblings_8.dat 544.7155839784585 0.03497865624452891 0.043028767973824

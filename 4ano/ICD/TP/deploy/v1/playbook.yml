@@ -1,0 +1,17 @@
+---
+
+- name: DB install and start
+  hosts: database_server 
+  become: yes
+  roles:
+    - db
+  tags: 
+    - dbinstall
+
+- name: WikiJS configure, install and deploy
+  hosts: wikijs_webserver
+  become: yes
+  roles:
+    - wikijs
+  tags:
+    - appinstall

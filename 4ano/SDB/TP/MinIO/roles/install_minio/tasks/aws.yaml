@@ -1,0 +1,32 @@
+- name: Install pip3
+  apt:
+    name: python3-pip
+
+- name: Install aws cli application
+  pip:
+    name: awscli
+
+- name: Create aws directory
+  file:
+    path: "~/.aws"
+    state: directory
+    owner: root
+    group: root
+    mode: 0750
+
+- name: Check for existing credentials
+  stat:
+    path: "~/.aws/credentials"
+  register: aws_credentials_stat_result
+
+- name: Create aws credentials
+  template:
+    src: aws_credentials
+    dest: "~/.aws/credentials"
+    owner: "root"
+    group: "root"
+  when: not aws_credentials_stat_result.stat.exists
+
+- name: Create bucket for Mattermost usage
+  shell: aws --endpoint-url http://127.0.0.1:9009 --no-verify-ssl s3 mb s3://mattermost-media
+  when: not aws_credentials_stat_result.stat.exists

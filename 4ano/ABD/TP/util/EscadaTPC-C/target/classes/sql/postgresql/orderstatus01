@@ -1,0 +1,93 @@
+drop function if exists tpcc_orderstatus(int,int,int,char(16));
+
+create function tpcc_orderstatus(int,int,int,char(16)) returns refcursor as
+'
+declare
+
+__w_id alias for $1;
+__d_id alias for $2;
+__c_id alias for $3;
+__c_last alias for $4;
+
+_c_balance numeric(12,2);
+_c_first char(16);
+_c_middle char(2);
+_o_id int;
+_o_entry_d timestamp;
+_o_carrier_id int;
+_cnt int;
+_c_id int;
+_c_last char(16);
+
+_retcustomer customer%rowtype;
+_retorders orders%rowtype;
+_retorderline order_line%rowtype;
+
+_ret refcursor;
+
+begin
+   if  __c_id = 0 then
+       select into _retcustomer *
+       from customer
+       where c_last = __c_last and
+       c_w_id = __w_id and
+       c_d_id = __d_id
+       order by c_w_id, c_d_id, c_last, c_first limit 1;
+
+       GET DIAGNOSTICS _cnt = ROW_COUNT;       
+          
+       _c_id  := _retcustomer.c_id;
+       _c_last := _retcustomer.c_last; 
+       _c_balance := _retcustomer.c_balance;
+       _c_first := _retcustomer.c_first;
+       _c_middle := _retcustomer.c_middle;
+   else
+       -- get customer info if by id
+       select into _retcustomer * 
+       from customer 
+       where c_id = __c_id and
+       c_d_id = __d_id and
+       c_w_id = __w_id;
+
+       GET DIAGNOSTICS _cnt = ROW_COUNT;       
+
+       _c_id := _retcustomer.c_id;
+       _c_last := _retcustomer.c_last; 
+       _c_balance := _retcustomer.c_balance;
+       _c_first := _retcustomer.c_first;
+       _c_middle := _retcustomer.c_middle;
+
+   end if;
+
+   if _cnt = 0 then
+       raise exception ''Customer not found (rowcount - %, warehouse - %, district - %, lastname %, idcust - %)'',_cnt,__w_id,__d_id,__c_last,__c_id;
+   else 
+      -- get order info
+      select into _retorders *
+      from orders 
+      where o_c_id = _c_id and
+      o_d_id = __d_id and
+      o_w_id = __w_id
+      order by o_id asc limit 1;
+      
+      -- get order info
+      _o_id = _retorders.o_id;
+      _o_entry_d = _retorders.o_entry_d;
+      _o_carrier_id = _retorders.o_carrier_id;
+
+      -- select order lines for the current order
+      select into _retorderline *
+        from order_line 
+        where ol_o_id = _o_id and
+        ol_d_id = __d_id and
+        ol_w_id = __w_id;
+
+   end if;
+
+   open _ret for select _o_id, _c_id,  _c_first,  _c_middle,
+                 _o_entry_d, _o_carrier_id, _c_balance;
+
+   return _ret;
+end
+'
+language 'plpgsql';

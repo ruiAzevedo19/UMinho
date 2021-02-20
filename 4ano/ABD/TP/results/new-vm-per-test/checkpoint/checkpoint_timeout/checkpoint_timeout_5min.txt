@@ -1,0 +1,2 @@
+name throughput(tx/s) response_time(s) abort_rate
+checkpoint_timeout_5min.dat 635.742981853877 0.027763617753065326 0.04102700611828122

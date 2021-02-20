@@ -1,0 +1,63 @@
+---
+#
+# Installing Beats
+#
+
+# Adds the apt-key for Elasticsearch
+- name: Add Elasticsearch apt-key
+  apt_key:
+    url: "https://packages.elastic.co/GPG-KEY-elasticsearch"
+    state: present
+
+# Add Beats APT-repository
+- name: Adding Beats APT repository
+  apt_repository:
+    repo: deb https://artifacts.elastic.co/packages/7.x/apt stable main
+    state: present
+
+# Install MetricBeat, PacketBeat, FileBeat
+- name: Update repositories cache and install Beats
+  apt:
+    name: ['metricbeat', 'packetbeat', 'filebeat']
+    update_cache: yes
+
+#Copy Beats Config Files
+- name: Copy Beats configuration files
+  template:
+    src: "{{ item }}"
+    dest: "/etc/{{ item }}/{{ item }}.yml"
+  with_items:
+    - filebeat
+    - metricbeat
+    - packetbeat
+
+# Enable *Beats service
+- name: Enabling Beats services
+  systemd:
+    name: "{{ item }}"
+    enabled: yes
+    daemon_reload: yes
+  with_items:
+    - metricbeat
+    - filebeat
+    - packetbeat
+
+# Start *Beats services
+- name: Starting Beats services
+  systemd:
+    name: "{{ item }}"
+    state: started
+  with_items:
+    - metricbeat
+    - packetbeat
+    - filebeat
+
+# Beats Setup
+- name:  Beats Setup
+  shell: "{{ item }}" 
+  with_items:
+   - metricbeat setup
+   - packetbeat setup
+   - filebeat setup
+  notify: restart beats
+

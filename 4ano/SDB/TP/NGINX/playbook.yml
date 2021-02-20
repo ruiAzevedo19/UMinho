@@ -1,0 +1,7 @@
+---
+# MUST BE RUN WITH -K
+-   name: NGINX installation
+    hosts: nginx_one
+    become: yes
+    roles:
+        - install_nginx

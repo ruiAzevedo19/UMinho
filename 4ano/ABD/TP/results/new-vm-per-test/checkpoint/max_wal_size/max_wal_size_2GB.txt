@@ -1,0 +1,2 @@
+name throughput(tx/s) response_time(s) abort_rate
+max_wal_size_2GB.dat 651.4825051650887 0.026060101345032224 0.03991576060338917

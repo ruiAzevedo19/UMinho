@@ -1,0 +1,111 @@
+# Description:
+
+Escada TPC-C is an easy to use JDBC benchmark that closely resembles the TPC-C standard for OLTP.
+DB's supported include PostgreSQL, MySQL, and Derby.
+
+# Requirements
+
+All dependencies are automatically fetched by Maven.
+
+# Build
+
+Once you have downloaded the source directory you should change dir into it and issue:
+
+  mvn package
+
+This creates a zip or tar.gz with the full benchmark in the target folder.
+
+# Configuration
+
+Inside the tar.gz there are the required libraries (in lib folder),
+two UNIX scripts (one for populate and other to run clients), a script folder
+with the SQL script do create database for each supported DB and a folder etc with the configuration files.
+This etc folder contains the:
+
+- log4j.xml: To configure the proper logger level.
+- database-config.properties: To configure the database connection url, driver, username
+ and password.
+- workload-config.properties: To configure workload parameters.
+    - tpcc.number.warehouses: Set the number of warehouse to populate the database.
+    - db.class: String <class> used to instantiate the database
+        - escada.tpc.tpcc.database.transaction.derby.dbDerby for derby
+        - escada.tpc.tpcc.database.transaction.postgresql.dbPostgresql for Postgresql
+        - escada.tpc.tpcc.database.transaction.mysql.dbTransactionMySql for MySQL
+    - eb.class: Factory <class> used to create EBs
+    - st.class: Defines the class used as a state machine for emulation
+    - st: Starting time for ramp-up, useful for synchronizing multiple RBEs.
+    - ru: Ramp-up time, seconds used to warm-up the simulator.
+    - rd: Ramp-down time, seconds of steady-state operation following measurement interval.
+    - trace.flag: It defines the usage of trace file or not (NOTRACE,TRACE,TRACESTRING,TRACETIME)
+    - prefix: It defines the composition of the trace file identification and is also used as a component of the emulator id
+    - pool.size: The number of entries available for connection pool...
+    - pool.enabled: If the pool is enabled or not.
+    - measurement.time: Measurement interval, minutes used for measuring SUT performance.
+    - resubmit.aborted: It enables the transaction resubmission when an error occurs.
+    - measurement.think.time: Enables/Disables user keying time
+    - frag: It shifts the clients in order to access different warehouses...
+    - hostId: Host identifier, allow to have statistics per host.
+    - clients: Number of clients concurrently accessing the database.
+    - tpcc.prob.NewOrder: probability of NewOrder transaction
+    - tpcc.prob.Payment: probability of Payment transaction.
+    - tpcc.prob.OrderStatus: probability of OrderStatus transaction.
+    - tpcc.prob.Delivery: probability of Delivery transaction.
+    - tpcc.prob.StockLevel: probability of StockLevel transaction.
+
+
+# Instructions for running
+
+The benchmark can be run as a daemon and populate and
+clients are started through JMX or executed directly:
+
+# Instructions for running
+
+ A.) JMX
+
+        $ ./jmx.sh or java escada.tpc.jmx.JmxStarter
+
+     1. DatabasePopulateMBean.populate()
+     2. ClientEmulationStartupMBean.startClients(key,machine,clients,frag,exit);
+ B.) Direct
+
+    1. Populate database.
+        $ ./load.sh or java escada.tpc.tpcc.database.populate.jmx.DatabasePopulate
+    2. Run clients.
+        $ ./run.sh or java escada.tpc.common.clients.jmx.ClientEmulationStartup
+        The class can be invoked without parameters or passing any of the following parameters
+        to ease several runs with similar configuration.
+
+        usage: ClientEmulationStartup
+         -clients <arg>              Number of clients concurrently accessing the
+                                     database.
+         -dbConnectionString <arg>   Database JDBC url.
+         -frag <arg>                 It shifts the clients in order to access
+                                     different warehouses.
+         -hostId <arg>               Host identifier, allow to have statistics per
+                                     host.
+
+
+# Feedback
+
+Updated source and an issue tracker are available at:
+
+        https://github.com/rmpvilaca/EscadaTPC-C
+
+Your feedback is welcome.
+
+# Authors
+
+The following people have contributed to this project from 2004 to 2008 within the GORDA project (FP6-IST2-004758):
+ - Alfranio Correia
+ - Luis Soares
+ - Miguel Matos
+ - Nuno Carvalho
+ - Ricardo Vilaca
+
+# Acknowledgement
+
+This project has been partially supported by the EU Comission through the GORDA project (FP6-IST2-004758).
+
+# Contact
+
+Ricardo Vilaca (<rmvilaca@di.uminho.pt>)

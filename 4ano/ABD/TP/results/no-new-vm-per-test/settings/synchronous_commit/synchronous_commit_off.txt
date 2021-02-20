@@ -1,0 +1,2 @@
+name throughput(tx/s) response_time(s) abort_rate
+/home/Joel/dat_results/settings/synchronous_commit/synchronous_commit_off.dat 676.1427258293639 0.015689942407988735 0.017023964753427875

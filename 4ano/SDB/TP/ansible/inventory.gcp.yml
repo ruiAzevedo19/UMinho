@@ -1,0 +1,11 @@
+plugin: gcp_compute
+projects:
+  - sdb-2020
+
+keyed_groups:
+  - prefix: ''
+    separator: ''
+    key: tags['items']
+
+auth_kind: serviceaccount
+service_account_file: credentials.json

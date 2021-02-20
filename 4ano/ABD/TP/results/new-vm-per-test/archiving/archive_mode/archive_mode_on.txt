@@ -1,0 +1,2 @@
+name throughput(tx/s) response_time(s) abort_rate
+/home/Joel/dat_results/archiving/archive_mode/archive_mode_on.dat 555.3080046745081 0.034411829422154934 0.04214281570856778

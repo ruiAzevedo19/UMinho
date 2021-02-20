@@ -1,0 +1,26 @@
+---
+
+- hosts: db_master_server
+  become: yes
+  gather_facts: true
+  roles: 
+    - mysql-install 
+    - mysql-master
+  vars:
+    - id: "{{ groups['db_master_server'].index(inventory_hostname) + 1 }}"
+
+
+- hosts: db_read_servers
+  become: yes
+  gather_facts: true
+  roles: 
+    - mysql-install 
+    - mysql-slave 
+  vars:
+    - id: "{{ 1 + groups['db_read_servers'].index(inventory_hostname) + groups['db_master_server'] | length}}"
+
+- hosts: db_master_server
+  become: yes
+  gather_facts: no
+  roles:
+    - mysql-after-repl

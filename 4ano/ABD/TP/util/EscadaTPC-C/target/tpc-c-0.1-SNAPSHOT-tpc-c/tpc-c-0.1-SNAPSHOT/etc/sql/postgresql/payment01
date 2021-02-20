@@ -1,0 +1,176 @@
+drop function if exists tpcc_payment(int,int,numeric(6,2),int,int,int,char(16));
+
+create function tpcc_payment(int,int,numeric(6,2),int,int,int,char(16)) returns refcursor as 
+'
+declare
+
+__w_id alias for $1;
+__c_w_id alias for $2;
+__h_amount alias for $3;
+__d_id alias for $4;
+__c_d_id alias for $5;
+__c_id alias for $6;
+__c_last alias for $7;
+
+_w_street_1 char(20);
+_w_street_2 char(20);
+_w_city char(20);
+_w_state char(2);
+_w_zip char(9);
+_w_name char(10);
+_d_street_1 char(20);
+_d_street_2 char(20);
+_d_city char(20);
+_d_state char(2);
+_d_zip char(9);
+_d_name char(10);
+_c_first char(16);
+_c_middle char(2);
+_c_street_1 char(20);
+_c_street_2 char(20);
+_c_city char(20);
+_c_state char(2);
+_c_zip char(9);
+_c_phone char(16);
+_c_since timestamp;
+_c_credit char(2);
+_c_credit_lim numeric(12,2);
+_c_balance numeric(12,2);
+_c_discount numeric(4,4);
+_data char(500);
+_c_data char(500);
+_datetime timestamp;
+_w_ytd numeric(12,2);
+_d_ytd numeric(12,2);
+_cnt int;
+_val int;
+_screen_data char(200);
+_d_id_local int;
+_w_id_local int;
+_c_id_local int;
+_c_id int;
+_c_last char(16);
+
+_retcustomer customer%rowtype;
+_retdistrict district%rowtype;
+_retwarehouse warehouse%rowtype;
+
+_ret refcursor;
+
+begin
+
+_screen_data := '''';
+
+select into _datetime current_timestamp;
+
+if __c_id = 0 then
+
+   select into _retcustomer * from customer
+     where c_last = __c_last and
+     c_w_id = __c_w_id and
+     c_d_id = __c_d_id
+     order by c_w_id, c_d_id, c_last, c_first limit 1;
+
+   GET DIAGNOSTICS _cnt = ROW_COUNT;
+
+   _c_id := _retcustomer.c_id;
+else
+   _c_id := __c_id;
+end if;
+
+update customer
+   set c_balance = c_balance - __h_amount,
+   c_payment_cnt = c_payment_cnt + 1,
+   c_ytd_payment = c_ytd_payment + __h_amount
+   where c_id = _c_id and
+   c_w_id = __c_w_id and
+   c_d_id = __c_d_id;
+
+select into _retcustomer *
+  from customer
+  where c_id = _c_id and
+  c_w_id = __c_w_id and
+  c_d_id = __c_d_id;
+
+
+_c_balance := _retcustomer.c_balance;
+_c_first := _retcustomer.c_first;
+_c_middle := _retcustomer.c_middle;
+_c_last := _retcustomer.c_last;
+_c_street_1 := _retcustomer.c_street_1;
+_c_street_2 := _retcustomer.c_street_2;
+_c_city := _retcustomer.c_city;
+_c_state := _retcustomer.c_state;
+_c_zip := _retcustomer.c_zip;
+_c_phone := _retcustomer.c_phone;
+_c_credit := _retcustomer.c_credit;
+_c_credit_lim := _retcustomer.c_credit_lim;
+_c_discount := _retcustomer.c_discount;
+_c_since := _retcustomer.c_since;
+_data := _retcustomer.c_data;
+_c_id_local := _retcustomer.c_id;
+
+if _c_credit = ''BC'' then
+   _c_data := cast(_c_id as char(5));
+   
+   update customer
+   set c_data = _c_data
+   where c_id = _c_id and
+   c_w_id = __c_w_id and
+   c_d_id = __c_d_id;
+
+   _screen_data := substring (_c_data,1,200);
+end if;
+
+-- get district data and update year-to-date
+update district
+   set d_ytd = d_ytd + __h_amount
+   where d_w_id = __w_id and
+   d_id = __d_id;
+
+select into _retdistrict *
+   from district
+   where d_w_id = __w_id and
+   d_id = __d_id;
+
+   _d_street_1 := _retdistrict.d_street_1;
+   _d_street_2 := _retdistrict.d_street_2;
+   _d_city := _retdistrict.d_city;
+   _d_state := _retdistrict.d_state;
+   _d_zip := _retdistrict.d_zip;
+   _d_name := _retdistrict.d_name;
+   _d_id_local := _retdistrict.d_id;
+
+-- get warehouse data and update year-to-date
+update warehouse
+  set w_ytd = w_ytd + __h_amount
+  where w_id = __w_id;
+
+select into _retwarehouse *
+  from warehouse
+  where w_id = __w_id;
+
+  _w_street_1 := _retwarehouse.w_street_1;
+  _w_street_2 := _retwarehouse.w_street_2;
+  _w_city := _retwarehouse.w_city;
+  _w_state := _retwarehouse.w_state;
+  _w_zip := _retwarehouse.w_zip;
+  _w_name := _retwarehouse.w_name;
+  _w_id_local := _retwarehouse.w_id;
+
+insert into history 
+(h_c_id,h_c_d_id,h_c_w_id,h_d_id,h_w_id,h_date,h_amount,h_data)
+values 
+( _c_id_local, __c_d_id, __c_w_id, _d_id_local, _w_id_local, _datetime,__h_amount, _w_name || '' '' || _d_name);
+
+ open _ret for select _c_id, _c_last, _datetime, _w_street_1, _w_street_2, _w_city,
+             _w_state, _w_zip, _d_street_1, _d_street_2, _d_city, _d_state, _d_zip,
+             _c_first, _c_middle, _c_street_1, _c_street_2, _c_city, _c_state,
+     	     _c_zip, _c_phone, _c_since, _c_credit, _c_credit_lim, _c_discount,
+             _c_balance, _screen_data;
+
+return _ret;
+
+end
+'
+language 'plpgsql';

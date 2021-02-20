@@ -1,0 +1,2 @@
+name throughput(tx/s) response_time(s) abort_rate
+/home/Joel/dat_results/checkpoint/min_wal_size/min_wal_size_160MB.dat 492.51913952609567 0.038890951974992906 0.044964555945156706

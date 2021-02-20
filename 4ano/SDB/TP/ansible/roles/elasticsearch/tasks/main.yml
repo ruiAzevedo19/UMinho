@@ -1,0 +1,43 @@
+---
+#
+# Installing Elasticsearch
+#
+# Adds the apt-key for Elasticsearch
+- name: Add Elasticsearch apt-key
+  apt_key:
+    url: "https://packages.elastic.co/GPG-KEY-elasticsearch"
+    state: present
+
+# Add the Elasticsearch APT-repository
+- name: Adding Elasticsearch APT repository
+  apt_repository:
+    repo: deb https://artifacts.elastic.co/packages/7.x/apt stable main
+    state: present
+
+#Update Max Memory
+- name: Update Max Memory
+  shell: sysctl -w vm.max_map_count=262144
+
+# Install Elasticsearch
+- name: Update repositories cache and install Elasticsearch
+  apt:
+    name: elasticsearch
+    update_cache: yes
+
+# Edit Elasticsearch Config File
+- name: Updating Elaticsearch config file
+  lineinfile:
+    destfile: /etc/elasticsearch/elasticsearch.yml
+    regexp: '{{item.From}}'
+    line: '{{item.To}}'
+    state: present 
+  with_items:
+    - { From: '#network.host: 192.168.0.1', To: 'network.host: 0.0.0.0'}
+    - { From: '#discovery.seed_hosts: ', To: 'discovery.seed_hosts: []'}
+    - { From: '#cluster.initial_master_nodes: ', To: 'cluster.initial_master_nodes: ["{{ elastic_host }}"]'} 
+        
+# Restart Elasticsearch
+- name: Restarting Elasticsearch
+  service:
+    name: elasticsearch
+    state: restarted
