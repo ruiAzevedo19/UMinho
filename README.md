@@ -68,4 +68,6 @@ Projects developed during the computer engineering course.
 * [José Alves](https://github.com/phansti)
 * [Miriam Pinto](https://github.com/a42040)
 * [José Luís](https://github.com/JLoisM)
+* [João Linhares](https://github.com/JoaoLinhares)
+* [Joel Ferreira](https://github.com/joel98ferreira)
 
