@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE nta PUBLIC '-//Uppaal Team//DTD Flat System 1.1//EN' 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_2.dtd'>
+<nta>
+	<declaration>// Channels.
+chan switch, activate, flow_change;
+
+// true if the lights are changing
+bool is_changing = false;
+
+// true if a light is green
+bool M_is_green = true;
+bool m_is_green = false;
+
+// 0 |-&gt; None ; 1 |-&gt; Low ; 2 |-&gt; High
+int major_state = 0;
+int minor_state = 0;
+
+
+
+
+
+
+</declaration>
+	<template>
+		<name>Sensor</name>
+		<parameter>bool &amp;light_green, int &amp;traffic</parameter>
+		<declaration>clock c;
+
+int n_cars = 0;
+
+// Lower State - Lower and Upper bound  
+int llb = 1, lub = 3;
+// High State - Lower and Upper bound  
+int hub = 10;
+
+bool one_car(){
+    return n_cars == 1;
+}
+
+bool low_condition(){
+    return n_cars &gt;= llb &amp;&amp; n_cars &lt;= lub;
+}
+
+bool high_condition(){
+    return n_cars &gt; lub &amp;&amp; n_cars &lt; hub;
+}
+
+void enter_car(){
+    n_cars++;
+}
+
+void leave_car(){
+    n_cars--;
+}
+</declaration>
+		<location id="id0" x="-382" y="-425">
+			<name x="-399" y="-459">None</name>
+		</location>
+		<location id="id1" x="-374" y="-170">
+			<name x="-391" y="-213">Low</name>
+		</location>
+		<location id="id2" x="-374" y="93">
+			<name x="-391" y="110">High</name>
+		</location>
+		<init ref="id0"/>
+		<transition>
+			<source ref="id2"/>
+			<target ref="id2"/>
+			<label kind="guard" x="-255" y="101">high_condition() 
+&amp;&amp; light_green
+&amp;&amp; c &gt;= 1
+&amp;&amp; !is_changing</label>
+			<label kind="assignment" x="-255" y="68">leave_car(),
+c := 0</label>
+			<nail x="-263" y="68"/>
+			<nail x="-263" y="161"/>
+		</transition>
+		<transition>
+			<source ref="id2"/>
+			<target ref="id2"/>
+			<label kind="guard" x="-612" y="101">high_condition() 
+&amp;&amp; !light_green
+&amp;&amp; c &gt;= 1
+&amp;&amp; !is_changing</label>
+			<label kind="assignment" x="-612" y="67">enter_car(),
+c := 0</label>
+			<nail x="-484" y="59"/>
+			<nail x="-484" y="161"/>
+		</transition>
+		<transition>
+			<source ref="id1"/>
+			<target ref="id1"/>
+			<label kind="guard" x="-255" y="-212">low_condition()
+&amp;&amp; light_green
+&amp;&amp; c &gt;= 1
+&amp;&amp; !is_changing</label>
+			<label kind="assignment" x="-255" y="-246">leave_car(),
+c := 0</label>
+			<nail x="-263" y="-255"/>
+			<nail x="-263" y="-127"/>
+		</transition>
+		<transition>
+			<source ref="id1"/>
+			<target ref="id1"/>
+			<label kind="guard" x="-629" y="-221">low_condition() 
+&amp;&amp; !light_green
+&amp;&amp; c &gt;= 1
+&amp;&amp; !is_changing</label>
+			<label kind="assignment" x="-629" y="-255">enter_car(),
+c := 0</label>
+			<nail x="-493" y="-263"/>
+			<nail x="-493" y="-127"/>
+		</transition>
+		<transition>
+			<source ref="id2"/>
+			<target ref="id1"/>
+			<label kind="guard" x="-306" y="-42">low_condition()
+&amp;&amp; light_green
+&amp;&amp; c &gt;= 1
+&amp;&amp; !is_changing</label>
+			<label kind="synchronisation" x="-306" y="-110">flow_change!</label>
+			<label kind="assignment" x="-306" y="-93">leave_car(),
+traffic = 1,
+c := 0</label>
+			<nail x="-314" y="17"/>
+			<nail x="-314" y="-127"/>
+		</transition>
+		<transition>
+			<source ref="id1"/>
+			<target ref="id0"/>
+			<label kind="guard" x="-297" y="-348">one_car()
+&amp;&amp; light_green
+&amp;&amp; !is_changing</label>
+			<label kind="synchronisation" x="-297" y="-416">flow_change!</label>
+			<label kind="assignment" x="-297" y="-399">leave_car(),
+traffic = 0,
+c := 0</label>
+			<nail x="-306" y="-272"/>
+			<nail x="-306" y="-425"/>
+		</transition>
+		<transition>
+			<source ref="id1"/>
+			<target ref="id2"/>
+			<label kind="guard" x="-552" y="-34">high_condition() 
+&amp;&amp; !light_green
+&amp;&amp; c &gt;= 1
+&amp;&amp; !is_changing</label>
+			<label kind="synchronisation" x="-552" y="-102">flow_change!</label>
+			<label kind="assignment" x="-552" y="-85">enter_car(),
+traffic = 2,
+c := 0</label>
+			<nail x="-433" y="-127"/>
+			<nail x="-433" y="17"/>
+		</transition>
+		<transition>
+			<source ref="id0"/>
+			<target ref="id1"/>
+			<label kind="guard" x="-569" y="-348">!light_green
+&amp;&amp; c &gt;= 1
+&amp;&amp; !is_changing</label>
+			<label kind="synchronisation" x="-569" y="-416">flow_change!</label>
+			<label kind="assignment" x="-569" y="-399">enter_car() ,
+traffic = 1, 
+c:= 0</label>
+			<nail x="-450" y="-425"/>
+			<nail x="-450" y="-272"/>
+		</transition>
+	</template>
+	<template>
+		<name>Controller</name>
+		<declaration>clock c;
+
+// true if a change of flow activates the controller
+bool forced = false;
+
+// time between state reads
+// every read cycle, a decision is made about changing lights or not
+int read_cycle = 10;
+
+// counts how many times the traffic lights switch
+int switch_lights = 0;
+
+// true if the last green light was in the major road, false otherwise
+int low_cycles = 0;
+int high_cycles = 0;
+int low_high_cycles = 0;
+int low_cycle_bound = 2;
+int high_cycle_bound = 3;
+int low_high_cycle_bound = 4;
+
+
+// decides if the lights will change or not
+bool decision(){
+    bool r = false;
+    if( 
+        (M_is_green &amp;&amp; forced &amp;&amp; major_state &gt; minor_state) 
+    ||  (!M_is_green &amp;&amp; forced &amp;&amp; minor_state &gt; major_state)
+    ||  (high_cycles == high_cycle_bound || low_cycles == low_cycle_bound || low_high_cycles == low_high_cycle_bound )
+    ||  (M_is_green &amp;&amp; major_state &lt; minor_state)
+    ||  (!M_is_green &amp;&amp; minor_state &lt; major_state)
+    )   r = true;
+    
+    return r;
+}
+
+void cycle_limits(){
+    if( low_cycles == 500 )
+        low_cycles = 0;
+    if( high_cycles == 500 )
+        high_cycles = 0;
+    if ( low_high_cycles == 500 )
+        low_high_cycles = 0;
+}
+
+void reset_cycles(){
+    low_cycles = 0;
+    high_cycles = 0;
+    low_high_cycles = 0;
+    if( switch_lights == 50 )
+        switch_lights = 1;
+    else
+        switch_lights++;
+}
+
+void update_cycles(){
+    if( major_state == 1 &amp;&amp; minor_state == 2 || major_state == 2 &amp;&amp; minor_state == 1 ){
+        low_high_cycles++;
+        return;
+    }
+    if( M_is_green ){
+        if( major_state == 1 ) low_cycles++;
+        if( major_state == 2 ) high_cycles++;
+    }
+    else{
+        if( minor_state == 1 ) low_cycles++;
+        if( minor_state == 2 ) high_cycles++; 
+    } 
+}</declaration>
+		<location id="id3" x="-1003" y="-637">
+			<name x="-1011" y="-671">idle</name>
+			<label kind="invariant" x="-1037" y="-688">c &lt;= read_cycle</label>
+		</location>
+		<location id="id4" x="-1003" y="-281" color="#ffa500">
+			<name x="-1046" y="-264">decision_state</name>
+			<committed/>
+		</location>
+		<init ref="id3"/>
+		<transition>
+			<source ref="id3"/>
+			<target ref="id4"/>
+			<label kind="synchronisation" x="-1173" y="-476">flow_change?</label>
+			<label kind="assignment" x="-1173" y="-459">forced := true</label>
+			<nail x="-1071" y="-586"/>
+			<nail x="-1071" y="-340"/>
+		</transition>
+		<transition>
+			<source ref="id4"/>
+			<target ref="id3"/>
+			<label kind="guard" x="-1300" y="-501">decision()</label>
+			<label kind="synchronisation" x="-1300" y="-484">activate!</label>
+			<label kind="assignment" x="-1300" y="-467">c := 0,
+reset_cycles(),
+forced := false</label>
+			<nail x="-1190" y="-280"/>
+			<nail x="-1190" y="-637"/>
+		</transition>
+		<transition>
+			<source ref="id4"/>
+			<target ref="id3"/>
+			<label kind="guard" x="-799" y="-484">!decision() 
+|| is_changing</label>
+			<label kind="assignment" x="-799" y="-450">c := 0,
+forced := false,
+cycle_limits()</label>
+			<nail x="-807" y="-280"/>
+			<nail x="-807" y="-637"/>
+		</transition>
+		<transition>
+			<source ref="id3"/>
+			<target ref="id4"/>
+			<label kind="guard" x="-926" y="-467">c == read_cycle</label>
+			<label kind="assignment" x="-926" y="-450">update_cycles()</label>
+			<nail x="-935" y="-586"/>
+			<nail x="-935" y="-331"/>
+		</transition>
+	</template>
+	<template>
+		<name x="5" y="5">MajorRoad</name>
+		<declaration>// Place local declarations here.
+clock c;
+</declaration>
+		<location id="id5" x="-382" y="-187" color="#00ff00">
+			<name x="-442" y="-196">Green</name>
+		</location>
+		<location id="id6" x="-382" y="-17">
+			<name x="-425" y="0">GreenYellow</name>
+			<label kind="invariant" x="-408" y="17">c &lt;= 1</label>
+		</location>
+		<location id="id7" x="-229" y="-17" color="#ffff00">
+			<name x="-254" y="0">Yellow</name>
+			<label kind="invariant" x="-255" y="17">c &lt;= 5</label>
+		</location>
+		<location id="id8" x="-93" y="-17">
+			<name x="-127" y="0">YellowRed</name>
+			<label kind="invariant" x="-119" y="17">c &lt;= 1</label>
+		</location>
+		<location id="id9" x="-93" y="-187" color="#ff0000">
+			<name x="-68" y="-196">Red</name>
+		</location>
+		<location id="id10" x="-246" y="-331">
+			<name x="-280" y="-365">RedGreen</name>
+			<label kind="invariant" x="-272" y="-382">c &lt;= 1</label>
+		</location>
+		<init ref="id5"/>
+		<transition>
+			<source ref="id10"/>
+			<target ref="id5"/>
+			<label kind="guard" x="-518" y="-255">c == 1</label>
+			<label kind="synchronisation" x="-518" y="-306">switch?</label>
+			<label kind="assignment" x="-518" y="-289">c := 0 , 
+M_is_green := true</label>
+			<nail x="-382" y="-331"/>
+		</transition>
+		<transition>
+			<source ref="id9"/>
+			<target ref="id10"/>
+			<label kind="synchronisation" x="-85" y="-297">switch?</label>
+			<label kind="assignment" x="-85" y="-280">c := 0</label>
+			<nail x="-93" y="-331"/>
+		</transition>
+		<transition>
+			<source ref="id8"/>
+			<target ref="id9"/>
+			<label kind="guard" x="-76" y="-110">c == 1</label>
+			<label kind="synchronisation" x="-76" y="-127">switch!</label>
+			<label kind="assignment" x="-76" y="-93">is_changing := false,
+M_is_green := false</label>
+		</transition>
+		<transition>
+			<source ref="id7"/>
+			<target ref="id8"/>
+			<label kind="guard" x="-187" y="-59">c == 5</label>
+			<label kind="synchronisation" x="-187" y="-76">switch!</label>
+			<label kind="assignment" x="-187" y="-42">c := 0</label>
+		</transition>
+		<transition>
+			<source ref="id6"/>
+			<target ref="id7"/>
+			<label kind="guard" x="-340" y="-59">c == 1</label>
+			<label kind="assignment" x="-340" y="-42">c := 0</label>
+		</transition>
+		<transition>
+			<source ref="id5"/>
+			<target ref="id6"/>
+			<label kind="synchronisation" x="-518" y="-127">activate?</label>
+			<label kind="assignment" x="-518" y="-110">c := 0,
+is_changing := true</label>
+		</transition>
+	</template>
+	<template>
+		<name>MinorRoad</name>
+		<declaration>clock c;</declaration>
+		<location id="id11" x="-119" y="-221">
+			<name x="-153" y="-255">RedGreen</name>
+			<label kind="invariant" x="-144" y="-272">c &lt;= 1</label>
+		</location>
+		<location id="id12" x="-263" y="-68" color="#00ff00">
+			<name x="-331" y="-76">Green</name>
+		</location>
+		<location id="id13" x="25" y="-85" color="#ff0000">
+			<name x="51" y="-93">Red</name>
+		</location>
+		<location id="id14" x="26" y="76">
+			<name x="-8" y="93">YellowRed</name>
+			<label kind="invariant" x="43" y="59">c &lt;= 1</label>
+		</location>
+		<location id="id15" x="-110" y="76" color="#ffff00">
+			<name x="-135" y="93">Yellow</name>
+			<label kind="invariant" x="-136" y="110">c &lt;= 5</label>
+		</location>
+		<location id="id16" x="-263" y="76">
+			<name x="-306" y="93">GreenYellow</name>
+			<label kind="invariant" x="-323" y="59">c &lt;= 1</label>
+		</location>
+		<init ref="id13"/>
+		<transition>
+			<source ref="id14"/>
+			<target ref="id13"/>
+			<label kind="guard" x="42" y="-17">c == 1</label>
+			<label kind="synchronisation" x="42" y="-34">switch!</label>
+			<label kind="assignment" x="42" y="0">is_changing := false,
+m_is_green := false</label>
+		</transition>
+		<transition>
+			<source ref="id11"/>
+			<target ref="id12"/>
+			<label kind="guard" x="-399" y="-187">c == 1</label>
+			<label kind="synchronisation" x="-399" y="-204">switch?</label>
+			<label kind="assignment" x="-399" y="-170">c := 0,
+m_is_green := true</label>
+			<nail x="-263" y="-221"/>
+		</transition>
+		<transition>
+			<source ref="id13"/>
+			<target ref="id11"/>
+			<label kind="synchronisation" x="34" y="-187">switch?</label>
+			<label kind="assignment" x="34" y="-170">c := 0</label>
+			<nail x="25" y="-221"/>
+		</transition>
+		<transition>
+			<source ref="id15"/>
+			<target ref="id14"/>
+			<label kind="guard" x="-76" y="34">c == 5</label>
+			<label kind="synchronisation" x="-76" y="17">switch!</label>
+			<label kind="assignment" x="-76" y="51">c := 0</label>
+		</transition>
+		<transition>
+			<source ref="id16"/>
+			<target ref="id15"/>
+			<label kind="guard" x="-212" y="34">c == 1</label>
+			<label kind="assignment" x="-204" y="51">c := 0</label>
+		</transition>
+		<transition>
+			<source ref="id12"/>
+			<target ref="id16"/>
+			<label kind="synchronisation" x="-408" y="-25">activate?</label>
+			<label kind="assignment" x="-408" y="-8">c := 0,
+is_changing := true</label>
+		</transition>
+	</template>
+	<system>// Place template instantiations here.
+major_road = MajorRoad();
+minor_road = MinorRoad();
+major_sensor = Sensor(M_is_green,major_state);
+minor_sensor = Sensor(m_is_green,minor_state);
+
+// List one or more processes to be composed into a system.
+system major_sensor, minor_sensor, Controller, major_road, minor_road;
+    </system>
+	<queries>
+		<query>
+			<formula>E&lt;&gt; major_road.Red</formula>
+			<comment>-- Reachability --
+The manor-road light can go read</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; minor_road.Green</formula>
+			<comment>-- Reachability --
+The manor-road light can go green</comment>
+		</query>
+		<query>
+			<formula>A[] not deadlock</formula>
+			<comment>-- Safety --
+The system never is deadlock-free</comment>
+		</query>
+		<query>
+			<formula>A[] not ( major_road.Green &amp;&amp; minor_road.Green )</formula>
+			<comment>-- Safety --
+The major and minor road lights cannot be green at the same time</comment>
+		</query>
+		<query>
+			<formula>major_sensor.n_cars &gt; 0 &amp;&amp; major_road.Red --&gt; major_road.Green</formula>
+			<comment>If there are cars waiting on the major road and the light is red, eventually the light will be green</comment>
+		</query>
+		<query>
+			<formula>minor_sensor.n_cars &gt; 0 &amp;&amp; minor_road.Red --&gt; minor_road.Green</formula>
+			<comment>If there are cars waiting on the minor road and the light is red, eventually the light will be green</comment>
+		</query>
+		<query>
+			<formula>A[] !(major_road.Yellow &amp;&amp; major_road.c &gt; 5)</formula>
+			<comment>The yellow lights does not stay on more than 5s</comment>
+		</query>
+		<query>
+			<formula>A[] !(minor_road.Yellow &amp;&amp; minor_road.c &gt; 5)</formula>
+			<comment>The yellow lights does not stay on more than 5s</comment>
+		</query>
+		<query>
+			<formula>major_road.Yellow --&gt; major_road.Red</formula>
+			<comment>Yellow light always leads to red light</comment>
+		</query>
+		<query>
+			<formula>minor_road.Yellow --&gt; minor_road.Red</formula>
+			<comment>Yellow light always leads to red light</comment>
+		</query>
+		<query>
+			<formula>A[]  Controller.low_cycles &lt;= Controller.low_cycle_bound &amp;&amp; 
+     Controller.high_cycles &lt;= Controller.high_cycle_bound &amp;&amp; 
+     Controller.low_high_cycles &lt;= Controller.low_high_cycle_bound
+</formula>
+			<comment>Read cycles are bounded</comment>
+		</query>
+		<query>
+			<formula>A[] (M_is_green &amp;&amp; major_sensor.High &amp;&amp; minor_sensor.Low || !M_is_green &amp;&amp; minor_sensor.High &amp;&amp; major_sensor.Low ) 
+	imply Controller.low_high_cycles &lt;= Controller.low_high_cycle_bound</formula>
+			<comment>Sensors do not stay forever in (Low,High)</comment>
+		</query>
+		<query>
+			<formula>A[] major_sensor.High &amp;&amp; minor_sensor.High imply Controller.high_cycles &lt;= Controller.high_cycle_bound</formula>
+			<comment>Sensors do not stay forever in (High,High)</comment>
+		</query>
+		<query>
+			<formula>A[] major_sensor.Low &amp;&amp; minor_sensor.Low imply Controller.low_cycles &lt;= Controller.low_cycle_bound</formula>
+			<comment>Sensors do not stay forever in (Low,Low)</comment>
+		</query>
+		<query>
+			<formula>minor_sensor.High &amp;&amp; major_sensor.None &amp;&amp; M_is_green &amp;&amp; Controller.switch_lights &lt; 1 --&gt; minor_sensor.High &amp;&amp; major_sensor.None &amp;&amp; !M_is_green &amp;&amp; Controller.switch_lights == 1</formula>
+			<comment>If the minor road as high traffic and the major road as none, then there is aat most one lights change</comment>
+		</query>
+		<query>
+			<formula>M_is_green &amp;&amp; minor_sensor.High --&gt; !minor_sensor.Low </formula>
+			<comment>Traffic never goes down if the red light is on</comment>
+		</query>
+		<query>
+			<formula>M_is_green &amp;&amp; minor_sensor.Low --&gt; !minor_sensor.None</formula>
+			<comment>Traffic never goes down if the red light is on</comment>
+		</query>
+		<query>
+			<formula>!M_is_green &amp;&amp; major_sensor.High --&gt; !major_sensor.Low</formula>
+			<comment>Traffic never goes down if the red light is on</comment>
+		</query>
+		<query>
+			<formula>!M_is_green &amp;&amp; major_sensor.Low --&gt; !major_sensor.None</formula>
+			<comment>Traffic never goes down if the red light is on</comment>
+		</query>
+		<query>
+			<formula>major_sensor.None &amp;&amp; !minor_sensor.None --&gt; !M_is_green</formula>
+			<comment>If the major road has no traffic and the minor road as some traffic, eventually the lights in the minor road will be green</comment>
+		</query>
+		<query>
+			<formula>!major_sensor.None &amp;&amp; minor_sensor.None --&gt; M_is_green</formula>
+			<comment>If the minor road has no traffic and the major road as some traffic, eventually the lights in the major road will be green</comment>
+		</query>
+		<query>
+			<formula>A[] !(major_road.Red &amp;&amp; minor_road.Red)</formula>
+			<comment></comment>
+		</query>
+		<query>
+			<formula></formula>
+			<comment></comment>
+		</query>
+	</queries>
+</nta>

@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE nta PUBLIC '-//Uppaal Team//DTD Flat System 1.1//EN' 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_2.dtd'>
+<nta>
+	<declaration>// Place global declarations here.
+chan switch, activate;
+broadcast chan turn_idle;
+</declaration>
+	<template>
+		<name>Sensor</name>
+		<location id="id0" x="-688" y="-357">
+			<name x="-698" y="-391">idle</name>
+		</location>
+		<location id="id1" x="-688" y="-238" color="#00ff00">
+			<name x="-714" y="-212">enabled</name>
+			<committed/>
+		</location>
+		<location id="id2" x="-535" y="-238" color="#ffa500">
+			<name x="-561" y="-212">disabled</name>
+		</location>
+		<init ref="id0"/>
+		<transition>
+			<source ref="id2"/>
+			<target ref="id0"/>
+			<label kind="synchronisation" x="-612" y="-323">turn_idle?</label>
+		</transition>
+		<transition>
+			<source ref="id1"/>
+			<target ref="id2"/>
+		</transition>
+		<transition>
+			<source ref="id0"/>
+			<target ref="id1"/>
+			<label kind="synchronisation" x="-748" y="-306">activate!</label>
+		</transition>
+	</template>
+	<template>
+		<name x="5" y="5">MajorRoad</name>
+		<declaration>// Place local declarations here.
+clock c;
+</declaration>
+		<location id="id3" x="-382" y="-161" color="#00ff00">
+			<name x="-442" y="-170">Green</name>
+		</location>
+		<location id="id4" x="-382" y="-17">
+			<name x="-425" y="0">GreenYellow</name>
+			<label kind="invariant" x="-408" y="17">c &lt;= 1</label>
+		</location>
+		<location id="id5" x="-229" y="-17" color="#ffff00">
+			<name x="-254" y="0">Yellow</name>
+			<label kind="invariant" x="-255" y="17">c &lt;= 5</label>
+		</location>
+		<location id="id6" x="-93" y="-17">
+			<name x="-127" y="0">YellowRed</name>
+			<label kind="invariant" x="-119" y="17">c &lt;= 1</label>
+		</location>
+		<location id="id7" x="-93" y="-161" color="#ff0000">
+			<name x="-68" y="-170">Red</name>
+		</location>
+		<location id="id8" x="-187" y="-238">
+			<name x="-221" y="-272">RedGreen</name>
+			<label kind="invariant" x="-212" y="-289">c &lt;= 1</label>
+		</location>
+		<location id="id9" x="-306" y="-238">
+			<name x="-340" y="-272">broad</name>
+			<committed/>
+		</location>
+		<init ref="id3"/>
+		<transition>
+			<source ref="id9"/>
+			<target ref="id3"/>
+			<label kind="synchronisation" x="-408" y="-229">turn_idle?</label>
+		</transition>
+		<transition>
+			<source ref="id8"/>
+			<target ref="id9"/>
+			<label kind="guard" x="-263" y="-212">c == 1</label>
+			<label kind="synchronisation" x="-263" y="-229">switch?</label>
+			<label kind="assignment" x="-263" y="-195">c := 0</label>
+		</transition>
+		<transition>
+			<source ref="id7"/>
+			<target ref="id8"/>
+			<label kind="synchronisation" x="-127" y="-229">switch?</label>
+			<label kind="assignment" x="-127" y="-212">c := 0</label>
+		</transition>
+		<transition>
+			<source ref="id6"/>
+			<target ref="id7"/>
+			<label kind="guard" x="-76" y="-93">c == 1</label>
+			<label kind="synchronisation" x="-76" y="-110">switch!</label>
+		</transition>
+		<transition>
+			<source ref="id5"/>
+			<target ref="id6"/>
+			<label kind="guard" x="-187" y="-59">c == 5</label>
+			<label kind="synchronisation" x="-187" y="-76">switch!</label>
+			<label kind="assignment" x="-187" y="-42">c := 0</label>
+		</transition>
+		<transition>
+			<source ref="id4"/>
+			<target ref="id5"/>
+			<label kind="guard" x="-340" y="-59">c == 1</label>
+			<label kind="assignment" x="-340" y="-42">c := 0</label>
+		</transition>
+		<transition>
+			<source ref="id3"/>
+			<target ref="id4"/>
+			<label kind="guard" x="-450" y="-102">c &gt; 30</label>
+			<label kind="synchronisation" x="-450" y="-119">activate?</label>
+			<label kind="assignment" x="-450" y="-85">c := 0</label>
+		</transition>
+	</template>
+	<template>
+		<name>MinorRoad</name>
+		<declaration>clock c;</declaration>
+		<location id="id10" x="-178" y="-178">
+			<name x="-212" y="-212">RedGreen</name>
+			<label kind="invariant" x="-204" y="-229">c &lt;= 1</label>
+		</location>
+		<location id="id11" x="-263" y="-68" color="#00ff00">
+			<name x="-323" y="-76">Green</name>
+			<label kind="invariant" x="-331" y="-93">c &lt;= 30</label>
+		</location>
+		<location id="id12" x="-59" y="-178" color="#ff0000">
+			<name x="-68" y="-212">Red</name>
+		</location>
+		<location id="id13" x="26" y="76">
+			<name x="-8" y="93">YellowRed</name>
+			<label kind="invariant" x="0" y="110">c &lt;= 1</label>
+		</location>
+		<location id="id14" x="-110" y="76" color="#ffff00">
+			<name x="-135" y="93">Yellow</name>
+			<label kind="invariant" x="-136" y="110">c &lt;= 5</label>
+		</location>
+		<location id="id15" x="-263" y="76">
+			<name x="-306" y="93">GreenYellow</name>
+			<label kind="invariant" x="-289" y="110">c &lt;= 1</label>
+		</location>
+		<location id="id16" x="25" y="-68">
+			<name x="51" y="-77">broad</name>
+			<committed/>
+		</location>
+		<init ref="id12"/>
+		<transition>
+			<source ref="id16"/>
+			<target ref="id12"/>
+			<label kind="synchronisation" x="-17" y="-144">turn_idle!</label>
+		</transition>
+		<transition>
+			<source ref="id10"/>
+			<target ref="id11"/>
+			<label kind="guard" x="-263" y="-153">c == 1</label>
+			<label kind="synchronisation" x="-263" y="-170">switch?</label>
+			<label kind="assignment" x="-263" y="-136">c := 0</label>
+		</transition>
+		<transition>
+			<source ref="id12"/>
+			<target ref="id10"/>
+			<label kind="synchronisation" x="-136" y="-170">switch?</label>
+			<label kind="assignment" x="-136" y="-153">c := 0</label>
+		</transition>
+		<transition>
+			<source ref="id13"/>
+			<target ref="id16"/>
+			<label kind="guard" x="34" y="0">c == 1</label>
+			<label kind="synchronisation" x="34" y="-17">switch!</label>
+			<nail x="25" y="25"/>
+		</transition>
+		<transition>
+			<source ref="id14"/>
+			<target ref="id13"/>
+			<label kind="guard" x="-76" y="34">c == 5</label>
+			<label kind="synchronisation" x="-76" y="17">switch!</label>
+			<label kind="assignment" x="-76" y="51">c := 0</label>
+		</transition>
+		<transition>
+			<source ref="id15"/>
+			<target ref="id14"/>
+			<label kind="guard" x="-204" y="34">c == 1</label>
+			<label kind="assignment" x="-204" y="51">c := 0</label>
+		</transition>
+		<transition>
+			<source ref="id11"/>
+			<target ref="id15"/>
+			<label kind="guard" x="-331" y="-26">c == 30</label>
+			<label kind="assignment" x="-331" y="-9">c := 0</label>
+		</transition>
+	</template>
+	<system>// Place template instantiations here.
+major = MajorRoad();
+minor = MinorRoad();
+sensor = Sensor();
+// List one or more processes to be composed into a system.
+system major, minor, sensor;
+    </system>
+	<queries>
+		<query>
+			<formula>E&lt;&gt; major.Red</formula>
+			<comment>-- Reachability --
+The major-road light can go read</comment>
+		</query>
+		<query>
+			<formula>E&lt;&gt; minor.Green</formula>
+			<comment>-- Reachability --
+The minor-road light can go green</comment>
+		</query>
+		<query>
+			<formula>A[] not deadlock</formula>
+			<comment>-- Safety --
+The system never is deadlock-free</comment>
+		</query>
+		<query>
+			<formula>A[] not ( major.Green &amp;&amp; minor.Green )</formula>
+			<comment>-- Safety --
+The major and minor road lights cannot be green at the same time</comment>
+		</query>
+		<query>
+			<formula>sensor.enabled --&gt; minor.Green</formula>
+			<comment>-- Liveness --
+If there are cars waiting they will eventually have green light</comment>
+		</query>
+		<query>
+			<formula>major.Yellow --&gt; major.Red</formula>
+			<comment>-- Liveness -- 
+If the lights in the major road are yellow, eventually will be red</comment>
+		</query>
+		<query>
+			<formula>minor.Yellow --&gt; minor.Red</formula>
+			<comment>-- Liveness -- 
+If the lights in the minor road are yellow, eventually will be red</comment>
+		</query>
+		<query>
+			<formula>A[] !(major.Yellow &amp;&amp; major.c &gt; 5)</formula>
+			<comment>-- Liveness --
+The yellow light never stays on more than 5s</comment>
+		</query>
+		<query>
+			<formula>A[] !(minor.Yellow &amp;&amp; minor.c &gt; 5)</formula>
+			<comment>-- Liveness --
+The yellow light never stays on more than 5s</comment>
+		</query>
+		<query>
+			<formula>A[] !(minor.Green &amp;&amp; minor.c &gt; 30)</formula>
+			<comment></comment>
+		</query>
+	</queries>
+</nta>

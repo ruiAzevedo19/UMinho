@@ -1,0 +1,10 @@
+digraph g {
+ graph [pad="0.5", nodesep="1", ranksep="2"] 
+rankdir=LR
+A -> C[style=solid, color=purple];
+C -> D[style=solid, color=purple];
+D -> E[style=solid, color=purple];
+E -> F[style=solid, color=purple];
+F -> B[style=solid, color=purple];
+B -> A[style=solid, color=purple];
+}
